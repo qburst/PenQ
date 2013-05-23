@@ -1,0 +1,10 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>SecurityFocus Vulns Search </os:ShortName>
+<os:Description>Search in SecurityFocus Vulns by KeyWords</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAAEgAAABIAAAAAAAAAAAAAAD+/v77/vz///7////9//7//////v////z9/v///v////7+//v9/f3+/v7+//v//v7////9///+/f/69/Le1cfRwrLSwrLPwa7m3tH49O/7/f79///9///+/v79//7+/v7///7g2dCukXJ8Sx2DVSWYdEymiGWqiWiihV6hgV22m4HMt6Lm3dP///z7/f7+/v7e0cN4SRVxPAmihWDv6N/+/fn///7//v/+/Pz39vLu6uXOvaqmhmO5oIb79vX+/v62m4FnLwChhF///v/9/v/9//7//v/+/v7////9/v/+/v7///76+vrPwK2tlHLu6ebe079yQw2DViPx7+X//v/////79/bj3dLXyrrYyrjv6eL9//////7//v/VxbS0mHr9///Nuad7Thugflrf0sLazb/HtZ7Is57g1Mjh1Ma7o4v59fT9///9///n3tW1mn///v39///59POQbEZyQAyNYjfKuaT28+78+Pf9///BrZTl3NP18u3g08O3n4Ps6eH//v7////TxLG0nYPo3NDTxbPBqZHBrZS/pY2zmXucelbLtJ7Tw7PXx7by7+r///79//7Qv6yjgF718u7//v/9///////7///z8Oiwlnjn4Nf///7+/v79/v///v38/v7q49qNZjrp39X//v///Pjb0MLbzr61m32felSvimja0cPz8Oj9//7+//v//v7//f+pimmPZTv7/f3////m4NXazsLCrZemgV/q5Nn6/Pze0saigFzNtKD//v7////+/v6deVV0Qg2qjmy0nYOniWaadlDJtJ/2+PL9/////v3////18u6rjWq3n4P///v9//7p4dSskHGbdlC1l3zTxLHs5tvg1Mjp4Nb7+/v///7///79/v/VxbRzRBHr5d78/v78/v7////9//7//v///v/////69fLZy7nUxLTbzLzZzL7Pu6qhfVetjm37+vb//////v3////////+//v//fz+//39/v////749/Pz7uv07unv6eLy7er8/v7+/f///voAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</os:Image>
+<SearchForm>http://search.securityfocus.com/swsearch?sbm=bid</SearchForm>
+<os:Url type="text/html" method="GET" template="http://search.securityfocus.com/swsearch?query={searchTerms}&amp;sbm=bid&amp;submit=Search!&amp;metaname=alldoc&amp;sort=swishlastmodified">
+</os:Url><os:Url type="application/x-suggestions+json" method="GET" template="http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=es-es&amp;q={searchTerms}">
+</os:Url>
+</SearchPlugin>

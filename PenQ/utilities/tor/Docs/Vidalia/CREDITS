@@ -1,0 +1,90 @@
+Vidalia is currently developed by:
+  Matt Edman <edmanm@vidalia-project.net>
+
+
+Contributors:
+  Domenik Bork was a Google Summer of Code student during Summer 2008 and
+  added the hidden service configuration interface.
+
+  Ren Bucholz <http://homes.eff.org/~renbucholz/tor/> created some of the
+  onion images off of which Corinna's icons and some of our own images are
+  based. 
+  
+  Dan Christensen <http://opello.org/> added additional image formats to 
+  the .ico files to support more Windowses. He also created the graph style
+  icons in the bandwidth graph settings.
+
+  dr|z3d created the Vidalia logo design and image files and helped redesign
+  the Vidalia website.
+
+  Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> supplied us with
+  nearly all of the flag icons that we use in the Appearance configuration
+  page and network map. He also created the router status icons we use in 
+  the network map.
+
+  Corinna Habets <corinna@geekin.de> created the images off which
+  our application icons are based.
+  
+  Matt Hanson <http://www.zuerchertech.com/> tweaked Corinna's images a bit
+  and created some .icos based off of them. 
+ 
+  Justin Hipple <hipplej@vidalia-project.net> co-founded the Vidalia project
+  and helped with lots of the initial development.
+
+  Andrew Lewman wrote the original Mac OS X bundle installer off which
+  Vidalia's is based, and also added Torbutton to the bundle.
+
+  This product includes GeoLite data created by MaxMind, available from
+  http://maxmind.com/
+
+  Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/> wrote the code
+  to launch a web browser when Tor has built a circuit and close Vidalia when
+  the browser has exited. He also implemented UPnP support using the MiniUPNPc
+  library.
+
+  Brandon Nase <http://www.students.dsu.edu/naseb/> designed and built 
+  the original vidalia-project.net website.
+
+  Christoph Sieghart (sigi) <http://www.0x2a.at/blog/> gave us some code that
+  converts world space coordinates (latitude,longitude) into image space
+  coordinates (x,y) which we used in the Net Viewer.
+
+  Michael Zuercher and Adam Tomjack of Zuerchertech LLC
+  <http://www.zuerchertech.com> gave us the ZImageView class which handles
+  drawing, scrolling and zooming the map image in the Network Viewer.
+
+  
+Translators:
+  Albanian    Frederik Nosi
+  Arabic      Ahmad Gharbeia
+  Bulgarian   kutia0001
+  Czech       el Mar <http://airdump.net>
+  Dutch       Ater Atrocitas
+  Farsi       persepolis
+              Hossein
+  Finnish     DJ Hasis
+  French      Michel Burkhardt
+              eight118
+              Daniel Berthereau
+  German      Christoph Sieghart
+              Steffen Dabbert
+  Hebrew      Anonymous
+  Hungarian   Tibor Fekete
+  Italian     Alex Mazzariol
+  Japanese    Nardog
+              Benessa Defend
+  Norwegian   xiando
+              Micromus
+  Polish      ZeeWolf
+  Portuguese  Mabat Haram
+  Russian     ygrek
+  Spanish     dererk
+              desolator
+  Simplified Chinese    Wu Xiaoguang
+                        LinHongJun
+  Swedish     Amin Amini
+              DJHasis
+  Traditional Chinese   LinHongJun
+  Turkish     Yunus Kaba
+              Omer Ishakoglu
+

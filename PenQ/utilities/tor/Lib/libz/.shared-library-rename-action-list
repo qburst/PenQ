@@ -1,0 +1,22 @@
+# In order to make Tor Browser Bundle for Linux run successfully when
+# extracted or copied onto a filesystem which does not support symbolic
+# links (such as the FAT filesystem used on most USB sticks), all shared
+# library symlinks in this directory were removed, and some shared
+# libraries in this directory were renamed to match the names by which
+# the loader will search for them.
+# 
+# Since the process of removing symlinks and renaming shared libraries
+# loses some potentially important information about shared library
+# version numbers, the remove-shared-lib-symlinks script which performs
+# these operations records some information about its actions.
+# 
+# See build-scripts/remove-shared-lib-symlinks in torbrowser.git for
+# more information.
+# 
+# This file contains a list of the rename (mv) and delete (rm) actions
+# which the remove-shared-lib-symlinks script performed to remove shared
+# library symlinks from this directory.
+# 
+rm libz.so
+rm libz.so.1
+mv libz.so.1.2.7 libz.so.1

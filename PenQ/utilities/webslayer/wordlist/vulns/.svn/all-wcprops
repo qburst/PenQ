@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/wordlist/vulns
+END
+fatwire.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/wordlist/vulns/fatwire.txt
+END
+tests.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/wordlist/vulns/tests.txt
+END
+dirTraversal.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/wordlist/vulns/dirTraversal.txt
+END
+coldfusion.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/wordlist/vulns/coldfusion.txt
+END
+netware.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/wordlist/vulns/netware.txt
+END
+oracle9i.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/wordlist/vulns/oracle9i.txt
+END
+sharepoint.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/wordlist/vulns/sharepoint.txt
+END
+jrun.txt
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/wordlist/vulns/jrun.txt
+END
+apache.txt
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/wordlist/vulns/apache.txt
+END
+fatwire_pagenames.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/wordlist/vulns/fatwire_pagenames.txt
+END
+websphere.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/wordlist/vulns/websphere.txt
+END
+iis.txt
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/wordlist/vulns/iis.txt
+END
+frontpage.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/wordlist/vulns/frontpage.txt
+END
+domino.txt
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/wordlist/vulns/domino.txt
+END
+cgis.txt
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/wordlist/vulns/cgis.txt
+END
+vignette.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/wordlist/vulns/vignette.txt
+END
+tomcat.txt
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/wordlist/vulns/tomcat.txt
+END
+sunas.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/wordlist/vulns/sunas.txt
+END
+weblogic.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/wordlist/vulns/weblogic.txt
+END
+iplanet.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/wordlist/vulns/iplanet.txt
+END
+dirTraversal-win.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/wordlist/vulns/dirTraversal-win.txt
+END
+dirTraversal-nix.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/wordlist/vulns/dirTraversal-nix.txt
+END
+sql_inj.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/wordlist/vulns/sql_inj.txt
+END

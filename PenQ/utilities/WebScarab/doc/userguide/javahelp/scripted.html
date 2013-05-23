@@ -1,0 +1,57 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>The scripted plugin</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="plugins.html" title="Chapter 5. WebScarab Plugins"><link rel="prev" href="sessionid.html" title="Session ID Analysis"><link rel="next" href="fragments.html" title="The fragments plugin"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="scripted"></a>The scripted plugin</h2></div></div></div><p>This plugin is intended to give users the ability to
+        create test scripts,
+        using the facilities of Webscarab.
+      </p><p>The scripting support is provided by the
+        Bean Scripting Framework (BSF), which means that any
+        BSF-supported scripting
+        language can be used to write test scripts. The default
+        language supported
+        is BeanShell, which is a relaxed Java-like language.
+        For more details of BeanShell,
+        go to http://www.beanshell.org/. If you wish to use one
+        of the other scripting
+        languages such as Jython or Groovy, for example, you
+        should place the appropriate
+        support libraries in the ClassPath prior to running
+        WebScarab, and make sure that
+        your script's filenames end with the appropriate
+        extension for your chosen
+        language. The required extension for BeanShell scripts
+        is ".bsh".
+      </p><p>The Scripted plugin exports a Java Object with
+        methods that allow you to
+        interact with the rest of WebScarab, for example,
+        fetching a response, or
+        adding a conversation to the WebScarab framework for
+        analysis by the other plugins.
+        It is likely that this object will change, as it is a
+        pretty new feature of WebScarab.
+        Therefore, if the documented behaviour does not match
+        what you observe, please check
+        the source code!
+      </p><p>
+        The exported Object is documented in
+        org/owasp/webscarab/plugins/scripted/ScriptedObjectModel.java
+        The major methods that you will likely want to use are:
+        </p><div class="itemizedlist"><ul type="disc"><li>
+            Request <code class="function">getRequest(int id)</code></li><li>
+            Response <code class="function">fetchResponse(Request
+              request) throws IOException
+            </code></li><li>
+            boolean <code class="function">hasAsyncCapacity()</code></li><li>
+            void <code class="function">submitAsyncRequest(Request
+              request)
+            </code></li><li>
+            boolean <code class="function">isAsyncBusy()</code></li><li>
+            boolean <code class="function">hasAsyncResponse()</code></li><li>
+            Response <code class="function">getAsyncResponse() throws
+              IOException
+            </code></li><li>
+            ConversationID <code class="function">
+              addConversation(Response response)
+            </code></li></ul></div><p>
+        The "async" methods allow for fetching of Responses in
+        multiple threads, while the 
+        "fetchResponse" method would be used for
+        single-threaded operations.
+      </p></div></body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE >
+
+<head>
+<title>Web Application Security Report Generator</title>
+<link rel="stylesheet" href="report.css"type="text/css" />
+<script src="jquery-1.8.2.min.js"></script>
+<script src="report.js"></script>
+
+</head>
+
+<body style="border:1px solid #ddd;">
+<form data-persist="garlic" method="POST" >
+<div style="font-family:Georgia!important;margin:auto;border-bottom:1px solid #ddd;" align="center">
+<h1>Web App Security Report Generator</h1>
+<h2 class="methodology"><a href="https://www.owasp.org/index.php/OWASP_Testing_Guide_v3_Table_of_Contents" target="_blank">( OWASP )</a></h2>
+</div>
+<span style="color: red; display: none; " id="loadingReport">&nbsp;Loading...&nbsp;</span>
+<a name="start"></a>
+<div style="margin:auto;border-bottom:1px solid #ddd;" align="center">
+<table width="100%" border="0" cellpadding="2" cellspacing="2">
+  <tbody><tr>
+    <th width="30%" scope="col">&nbsp;</th>
+    <th width="70%" scope="col">&nbsp;</th>
+  </tr>
+  <tr>
+    <td>Target site:</td>
+    <td><input name="text" type="text" id="site" style="width:100%;font-weight:bold;" placeholder="http://example.com"></td>
+  </tr>
+   <tr>
+    <td>Target IP:</td>
+    <td><input name="text2" type="text" id="ip" style="width:100%;font-weight:bold;" placeholder="127.0.0.1"></td>
+  </tr>
+  <tr>
+    <td>Security tester:</td>
+    <td><input name="text3" type="text" id="securityTester" style="width:100%;font-weight:bold;" placeholder="QBurst"></td>
+  </tr>
+   <tr>
+    <td>Tested for:</td>
+    <td><input name="text4" type="text" id="client" style="width:100%;font-weight:bold;" placeholder="Client Name"></td>
+  </tr>
+  <tr>
+    <td>Tested date:</td>
+    <td><input name="text5" type="text" id="date" style="width:100%;font-weight:bold;" placeholder="dd/mm/yyyy"></td>
+  </tr>
+  <tr>
+    <td height="32"><button type="button" value="Reset Report" onclick="reset();localStorage.clear();populate();">Reset Report</button></td>
+    <td align="right"><button type="button" value="Generate Report" onclick="generateReport()" id="buttonGenerateReport">Generate Report</button></td>
+  </tr>
+</tbody></table>
+<br>
+</div>
+
+<div align="left" style="border-bottom:1px solid #ddd;padding:8px;">
+<span style="font-size:12px;">
+	<strong ><a href="javascript:void(0)" onclick="if($(&#39;executiveSum&#39;).style.display==&#39;none&#39;){$(&#39;executiveSum&#39;).style.display=&#39;&#39;;$(&#39;executiveSum&#39;).focus();}else{$(&#39;executiveSum&#39;).style.display=&#39;none&#39;;}">Test Summary <img style="padding-left:5px;width:16px;height:16px;border:none;padding-right:30px;" src="edit.png"/></a></strong>
+	<span id="executiveSummary">
+		<textarea name="textarea6" cols="85"  rows="10" id="executiveSum" style="display:none"></textarea>
+	</span>
+
+	<strong><a href="javascript:void(0)" onclick="if($(&#39;scope&#39;).style.display==&#39;none&#39;){$(&#39;scope&#39;).style.display=&#39;&#39;;$(&#39;scope&#39;).focus();}else{$(&#39;scope&#39;).style.display=&#39;none&#39;;}">Test Scope <img style="padding-left:5px;width:16px;height:16px;border:none;padding-right:30px;" src="edit.png"/></a></strong>
+	<span id="reportScope">
+		<textarea name="textarea7" cols="85" rows="10" id="scope" style="display:none"></textarea>
+	</span>
+
+<strong><a href="javascript:void(0)" onclick="if($(&#39;keyFindings&#39;).style.display==&#39;none&#39;){$(&#39;keyFindings&#39;).style.display=&#39;&#39;;$(&#39;keyFindings&#39;).focus();}else{$(&#39;keyFindings&#39;).style.display=&#39;none&#39;;}">Test Findings <img style="padding-left:5px;width:16px;height:16px;border:none;padding-right:30px;" src="edit.png"/></a></strong>
+<span id="reportKeyFindings"><textarea name="textarea8" cols="85" rows="10" id="keyFindings" style="display:none"></textarea></span>
+
+<strong><a href="javascript:void(0)" onclick="if($(&#39;conclusion&#39;).style.display==&#39;none&#39;){$(&#39;conclusion&#39;).style.display=&#39;&#39;;$(&#39;conclusion&#39;).focus();}else{$(&#39;conclusion&#39;).style.display=&#39;none&#39;;}">Conclusion <img style="padding-left:5px;width:16px;height:16px;border:none;padding-right:30px;" src="edit.png"/></a></strong>
+<span id="reportConclusion"><textarea name="textarea9" cols="85" rows="10" id="conclusion" style="display:none"></textarea></span>
+<br>
+</div>
+
+<br>
+<p id="reportBlock"></p><a name="end"></a>
+<script src="garlic.js"></script>
+</span>
+</form>
+</body></html>

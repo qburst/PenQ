@@ -1,0 +1,10 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>server and Proxy authentication</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="environment.html" title="Chapter 4. WebScarab environmental settings"><link rel="prev" href="clientcerts.html" title="Client-side Certificates"><link rel="next" href="plugins.html" title="Chapter 5. WebScarab Plugins"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="authentication"></a>server and Proxy authentication</h2></div></div></div><p>WebScarab has support for authenticating against proxy and web servers, using
+        Basic, NTLM and Negotiate (not Kerberos) authentication. The first time a server requests 
+        authentication, WebScarab will prompt for credentials. These credentials will be reused for 
+        subsequent requests when required by the web server or proxy.
+      </p><p><span class="emphasis"><em>Note:</em></span> The credentials used will be included as
+        a fake header in the request when the conversation is archived. This is intended to allow
+        for automatic replay of a request using the credentials that were active at the time the request was issued.
+        If you wish to replay the request with different (or no) credentials, make sure to 
+        delete the "Authorization" or "Proxy-Authorization" header from the request.
+      </p></div></body></html>

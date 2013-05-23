@@ -1,0 +1,128 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Session ID Analysis</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="plugins.html" title="Chapter 5. WebScarab Plugins"><link rel="prev" href="spider.html" title="The Spider plugin"><link rel="next" href="scripted.html" title="The scripted plugin"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sessionid"></a>Session ID Analysis</h2></div></div></div><p>Session ID Analysis is useful to determine how easy
+        it is for
+        an attacker to brute force a victim's sessionid, and
+        take it over.
+      </p><p>The principle is that we collect a sample of session
+        identifiers,
+        most likely from a cookie that is set in the browser,
+        but possibly also one that
+        is set in a hidden form field in the HTML body.
+        WebScarab tags all sessionid's 
+        with the date and time that it was collected, and then,
+        after performing some
+        calculations on the string value to convert it into a
+        number, plots the
+        value against time on a graph. The human eye is a lot
+        more efficient at identifying
+        patterns than a computer, so by plotting the values on
+        a pair of axes, we 
+        make it easy for a human to visualise the sequence.
+      </p><p>The default calculator identifies the possible
+        character set 
+        for each position in the session id string. It then
+        performs base-n conversion
+        of the string to get it to a large number. This is
+        quite an efficient way
+        of converting arbitrary strings into a number, as it
+        does not make any
+        assumptions about the character set, and is reasonably
+        effective at eliminating
+        constant strings (they are reduced to a value of 0
+        since the character 
+        set does not change)
+      </p><p>It is possible to use alternative calculators, e.g. a
+        Base64 calculator
+        that knows what the Base64 character set is, but there
+        is no User Interface support
+        for selecting different calculators. It currently
+        requires code changes to use
+        different calculators. This might be a good project for
+        an 
+        interested person to implement.
+      </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sessionidcollection"></a>Collecting sessionids</h3></div></div></div><p>There are currently two ways to collect
+          sessionids, from a cookie in the
+          response headers, and by matching a regular
+          expression against the response body.
+        </p><p>To collect sessionids from cookies, make sure
+          that the "From message body"
+          checkbox is NOT selected. To collect sessionids
+          from the message body, make sure
+          that the "From message body" checkbox IS selected.
+          Provide a name for the series of
+          sessionids (the name is calculated automatically
+          for cookies), and a regular 
+          expression that can be used to identify the
+          identifier from the rest of the message.
+        </p><p>The regular expression MUST match the ENTIRE
+          message body, so it should probably
+          start and end with ".*" constructs. The portion of
+          the matched text that should be used
+          for the session identifier should be surrounded by
+          round brackets (i.e. a group). 
+          WebScarab will concatenate multiple groups into a
+          single identifier if desired.
+        </p><p>Example regular expressions:
+          </p><div class="itemizedlist"><ul type="disc"><li>.*id="(..........)".* will extract a
+              10-character sessionid 
+              surrounded by quotes, and prefixed by "id="
+            </li></ul></div><p>
+        </p><p>Once you have specified what you want to collect,
+          you need to provide
+          a request that will result in a response that
+          contains a new sessionid. The
+          easiest way of doing this is to look in the
+          SummaryPanel to see conversations
+          that have a value in the "Set-Cookie" column. Then,
+          select that request from the
+          drop-down menu, and use that exact request to
+          collect new sessionids.
+        </p><p>Alternatively, you can hand-craft your request,
+          possibly changing a GET to
+          HEAD to reduce the amount of data that needs to be
+          requested.
+        </p><p>Once the request has been entered, you can test
+          the setup to make sure
+          that it works. Press the "Test" button. If a
+          sessionid is successfully found,
+          a dialog box will be shown with the details. Once
+          the sessionids are being 
+          successfully extracted via the "Test" button, you
+          can specify a number of sessionids
+          to collect in the "Samples" field, and click
+          "Fetch" to start the process
+        </p><p>If you specify a large number of sessionids, and
+          want to stop the collection
+          process before it finishes naturally, enter "0"
+          into the "Samples" field, and press "Fetch".
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sessionidanalysis"></a>Session ID Analysis</h3></div></div></div><p>While the sessionids are being collected, you can
+          change to the
+          Analysis tab, and view the collected values. Using
+          the "Session Identifier"
+          drop-down box, choose the identifier that you are
+          interested in. The table
+          below will fill with the identifiers that have been
+          collected, and will extend
+          as new identifiers are seen. The first column
+          specifies the date/time that the 
+          sessionid was collected, then the actual string
+          value of the identifier is 
+          in the second column. The third column shows the
+          calculated value, which may change
+          over time, as the "per-position character-set" is
+          updated. The final
+          column shows the difference between subsequent
+          calculated values.
+        </p><p>If you want to copy the sessionids into a
+          spreadsheet program for alternative
+          analysis, you can simply select, Copy (Ctrl-C) and
+          then paste it into your program.
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sessionidvisualisation"></a>Session ID Visualisation</h3></div></div></div><p>The "Visualisation" tab contains a graph view of
+          the selected session 
+          identifier. The graph widget is created the first
+          time the tab is selected.
+          If no session identifier is selected on the
+          "Analysis" tab, no points will be
+          shown on the graph. Using the graph, it should be
+          easy to identify linear or
+          repeating patterns in the session ids collected.
+        </p></div></div></body></html>

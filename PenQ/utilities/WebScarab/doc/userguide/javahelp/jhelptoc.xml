@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0">
+  <tocitem target="id2475084" text="WebScarab">
+    <tocitem target="about" text="About WebScarab"/>
+    <tocitem target="introduction" text="Introduction"/>
+    <tocitem target="sessions" text="WebScarab session management"/>
+    <tocitem target="environment" text="WebScarab environmental settings">
+      <tocitem target="proxies" text="Upstream Proxy"/>
+      <tocitem target="clientcerts" text="Client-side Certificates"/>
+      <tocitem target="authentication" text="server and Proxy authentication"/>
+    </tocitem>
+    <tocitem target="plugins" text="WebScarab Plugins">
+      <tocitem target="id2480413" text="WebScarab plugins"/>
+      <tocitem target="proxy" text="The Proxy plugin">
+        <tocitem target="listeners" text="Proxy listeners"/>
+        <tocitem target="id2474830" text="Active conversations"/>
+        <tocitem target="proxyplugins" text="Proxy plugins">
+          <tocitem target="proxyintercept" text="Manual Intercept"/>
+          <tocitem target="proxybeanshell" text="Bean Shell"/>
+          <tocitem target="proxymisc" text="Miscellaneous plugins"/>
+        </tocitem>
+      </tocitem>
+      <tocitem target="manualrequest" text="The Manual Request plugin"/>
+      <tocitem target="webservices" text="The Web Services plugin"/>
+      <tocitem target="spider" text="The Spider plugin"/>
+      <tocitem target="sessionid" text="Session ID Analysis">
+        <tocitem target="sessionidcollection" text="Collecting sessionids"/>
+        <tocitem target="sessionidanalysis" text="Session ID Analysis"/>
+        <tocitem target="sessionidvisualisation" text="Session ID Visualisation"/>
+      </tocitem>
+      <tocitem target="scripted" text="The scripted plugin"/>
+      <tocitem target="fragments" text="The fragments plugin"/>
+      <tocitem target="compare" text="The Compare plugin"/>
+      <tocitem target="fuzzer" text="The Fuzzer plugin"/>
+      <tocitem target="search" text="The Search plugin"/>
+    </tocitem>
+    <tocitem target="appendix" text="Appendix">
+      <tocitem target="javadocs" text="Request and Response methods"/>
+    </tocitem>
+  </tocitem>
+</toc>

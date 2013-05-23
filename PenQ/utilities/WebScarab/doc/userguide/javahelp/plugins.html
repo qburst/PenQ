@@ -1,0 +1,24 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 5. WebScarab Plugins</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="index.html" title="WebScarab"><link rel="prev" href="authentication.html" title="server and Proxy authentication"><link rel="next" href="proxy.html" title="The Proxy plugin"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="plugins"></a>Chapter 5. WebScarab Plugins</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="plugins.html#id2480413">WebScarab plugins</a></span></dt><dt><span class="section"><a href="proxy.html">The Proxy plugin</a></span></dt><dd><dl><dt><span class="section"><a href="proxy.html#listeners">Proxy listeners</a></span></dt><dt><span class="section"><a href="proxy.html#id2474830">Active conversations</a></span></dt><dt><span class="section"><a href="proxy.html#proxyplugins">Proxy plugins</a></span></dt></dl></dd><dt><span class="section"><a href="manualrequest.html">The Manual Request plugin</a></span></dt><dt><span class="section"><a href="webservices.html">The Web Services plugin</a></span></dt><dt><span class="section"><a href="spider.html">The Spider plugin</a></span></dt><dt><span class="section"><a href="sessionid.html">Session ID Analysis</a></span></dt><dd><dl><dt><span class="section"><a href="sessionid.html#sessionidcollection">Collecting sessionids</a></span></dt><dt><span class="section"><a href="sessionid.html#sessionidanalysis">Session ID Analysis</a></span></dt><dt><span class="section"><a href="sessionid.html#sessionidvisualisation">Session ID Visualisation</a></span></dt></dl></dd><dt><span class="section"><a href="scripted.html">The scripted plugin</a></span></dt><dt><span class="section"><a href="fragments.html">The fragments plugin</a></span></dt><dt><span class="section"><a href="compare.html">The Compare plugin</a></span></dt><dt><span class="section"><a href="fuzzer.html">The Fuzzer plugin</a></span></dt><dt><span class="section"><a href="search.html">The Search plugin</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2480413"></a>WebScarab plugins</h2></div></div></div><p>WebScarab uses the concept of plugins, which can do
+        one  or both of the following: 
+        </p><div class="itemizedlist"><ul type="disc"><li>Create conversations</li><li>Analyse conversations</li></ul></div><p>
+      </p><p>Plugins that create conversations use a 
+        plugin-specific
+        method to decide which resources to request from the 
+        server,
+        how to parameterise the request headers, etc, then 
+        submits
+        the request to the server. It then receives the 
+        response from
+        the server, can perform some computation on the 
+        response, and
+        can then decide whether or not to submit that 
+        conversation to
+        the framework.  
+      </p><p>All conversations that are submitted to the framework
+        are distributed to all of the plugins that are 
+        installed in
+        the framework. Each plugin then gets the opportunity to
+        perform some analysis on that conversation.
+      </p><p>Current plugins include:</p><p>
+        </p><div class="itemizedlist"><ul type="disc"><li><a href="proxy.html" title="The Proxy plugin">Proxy</a></li><li><a href="manualrequest.html" title="The Manual Request plugin">Manual Request</a></li><li><a href="webservices.html" title="The Web Services plugin">Web Services</a></li><li><a href="spider.html" title="The Spider plugin">Spider</a></li><li><a href="sessionid.html" title="Session ID Analysis">SessionID Analysis</a></li><li><a href="scripted.html" title="The scripted plugin">Scripted</a></li><li><a href="fragments.html" title="The fragments plugin">Fragments</a></li><li><a href="compare.html" title="The Compare plugin">Compare</a></li><li><a href="fuzzer.html" title="The Fuzzer plugin">Fuzzer</a></li><li><a href="search.html" title="The Search plugin">Search</a></li></ul></div><p>
+      </p></div></div></body></html>

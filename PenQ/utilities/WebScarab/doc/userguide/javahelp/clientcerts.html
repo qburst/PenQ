@@ -1,0 +1,23 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Client-side Certificates</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="environment.html" title="Chapter 4. WebScarab environmental settings"><link rel="prev" href="environment.html" title="Chapter 4. WebScarab environmental settings"><link rel="next" href="authentication.html" title="server and Proxy authentication"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="clientcerts"></a>Client-side Certificates</h2></div></div></div><p>WebScarab has support for client side SSL
+        certificates. It can access keys and certificates
+        stored in PKCS#12 format files, as well as using PKCS#11 tokens
+        on the Java 1.5 platform. 
+        This functionality is accessed via the Tools-&gt;Certificates menu.
+        Simply choose the "Add Keystore" button, and select the type of keystore to
+        add. If it is a PKCS#12 store, provide the file location, and the keystore
+        password. If it is a PKCS#11 keystore, you need to give the store an arbitrary name,
+        as well as specifying the location of the PKCS#11 library that Java should use to access the token.
+        You also need to provide the password for accessing the token.
+      </p><p>Once keystores have been configured, you can see the details of the certificates
+        in the keystores. Clicking on the certificate alias will display the details of the certificate.
+      </p><p>To activate a particular certificate, select "Activate selected Alias". 
+        You may be prompted for a password to use to access the key. 
+        To stop using any client certificate, make sure that no alias is selected (Ctrl-Click if necessary),
+        and select "Activate selected Alias".
+      </p><p>You can see which alias is currently active in the "Active key" text field.
+      </p><p><span class="emphasis"><em>Note:</em></span> The fingerprint of the client certificate will be included as
+        a fake header in the request when the conversation is archived. This is intended to allow
+        for automatic replay of a request using the client certificate that was selected at the time the request was issued.
+        If you wish to replay the request with a different (or no) certificate, make sure to 
+        delete the "X-SSLClientCertificate" header from the request.
+      </p></div></body></html>

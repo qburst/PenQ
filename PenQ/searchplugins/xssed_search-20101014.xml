@@ -1,0 +1,13 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>XSSed Search</ShortName>
+<Description>Search the cross-site scripting database at XSSed.Com</Description>
+<InputEncoding>UTF-8</InputEncoding>
+<Image height="16" width="16" type="image/x-icon">http://xssed.com/favicon.ico</Image>
+<Url type="text/html" method="get" template="http://xssed.com/search">
+  <Param name="key" value="{searchTerms}"/>
+</Url>
+<Url type="application/x-suggestions+json" template="suggestionURL"/>
+<moz:SearchForm>http://xssed.com/</moz:SearchForm>
+</OpenSearchDescription>
+

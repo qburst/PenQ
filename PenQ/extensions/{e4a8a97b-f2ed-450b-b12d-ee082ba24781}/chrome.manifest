@@ -1,0 +1,70 @@
+interfaces components/gmIGreasemonkeyService.xpt
+
+component  {77bf3650-1cd6-11da-8cd6-0800200c9a66} components/greasemonkey.js
+contract   @greasemonkey.mozdev.org/greasemonkey-service;1 {77bf3650-1cd6-11da-8cd6-0800200c9a66}
+category   profile-after-change @greasemonkey.mozdev.org/greasemonkey-service;1 @greasemonkey.mozdev.org/greasemonkey-service;1
+category   content-policy @greasemonkey.mozdev.org/greasemonkey-service;1 @greasemonkey.mozdev.org/greasemonkey-service;1
+
+content greasemonkey jar:chrome/greasemonkey.jar!/content/
+skin greasemonkey classic/1.0 jar:chrome/greasemonkey.jar!/skin/
+
+overlay	   chrome://browser/content/browser.xul chrome://greasemonkey/content/browser.xul
+style      chrome://browser/content/browser.xul chrome://greasemonkey/skin/browser-mac3.css os=Darwin appversion<4.0
+style      chrome://browser/content/browser.xul chrome://greasemonkey/skin/browser-mac.css os=Darwin appversion>=4.0b1
+style      chrome://global/content/alerts/alert.xul chrome://greasemonkey/skin/third-party/alert.css os=Darwin
+style      chrome://global/content/customizeToolbar.xul chrome://greasemonkey/skin/browser.css
+overlay	   chrome://browser/content/browser.xul chrome://greasemonkey/content/statusbar.xul appversion<4.0
+
+# Firefox 3.6 Add-Ons window integration.
+overlay    chrome://mozapps/content/extensions/extensions.xul chrome://greasemonkey/content/addons.xul appversion<4.0
+style      chrome://greasemonkey/content/addons.xul chrome://greasemonkey/skin/addons-mac.css os=Darwin appversion<4.0
+
+# Firefox >=4.0 Add-Ons Manager integration.
+resource   greasemonkey modules/
+overlay	   chrome://browser/content/browser.xul chrome://greasemonkey/content/addons4.xul appversion>=4.0b1
+overlay    about:addons chrome://greasemonkey/content/addons4-overlay.xul appversion>=4.0b1
+
+overlay    chrome://greasemonkey/content/install.xul chrome://greasemonkey/content/closewindow.xul
+overlay    chrome://greasemonkey/content/options.xul chrome://greasemonkey/content/closewindow.xul
+overlay    chrome://greasemonkey/content/newscript.xul chrome://greasemonkey/content/closewindow.xul
+
+locale greasemonkey en-US jar:chrome/greasemonkey.jar!/locale/en-US/
+locale greasemonkey ar jar:chrome/greasemonkey.jar!/locale/ar/
+locale greasemonkey ca-AD jar:chrome/greasemonkey.jar!/locale/ca-AD/
+locale greasemonkey cs jar:chrome/greasemonkey.jar!/locale/cs/
+locale greasemonkey cs-CZ jar:chrome/greasemonkey.jar!/locale/cs-CZ/
+locale greasemonkey da jar:chrome/greasemonkey.jar!/locale/da/
+locale greasemonkey de jar:chrome/greasemonkey.jar!/locale/de/
+locale greasemonkey es jar:chrome/greasemonkey.jar!/locale/es/
+locale greasemonkey es-AR jar:chrome/greasemonkey.jar!/locale/es-AR/
+locale greasemonkey es-ES jar:chrome/greasemonkey.jar!/locale/es-ES/
+locale greasemonkey es-MX jar:chrome/greasemonkey.jar!/locale/es-MX/
+locale greasemonkey et-EE jar:chrome/greasemonkey.jar!/locale/et-EE/
+locale greasemonkey fa-IR jar:chrome/greasemonkey.jar!/locale/fa-IR/
+locale greasemonkey fi jar:chrome/greasemonkey.jar!/locale/fi/
+locale greasemonkey fi-FI jar:chrome/greasemonkey.jar!/locale/fi-FI/
+locale greasemonkey fr jar:chrome/greasemonkey.jar!/locale/fr/
+locale greasemonkey gl-ES jar:chrome/greasemonkey.jar!/locale/gl-ES/
+locale greasemonkey he-IL jar:chrome/greasemonkey.jar!/locale/he-IL/
+locale greasemonkey hu jar:chrome/greasemonkey.jar!/locale/hu/
+locale greasemonkey it jar:chrome/greasemonkey.jar!/locale/it/
+locale greasemonkey it-IT jar:chrome/greasemonkey.jar!/locale/it-IT/
+locale greasemonkey ja-JP jar:chrome/greasemonkey.jar!/locale/ja-JP/
+locale greasemonkey ko-KR jar:chrome/greasemonkey.jar!/locale/ko-KR/
+locale greasemonkey lt jar:chrome/greasemonkey.jar!/locale/lt/
+locale greasemonkey nl jar:chrome/greasemonkey.jar!/locale/nl/
+locale greasemonkey pl jar:chrome/greasemonkey.jar!/locale/pl/
+locale greasemonkey pt-BR jar:chrome/greasemonkey.jar!/locale/pt-BR/
+locale greasemonkey ro jar:chrome/greasemonkey.jar!/locale/ro/
+locale greasemonkey ru jar:chrome/greasemonkey.jar!/locale/ru/
+locale greasemonkey ru-RU jar:chrome/greasemonkey.jar!/locale/ru-RU/
+locale greasemonkey si-LK jar:chrome/greasemonkey.jar!/locale/si-LK/
+locale greasemonkey sk-SK jar:chrome/greasemonkey.jar!/locale/sk-SK/
+locale greasemonkey sr jar:chrome/greasemonkey.jar!/locale/sr/
+locale greasemonkey sv-SE jar:chrome/greasemonkey.jar!/locale/sv-SE/
+locale greasemonkey tr jar:chrome/greasemonkey.jar!/locale/tr/
+locale greasemonkey tr-TR jar:chrome/greasemonkey.jar!/locale/tr-TR/
+locale greasemonkey uk jar:chrome/greasemonkey.jar!/locale/uk/
+locale greasemonkey uk-UA jar:chrome/greasemonkey.jar!/locale/uk-UA/
+locale greasemonkey zh-CN jar:chrome/greasemonkey.jar!/locale/zh-CN/
+locale greasemonkey zh-TW jar:chrome/greasemonkey.jar!/locale/zh-TW/

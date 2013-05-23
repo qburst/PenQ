@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/wordlist/Injections
+END
+Traversal.txt
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/wordlist/Injections/Traversal.txt
+END
+bad_chars.txt
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/wordlist/Injections/bad_chars.txt
+END
+XSS.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/wordlist/Injections/XSS.txt
+END
+SQL.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/wordlist/Injections/SQL.txt
+END
+All_attack.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/wordlist/Injections/All_attack.txt
+END
+XML.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/wordlist/Injections/XML.txt
+END

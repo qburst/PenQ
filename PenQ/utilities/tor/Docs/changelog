@@ -1,0 +1,101 @@
+Tor Browser Bundle (2.3.25-2); suite=linux
+
+  * Update Firefox to 10.0.12esr
+  * Update Libevent to 2.0.21-stable
+  * Update HTTPS Everywhere to 3.1.2
+  * Update NoScript to 2.6.4.2
+
+ -- Erinn Clark <erinn@torproject.org>  Fri Jan  4 11:46:05 CET 2013
+
+Tor Browser Bundle (2.3.25-1); suite=linux
+
+  * Update Tor to 0.2.3.25-rc
+  * Update Firefox 10.0.11esr
+  * Update Vidalia to 0.2.21
+  * Update NoScript to 2.6.2
+
+ -- Erinn Clark <erinn@torproject.org>  Sun Dec  2 09:03:27 GMT 2012
+
+Tor Browser Bundle (2.3.24-alpha-1); suite=linux
+
+  * Update Tor to 0.2.3.24-rc
+  * Update Firefox to 10.0.10esr
+  * Update NoScript to 2.5.9
+  * Update HTTPS Everywhere to 4.0development.2
+
+ -- Erinn Clark <erinn@torproject.org>  Sat Oct 27 12:16:59 BST 2012
+
+Tor Browser Bundle (2.3.23-alpha-1); suite=linux
+
+  * Update Tor to 0.2.3.23-rc
+  * Update Firefox to 10.0.9esr
+  * Update HTTPS Everywhere to 4.0development.1
+  * Update NoScript to 2.5.8
+  * Re-enable automatic Control and SOCKS port selection on Linux and OSX
+  * Update libpng to 1.5.13
+
+ -- Erinn Clark <erinn@torproject.org>  Mon Oct 22 16:14:09 BST 2012
+
+Tor Browser Bundle (2.3.22-alpha-1); suite=linux
+
+  * Update Tor to 0.2.3.22-rc
+  * Temporarily use fixed Control and SOCKS ports as a workaround for #6803
+
+ -- Erinn Clark <erinn@torproject.org>  Wed Sep 12 14:02:57 BST 2012
+
+Tor Browser Bundle (2.3.21-alpha-1); suite=linux
+
+  * Update Tor to 0.2.3.21-rc
+  * Update Firefox to 15.0.1
+  * Update Libevent to 2.0.20-stable
+  * Update Torbutton to 1.4.6.1
+  * Update HTTPS Everywhere to 3.0development.6
+  * Update NoScript to 2.5.4
+
+ -- Erinn Clark <erinn@torproject.org>  Sun Sep  9 10:42:38 BST 2012
+
+Tor Browser Bundle (2.3.20-alpha-1); suite=linux
+
+  * Update Tor to 0.2.3.20-rc
+  * Update libpng to 1.5.12
+  * Update NoScript to 2.5
+  * Change the urlbar search engine to Startpage (closes: #5925)
+  * Firefox patch updates:
+    - Fix the Tor Browser SIGFPE crash bug (closes: #6492)
+    - Add a redirect API for HTTPS-Everywhere (closes: #5477)
+    - Enable WebGL (as click-to-play only) (closes: #6370)
+
+ -- Erinn Clark <erinn@torproject.org>  Sun Aug  5 23:21:30 BST 2012
+
+Tor Browser Bundle (2.3.19-alpha-1); suite=linux
+
+  * Update Tor to 0.2.3.19-rc
+  * Update Firefox to 14.0.1
+  * Update libevent to 2.0.19-stable
+  * Update OpenSSL to 1.0.1c
+  * Update zlib to 1.2.7
+  * Update Torbutton to 1.4.6
+  * Update NoScript to 2.4.9
+  * Update HTTPS Everywhere to 3.0development.5
+  * Downgrade Vidalia to 0.2.20
+  * Update libpng to 1.5.12
+
+ -- Erinn Clark <erinn@torproject.org>  Wed Jul 25 15:12:37 BST 2012
+
+Tor Browser Bundle (2.3.12-alpha-2); suite=linux
+
+  * Update Firefox to 11.0
+  * Update NoScript to 2.3.4
+  * Update HTTPS Everywhere to 3.0development.1
+  * Disable HTTPS Everywhere SSL Observatory screen (closes: #5300)
+  * Always build to with warnings enabled (closes: #4470)
+  * Don't attempt to load the default KDE 4 theme from Vidalia, because that
+    fails when the Qt versions don't match (closes: #5214)
+
+ -- Erinn Clark <erinn@torproject.org>  Mon Mar 19 01:14:43 BRT 2012
+
+Tor Browser Bundle (2.3.12-alpha-1); suite=linux
+
+  * Initial release
+
+ -- Erinn Clark <erinn@torproject.org>  Thu Mar  1 14:04:56 BRT 2012

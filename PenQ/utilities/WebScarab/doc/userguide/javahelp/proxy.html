@@ -1,0 +1,340 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>The Proxy plugin</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="plugins.html" title="Chapter 5. WebScarab Plugins"><link rel="prev" href="plugins.html" title="Chapter 5. WebScarab Plugins"><link rel="next" href="manualrequest.html" title="The Manual Request plugin"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="proxy"></a>The Proxy plugin</h2></div></div></div><p>The proxy plugin sets up a HTTP proxy, listening by
+        default on localhost port 8008. In order to use this
+        listener, you should configure your browser to use
+        WebScarab
+        as an upstream proxy. Once this is done, any requests
+        that
+        your browser makes will be routed through webScarab,
+        and will
+        be recorded and analysed.
+      </p><p>WebScarab also has support for intercepting
+        SSL-encrypted HTTPS requests. If your browser is
+        configured
+        to use WebScarab for SSL requests, WebScarab will use
+        its
+        own, untrusted SSL server certificate to negotiate an
+        encrypted session with the browser, in order to read
+        the request that the browser is making to the
+        "secure" server.
+        Naturally, since the certificate that WebScarab uses is
+        not
+        trusted by your browser, your browser SHOULD warn you
+        that
+        the certificate is untrusted, and give you the option
+        to continue.
+      </p><p>
+        <span class="emphasis"><em>Note:</em></span>This ability to observe what
+        your
+        browser is sending over an SSL connection does not mean
+        that
+        "SSL has been broken". Your browser should have given
+        you the
+        necessary warnings. If you choose to ignore the
+        warnings, it
+        is not a failure of SSL.
+      </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="listeners"></a>Proxy listeners</h3></div></div></div><p>WebScarab supports multiple HTTP listeners. The
+          Listener allows you to specify the IP address and
+          port that
+          the Listener listens on. 
+          <span class="emphasis"><em>Note:</em></span>By default, WebScarab
+          listens
+          only on localhost, so as to eliminate the
+          possibility of
+          unauthorized anonymous proxying.
+        </p><p>WebScarab allows you to specify a "base address"
+          for
+          a Listener. The base address instructs the Listener
+          to
+          operate as a reverse proxy, and should be formatted
+          as a
+          HTTP or HTTPS URL. In this mode, it will act as a
+          web
+          server, rather than as a proxy server, and will
+          construct
+          the URL by concatenating the base URL and the path
+          that
+          appears in the request line. If the base URL is an
+          HTTPS
+          URL, it will immediately negotiate an SSL tunnel
+          prior to
+          trying to read the request from the browser. This
+          is useful
+          for the situation where you are using a custom
+          HTTP-based
+          client that does not support configuring an
+          upstream proxy. 
+          Simply change the hosts file on the computer on
+          which the 
+          custom client is running to point the site in
+          question to 
+          the computer on which WebScarab is running on, and
+          WebScarab 
+          will receive requests for the targeted website. <span class="emphasis"><em>
+            Note:
+          </em></span>
+          You can't run both WebScarab and the client
+          application
+          on the same computer in such a situation, because
+          WebScarab will 
+          get the same IP address from the hosts file when
+          trying to connect
+          to the upstream target, and will end up looping
+          back to itself 
+          recursively. <span class="emphasis"><em>Note:</em></span>You SHOULD
+          also have to add the
+          WebScarab certificate to the client applications
+          list of recognised
+          certificates, to prevent certificate errors from
+          occuring. If you
+          DON'T have to do this, the client application is
+          vulnerable to a 
+          man in the middle attack, because it does not
+          verify the certificate
+          properly.
+        </p><p>The network simulator allows the user to limit
+          the bandwidth available to the client, and
+          introduces
+          artificial latencies.
+        </p><p><a name="enableplugins"></a>There is also an option to
+          enable plugins. 
+          If this option is NOT selected, the various proxy
+          plugins will NOT be
+          invoked when each request and response is seen. If
+          the plugins
+          do not seem to be working, or your intercepts are
+          not happening,
+          check to make sure that this checkbox is selected.
+        </p><p>On the Windows platform, if the W32WinInet DLL is
+          loaded by WebScarab, the Listener that is marked as
+          primary
+          will automatically "hijack" the Internet Explorer
+          when it
+          starts, and configure Internet Explorer (and all
+          other
+          WinInet based applications) to use WebScarab as a
+          proxy.
+          When the Listener stops (for example, if it is
+          manually
+          stopped, or if WebScarab exits), the original
+          settings will
+          be restored. Obviously, it makes no sense to
+          configure
+          multiple Primary listeners, as they will conflict
+          with each
+          other, and probably result in the wrong proxy
+          settings
+          being restored when WebScarab is closed. <span class="emphasis"><em>
+            Note:
+          </em></span>
+          At this point, there is nothing technically
+          preventing you 
+          from configuring multiple "Primary" listeners. Just
+          don't do it.
+          Also, it makes no sense to configure a Listener
+          with a base URL,
+          as well as setting it as a primary listener,
+          because it will 
+          be talking a different protocol (expecting
+          non-fully-qualified
+          URL's, instead of URL's that include the scheme and
+          host portion).
+          Just don't do it.
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2474830"></a>Active conversations</h3></div></div></div><p>Below the Listener configuration is a table which
+          shows recent and current requests which have been
+          handled
+          by the various Listeners. This can be useful when
+          troubleshooting connectivity errors, since the
+          proxy will
+          not save failed requests to the general Summary.
+        </p><p>A useful option might be to have a specific
+          option for increasing the debugging output
+          in the Proxy plugin,
+          for detailed debugging
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="proxyplugins"></a>Proxy plugins</h3></div></div></div><p>It is possible to write proxy plugins that
+          perform various modifications to the
+          requests and responses in
+          transit through the proxy. Current plugins are: 
+          </p><div class="itemizedlist"><ul type="disc"><li><a href="proxy.html#proxyintercept" title="Manual Intercept">Manual
+                Intercept
+              </a></li><li><a href="proxy.html#proxybeanshell" title="Bean Shell">Bean Shell</a></li><li><a href="proxy.html#revealhidden">Reveal hidden
+                form
+                fields
+              </a></li><li><a href="proxy.html#preventcaching">Prevent
+                browser caching
+                content
+              </a></li><li><a href="proxy.html#injectcookies">Inject known
+                cookies into
+                requests
+              </a></li><li><a href="proxy.html#collectcookies">Extract
+                cookies from
+                responses
+              </a></li><li><a href="proxy.html#ntlmfilter">Remove NTLM
+                authentication
+                headers
+              </a></li></ul></div><p>
+        </p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="proxyintercept"></a>Manual Intercept</h4></div></div></div><p>The Manual Intercept proxy plugin allows the
+            user
+            to intercept requests from the browser and
+            responses from
+            the server, inspect them, and optionally modify
+            them
+            before transmission. This is particularly
+            useful when one
+            wants to sumbmit a form to a webserver, but
+            JavaScript
+            validation rejects the values that you would
+            like to
+            submit.The request can be altered after the
+            validation
+            has been performed.
+          </p><p>The user has the option to intercept requests
+            with
+            specific methods, by selecting from the
+            "Methods" list.
+            If one wants to select more than a single
+            method, use
+            Ctrl when clicking to select additional items.
+          </p><p>The user also has the ability to specify a
+            Java
+            Regular Expression that the URL must match in
+            order to be
+            intercepted. You also have the option to
+            specify a
+            regular expression that matches URLs that
+            should not be
+            intercepted. Once can also specify whether the
+            Regular
+            Expression should be evaluated in a Case
+            Sensitive
+            fashion, for instance where the image file
+            extension is
+            .GIF
+          </p><p>WebScarab can also intercept responses coming
+            from
+            the server, and modify those before they are
+            relayed to
+            the browser. You can specify a Regular
+            Expression that
+            the response Content-Type header should match
+            in order to
+            be intercepted.
+          </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="proxybeanshell"></a>Bean Shell</h4></div></div></div><p>The Bean Shell proxy plugin enables scripted
+            modifications of the request and response. This
+            is
+            particularly useful when one wants to perform
+            the same
+            modification to a number of conversations, or
+            if the
+            modification is particularly complex. The
+            script has
+            complete access to the request before it is
+            sent to the
+            server, and the response before it is sent to
+            the
+            browser. The request and response objects are
+            currently
+            only fully documented in the JavaDoc for the
+            relevant
+            classes (org.owasp.webscarab.model.Request and
+            org.owasp.webscarab.model.Response).
+          </p><p>
+            <span class="emphasis"><em>Note :</em></span>Changes made to the
+            script in
+            the editor window only take effect when the
+            "Commit"
+            button is pressed.
+          </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="proxymisc"></a>Miscellaneous plugins</h4></div></div></div><p>There are a number of miscellaneous plugins
+            that
+            can operate on proxied conversations. 
+            </p><div class="itemizedlist"><ul type="disc"><li><a name="revealhidden"></a>The "Reveal
+                hidden fields" plugin changes any
+                forms fields with the type of "hidden"
+                to have a type
+                of "text". This causes the browser to
+                display these
+                fields, and makes it easy for the user
+                to modify the
+                fields, as well as observing when such
+                hidden fields
+                are being used.
+              </li><li><a name="preventcaching"></a>The "prevent
+                caching" plugin removes any
+                "if-modified-since" or similar headers
+                from requests to
+                ensure that WebScarab always has a copy
+                of the response
+                body, rather than allowing the browser
+                to use a locally
+                cached copy.
+              </li><li><a name="injectcookies"></a>The "Inject
+                cookies" plugin allows WebScarab
+                to override any cookies in the browser,
+                or to supply
+                cookies that the browser does not know
+                about. The
+                cookies are retrieved from the "Shared
+                cookies" list,
+                and are filtered for applicability
+                according to the
+                domain and path attributes.
+              </li><li><a name="collectcookies"></a>The "Collect
+                cookies" plugin extracts any
+                "Set-Cookie" headers from responses
+                passing through the
+                proxy, and adds those to the "Shared
+                cookies" list.
+                these can later be used by other
+                plugins to maintain
+                state, if desired.
+              </li><li><a name="ntlmfilter"></a>NTLM
+                authentication cannot be used through a
+                proxy. However, since browsers should
+                use the strongest
+                authentication method available,
+                Internet Explorer will
+                usually try to use NTLM authentication
+                in favour of
+                Basic, and will fail. However, IE will
+                not then fall
+                back to using Basic authentication.
+                WebScarab works
+                around this problem by removing or
+                modifying any
+                Authenticate headers that offer the
+                NTLM protocol. If
+                your upstream proxy or target web
+                server require NTLM
+                authentication you may want to try
+                using APS (the
+                authenticating proxy server) which DOES
+                support NTLM
+                authentication. It may be possible to
+                run both
+                WebScarab and APS in a chained
+                configuration (with APS
+                closer to the target). This has not
+                been tested,
+                however. 
+                <span class="emphasis"><em>Note:</em></span>
+                Interestingly enough, it <span class="emphasis"><em>
+                  IS
+                </em></span>
+                possible to perform SPNEGO
+                authentication through a
+                proxy. In particular, since WebScarab
+                supports
+                persistent connections, it is possible
+                to monitor
+                proxied conversations to a server that
+                uses SPNEGO,
+                although each portion of the protocol
+                negotiation
+                between the browser and server will be
+                recorded, and
+                will result in a number of 401
+                responses ending up in
+                the logs. This should even work for
+                intercepted SSL
+                connections!
+              </li></ul></div><p>
+          </p></div></div></div></body></html>

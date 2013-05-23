@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>SecurityWire Search</ShortName>
+<Description>Search top security sites handpicked by SecurityWire Staff</Description>
+<InputEncoding>UTF-8</InputEncoding>
+<Url type="text/html" template="http://www.securitywire.com/gsresults.php?cx=012452898051862029248%3Avx5ljcjoaw0&amp;cof=FORID%3A11&amp;ie=UTF-8&amp;q={searchTerms}&amp;sa=Security+Search#905"/>
+<Image width="16" height="16" type="image/vnd.microsoft.icon">http://www.securitywire.com/favicon.ico</Image>
+</OpenSearchDescription>

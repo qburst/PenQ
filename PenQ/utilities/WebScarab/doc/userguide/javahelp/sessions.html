@@ -1,0 +1,47 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 3. WebScarab session management</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="index.html" title="WebScarab"><link rel="prev" href="introduction.html" title="Chapter 2. Introduction"><link rel="next" href="environment.html" title="Chapter 4. WebScarab environmental settings"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="sessions"></a>Chapter 3. WebScarab session management</h2></div></div></div><p>WebScarab uses the concept of a session to relate various
+      conversations. It is compulsory to have a session when
+      using WebScarab, because each conversation is written to
+      the session  as it is seen, and read back from the session
+      when
+      requested.
+    </p><p>At the moment, sessions can only be saved to a directory
+      on the filesystem. When creating a new session, you should
+      select an empty directory, or provide the name of a
+      directory  that should be created.
+    </p><p>When WebScarab starts up, it prompts you to choose what
+      kind of session to use. The default option is to create a 
+      temporary session. This temporary session is a directory
+      created  in the ${java.io.tmpdir} directory, using a
+      pattern of 
+      webscarabnnnnn.tmp.
+    </p><p>
+      <span class="emphasis"><em>Note:</em></span>This temporary directory is
+      deleted  when WebScarab exits. If you wish to preserve the
+      audit
+      record  for later review, you should start a new session
+      before
+      creating or intercepting any conversations. Alternatively,
+      if  you need to save a temporary session that already
+      contains
+      conversations, you should <span class="emphasis"><em>NOT</em></span> exit
+      WebScarab.  First change to a  new session, or open an
+      existing session. This causes
+      WebScarab  to flush some memory-based data structures to
+      disk. Then
+      copy  or move the temporary session directory to a new
+      location.  
+    </p><p>
+      <span class="emphasis"><em>Note:</em></span>It could be really useful for
+      WebScarab to store its sessions in a SQL database. Each of
+      the  plugins have been implemented with an interface to its
+      "datastore". As mentioned, there is currently a 
+      FileSystemStore
+      implementation of these interfaces, which could be used as
+      a template for implementing a SQLStore. For standalone
+      use,  WebScarab could use HSQLDB, or could be configured to
+      use
+      an external database such as Oracle or PostgreSQL. This
+      would be a  great feature for an interested person to
+      contribute to
+      WebScarab.
+    </p></div></body></html>

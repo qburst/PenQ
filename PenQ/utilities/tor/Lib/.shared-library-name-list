@@ -1,0 +1,50 @@
+# In order to make Tor Browser Bundle for Linux run successfully when
+# extracted or copied onto a filesystem which does not support symbolic
+# links (such as the FAT filesystem used on most USB sticks), all shared
+# library symlinks in this directory were removed, and some shared
+# libraries in this directory were renamed to match the names by which
+# the loader will search for them.
+# 
+# Since the process of removing symlinks and renaming shared libraries
+# loses some potentially important information about shared library
+# version numbers, the remove-shared-lib-symlinks script which performs
+# these operations records some information about its actions.
+# 
+# See build-scripts/remove-shared-lib-symlinks in torbrowser.git for
+# more information.
+# 
+# This file contains a list of the files and symlinks which the
+# remove-shared-lib-symlinks script might have affected.
+# 
+libQtCore.so link libQtCore.so.4.8.1
+libQtCore.so.4 link libQtCore.so.4.8.1
+libQtCore.so.4.8 link libQtCore.so.4.8.1
+libQtCore.so.4.8.1 file {}
+libQtGui.so link libQtGui.so.4.8.1
+libQtGui.so.4 link libQtGui.so.4.8.1
+libQtGui.so.4.8 link libQtGui.so.4.8.1
+libQtGui.so.4.8.1 file {}
+libQtNetwork.so link libQtNetwork.so.4.8.1
+libQtNetwork.so.4 link libQtNetwork.so.4.8.1
+libQtNetwork.so.4.8 link libQtNetwork.so.4.8.1
+libQtNetwork.so.4.8.1 file {}
+libQtXml.so link libQtXml.so.4.8.1
+libQtXml.so.4 link libQtXml.so.4.8.1
+libQtXml.so.4.8 link libQtXml.so.4.8.1
+libQtXml.so.4.8.1 file {}
+libcrypto.so link libcrypto.so.1.0.0
+libcrypto.so.1.0.0 file {}
+libevent-2.0.so.5 link libevent-2.0.so.5.1.9
+libevent-2.0.so.5.1.9 file {}
+libevent.so link libevent-2.0.so.5.1.9
+libevent_core-2.0.so.5 link libevent_core-2.0.so.5.1.9
+libevent_core-2.0.so.5.1.9 file {}
+libevent_core.so link libevent_core-2.0.so.5.1.9
+libevent_extra-2.0.so.5 link libevent_extra-2.0.so.5.1.9
+libevent_extra-2.0.so.5.1.9 file {}
+libevent_extra.so link libevent_extra-2.0.so.5.1.9
+libpng15.so link libpng15.so.15.13.0
+libpng15.so.15 link libpng15.so.15.13.0
+libpng15.so.15.13.0 file {}
+libssl.so link libssl.so.1.0.0
+libssl.so.1.0.0 file {}

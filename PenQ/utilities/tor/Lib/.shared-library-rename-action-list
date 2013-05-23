@@ -1,0 +1,49 @@
+# In order to make Tor Browser Bundle for Linux run successfully when
+# extracted or copied onto a filesystem which does not support symbolic
+# links (such as the FAT filesystem used on most USB sticks), all shared
+# library symlinks in this directory were removed, and some shared
+# libraries in this directory were renamed to match the names by which
+# the loader will search for them.
+# 
+# Since the process of removing symlinks and renaming shared libraries
+# loses some potentially important information about shared library
+# version numbers, the remove-shared-lib-symlinks script which performs
+# these operations records some information about its actions.
+# 
+# See build-scripts/remove-shared-lib-symlinks in torbrowser.git for
+# more information.
+# 
+# This file contains a list of the rename (mv) and delete (rm) actions
+# which the remove-shared-lib-symlinks script performed to remove shared
+# library symlinks from this directory.
+# 
+rm libQtCore.so
+rm libQtCore.so.4
+mv libQtCore.so.4.8.1 libQtCore.so.4
+rm libQtCore.so.4.8
+rm libQtGui.so
+rm libQtGui.so.4
+mv libQtGui.so.4.8.1 libQtGui.so.4
+rm libQtGui.so.4.8
+rm libQtNetwork.so
+rm libQtNetwork.so.4
+mv libQtNetwork.so.4.8.1 libQtNetwork.so.4
+rm libQtNetwork.so.4.8
+rm libQtXml.so
+rm libQtXml.so.4
+mv libQtXml.so.4.8.1 libQtXml.so.4
+rm libQtXml.so.4.8
+rm libcrypto.so
+rm libevent-2.0.so.5
+mv libevent-2.0.so.5.1.9 libevent-2.0.so.5
+rm libevent.so
+rm libevent_core-2.0.so.5
+mv libevent_core-2.0.so.5.1.9 libevent_core-2.0.so.5
+rm libevent_core.so
+rm libevent_extra-2.0.so.5
+mv libevent_extra-2.0.so.5.1.9 libevent_extra-2.0.so.5
+rm libevent_extra.so
+rm libpng15.so
+rm libpng15.so.15
+mv libpng15.so.15.13.0 libpng15.so.15
+rm libssl.so

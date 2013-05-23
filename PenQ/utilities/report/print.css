@@ -1,0 +1,29 @@
+#print {
+visibility:hidden;
+}
+body {
+line-height:1.8em;
+padding:2% 3% 3% 3%;
+width:1024px;
+margin:auto;
+font-family:Georgia;
+}
+a {
+text-decoration:none;
+color:black;
+}
+.style1 {
+color:#0c5aa6 !imporant;
+font-weight:bold;
+text-align:center;
+font-size:1.2em;
+border-bottom:1px solid #efefef;
+}
+.style2 {
+text-decoration:none;
+font-weight:bold;
+}
+.style {
+color:#408ad2 !imporant;
+border-bottom:1px solid #efefef;
+}

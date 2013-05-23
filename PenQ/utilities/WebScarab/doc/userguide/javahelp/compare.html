@@ -1,0 +1,28 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>The Compare plugin</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="plugins.html" title="Chapter 5. WebScarab Plugins"><link rel="prev" href="fragments.html" title="The fragments plugin"><link rel="next" href="fuzzer.html" title="The Fuzzer plugin"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="compare"></a>The Compare plugin</h2></div></div></div><p>The Compare plugin allows the user to judge the
+        degree of difference between
+        a number of responses. This is useful when you have
+        issued a number of requests 
+        for a particular URL, possibly via the Scripted plugin,
+        and would like to evaluate
+        the results. Obviously, if you can eliminate groups of
+        identical responses at once,
+        you can save yourself some time.
+      </p><p>Choose the "base" conversation against which others
+        should be compared, using 
+        the drop down list. The Conversation table will be
+        populated with conversations,
+        and the Difference column will indicate the number of
+        words that differ in the 
+        responses. The number is actually the Levenshtein Edit
+        Distance, showing the number
+        of edits (inserts, changes, and deletes) that are
+        required to transform
+        the base response into the current target. For speed
+        reasons, the response content
+        is tokenised into words, since the Levenshtein
+        algorithm is O(n*m), and slows
+        down quickly for large numbers of comparisons.
+      </p><p>The two responses are then displayed side by side in
+        the lower half
+        of the window, to make it easy to compare them.
+      </p></div></body></html>

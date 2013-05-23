@@ -1,0 +1,14 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 6. Appendix</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="index.html" title="WebScarab"><link rel="prev" href="search.html" title="The Search plugin"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="appendix"></a>Chapter 6. Appendix</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="appendix.html#javadocs">Request and Response methods</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="javadocs"></a>Request and Response methods</h2></div></div></div><p>Request methods that you may use are: 
+        </p><div class="itemizedlist"><ul type="disc"><li>String getMethod()</li><li>void setMethod(String method)</li><li>HttpUrl getURL()</li><li>void setURL(HttpUrl url)</li><li>void setURL(String url) throws
+            MalformedURLException
+          </li><li>String getVersion()</li><li>void setVersion(String version)</li></ul></div><p>
+      </p><p>Response methods that you may use are: 
+        </p><div class="itemizedlist"><ul type="disc"><li>String getVersion()</li><li>void setVersion(String version)</li><li>String getStatus()</li><li>void getStatus(String status)</li><li>String getMessage()</li><li>void setMessage(String message)</li><li>String getStatusLine()</li></ul></div><p>
+      </p><p>The following methods are common to both the Request
+        and Response objects: 
+        </p><div class="itemizedlist"><ul type="disc"><li>String[] getHeaderNames()</li><li>String getHeader(String name)</li><li>void setHeader(String name, String
+            value)
+          </li><li>void addHeader(String name, String
+            value)
+          </li><li>void deleteHeader(String name)</li><li>NamedValue[] getHeaders()</li><li>void setheaders(NamedValue[] headers)</li><li>byte[] getContent()</li><li>void setContent(byte[] content)</li></ul></div><p>
+      </p></div></div></body></html>

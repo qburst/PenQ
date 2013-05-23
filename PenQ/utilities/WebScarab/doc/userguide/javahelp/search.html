@@ -1,0 +1,42 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>The Search plugin</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="plugins.html" title="Chapter 5. WebScarab Plugins"><link rel="prev" href="fuzzer.html" title="The Fuzzer plugin"><link rel="next" href="appendix.html" title="Chapter 6. Appendix"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="search"></a>The Search plugin</h2></div></div></div><p>The search plugin allows you to execute arbitrary
+        beanshell scripts to
+        identify "interesting" conversations. You are provided
+        with the request,
+        response, and origin (originating plugin) of the
+        conversation, and can
+        use the class methods to return a true or false value.
+        A true value
+        indicates an interesting conversation that should be
+        displayed, and a
+        false value indicates that the conversation should not
+        be displayed.
+      </p><p>
+        An example might be something like:
+      </p><p>
+        response.getContent() != null &amp;&amp; new
+        String(response.getContent()).matches("(?s).*[Ee](rror|xception).*")
+      </p><p>
+        which makes sure that the response HAS content
+        (byte[]), before checking
+        to see if a String constructed from that content
+        contains any of the
+        strings: Error, error, Exception, exception. The (?s)
+        instructs the Java
+        Regex algorithm to perform a multi-line match, i.e.
+        enables the period
+        to match a linefeed character.
+      </p><p>
+        BeanShell also does automatic JavaBean introspection,
+        so in fact, the
+        call to response.getContent() could also be written as
+        "response.content", with BeanShell using the getters
+        and setters
+        appropriately.
+      </p><p>
+        For details of the class methods available, please
+        consult the JavaDocs
+        (included in the installer build) for
+        org.owasp.webscarab.model.(Request|Response). Origin is
+        simply a String
+        matching the plugin name.
+      </p></div></body></html>

@@ -1,0 +1,23 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 4. WebScarab environmental settings</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="index.html" title="WebScarab"><link rel="prev" href="sessions.html" title="Chapter 3. WebScarab session management"><link rel="next" href="clientcerts.html" title="Client-side Certificates"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="environment"></a>Chapter 4. WebScarab environmental settings</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="environment.html#proxies">Upstream Proxy</a></span></dt><dt><span class="section"><a href="clientcerts.html">Client-side Certificates</a></span></dt><dt><span class="section"><a href="authentication.html">server and Proxy authentication</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="proxies"></a>Upstream Proxy</h2></div></div></div><p>If you need to use an upstream proxy setting, you can
+        configure it under the Tools -&gt; Proxies menu.
+      </p><p>For Windows users, WebScarab has support for querying
+        Internet Explorer's proxy settings, and automatically
+        loading  them into the appropriate dialog boxes. This
+        feature
+        requires  a JNI plugin/DLL, which has to be on the
+        PATH. If the
+        DLL was  successfully located, you will see a button
+        entitled
+        "Get IE  Settings". If the DLL is not found, this
+        button is not
+        shown.  If you used the WebScarab installer to install
+        WebScarab,  this should all be configured. In most
+        cases, simply
+        including the W32WinInet.dll file in the same directory
+        as  the WebScarab JAR file should be sufficient. If you
+        are
+        running WebScarab via a shortcut, make sure that the
+        application directory is configured to be the directory
+        in  which the W32WinInet.dll and WebScarab JAR file is
+        located.
+      </p><div class="figure"><a name="id2475240"></a><p class="title"><b>Figure 4.1. Upstream proxy dialog</b></p><div class="mediaobject"><img src="proxies.png" alt="Configuring upstream proxies"></div></div></div></div></body></html>

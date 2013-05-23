@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN" "http://java.sun.com/products/javahelp/map_1_0.dtd">
+<map version="1.0">
+  <mapID target="id2475084" url="index.html"/>
+  <mapID target="about" url="about.html"/>
+  <mapID target="introduction" url="introduction.html"/>
+  <mapID target="sessions" url="sessions.html"/>
+  <mapID target="environment" url="environment.html"/>
+  <mapID target="proxies" url="environment.html#proxies"/>
+  <mapID target="clientcerts" url="clientcerts.html"/>
+  <mapID target="authentication" url="authentication.html"/>
+  <mapID target="plugins" url="plugins.html"/>
+  <mapID target="id2480413" url="plugins.html#id2480413"/>
+  <mapID target="proxy" url="proxy.html"/>
+  <mapID target="listeners" url="proxy.html#listeners"/>
+  <mapID target="id2474830" url="proxy.html#id2474830"/>
+  <mapID target="proxyplugins" url="proxy.html#proxyplugins"/>
+  <mapID target="proxyintercept" url="proxy.html#proxyintercept"/>
+  <mapID target="proxybeanshell" url="proxy.html#proxybeanshell"/>
+  <mapID target="proxymisc" url="proxy.html#proxymisc"/>
+  <mapID target="manualrequest" url="manualrequest.html"/>
+  <mapID target="webservices" url="webservices.html"/>
+  <mapID target="spider" url="spider.html"/>
+  <mapID target="sessionid" url="sessionid.html"/>
+  <mapID target="sessionidcollection" url="sessionid.html#sessionidcollection"/>
+  <mapID target="sessionidanalysis" url="sessionid.html#sessionidanalysis"/>
+  <mapID target="sessionidvisualisation" url="sessionid.html#sessionidvisualisation"/>
+  <mapID target="scripted" url="scripted.html"/>
+  <mapID target="fragments" url="fragments.html"/>
+  <mapID target="compare" url="compare.html"/>
+  <mapID target="fuzzer" url="fuzzer.html"/>
+  <mapID target="search" url="search.html"/>
+  <mapID target="appendix" url="appendix.html"/>
+  <mapID target="javadocs" url="appendix.html#javadocs"/>
+</map>

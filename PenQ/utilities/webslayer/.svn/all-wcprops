@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 21
+/svn/!svn/ver/5/trunk
+END
+MainGui.py
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/5/trunk/MainGui.py
+END
+WebSlayer.py
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/trunk/WebSlayer.py
+END
+highLighter.py
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/highLighter.py
+END
+Main-wzuffer.ui
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/4/trunk/Main-wzuffer.ui
+END
+TextParser.py
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/trunk/TextParser.py
+END
+encoders.py
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/trunk/encoders.py
+END
+hostchecker.py
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/hostchecker.py
+END
+help.html
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/2/trunk/help.html
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/5/trunk/README
+END
+dictio.py
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/2/trunk/dictio.py
+END
+wf.py
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/5/trunk/wf.py
+END
+payloads.py
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/trunk/payloads.py
+END
+LICENSES
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/trunk/LICENSES
+END
+requester.py
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/trunk/requester.py
+END
+gencc.py
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/trunk/gencc.py
+END
+overGui.py
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/trunk/overGui.py
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/trunk/COPYING
+END
+reqresp.py
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/trunk/reqresp.py
+END
+wfuzz.py
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/4/trunk/wfuzz.py
+END

@@ -1,0 +1,47 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>The Fuzzer plugin</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="plugins.html" title="Chapter 5. WebScarab Plugins"><link rel="prev" href="compare.html" title="The Compare plugin"><link rel="next" href="search.html" title="The Search plugin"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="fuzzer"></a>The Fuzzer plugin</h2></div></div></div><p>The fuzzer basically allows you to throw a
+        combination of values at a
+        server. It is still a little rough, but functionally,
+        it works pretty
+        well. The idea is that you configure the request
+        method, the basic URL
+        (without any parameters), the request version, any
+        headers (e.g. a Host:
+        header if you are using HTTP/1.1, etc. Don't configure
+        cookies here!),
+        and a list of Parameters.
+      </p><p>A Parameter is defined by its location (Path,
+        Fragment, Query, Cookie,
+        Body), its name (ignored for Path), type == String,
+        Default value, Fuzz
+        Priority, and a fuzz source.
+      </p><p>The default value is the value that will be submitted
+        if no fuzz source
+        is defined.
+      </p><p>The fuzz priority defines how the various fuzz
+        sources are combined: if
+        all the priorities are the same value, the number of
+        queries submitted
+        will be the number of items in the shortest fuzz
+        source. If they are
+        different values, the number of queries generated will
+        be the product of
+        the number of items in each level.
+      </p><p>An example would be if you had a list of usernames
+        and passwords. If
+        both username and password parameters had the same
+        priority, usernames
+        and passwords would be consumed in lock-step. If they
+        had different
+        priorities, EVERY password would be tried for each
+        username.
+      </p><p>Parameters are processed in order, first path, then
+        fragment, then
+        query, then cookie, then body. The only content type
+        supported for POST
+        Requests is application/x-www-urlencoded, it does not
+        support multi-part
+        (although provision is made for parameters of different
+        types, e.g.
+        File), or XML documents, etc. Multi-part and XML will
+        be the next evolution.
+      </p></div></body></html>

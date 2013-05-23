@@ -1,0 +1,13 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>The Web Services plugin</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="WebScarab"><link rel="up" href="plugins.html" title="Chapter 5. WebScarab Plugins"><link rel="prev" href="manualrequest.html" title="The Manual Request plugin"><link rel="next" href="spider.html" title="The Spider plugin"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="webservices"></a>The Web Services plugin</h2></div></div></div><p>The Web Services plugin is intended to allow the user 
+      to manually consume a SOAP web service. The plugin automatically 
+      identifies conversations that contain WSDL documents, and
+      presents them in a drop down list for selection.</p><p>One can also type in the URL manually, which will 
+      result in the plugin retrieving the WSDL. If the WSDL is 
+      not accessible via an HTTP or HTTPS url, the operator can also 
+      access a local copy of the WSDL by simply providing the path to the
+      local copy in the WSDL URL field, and pressing Load.</p><p>The plugin then presents the available services and 
+      operations, and automatically populates a tree containing
+      the parameters that the service requires.</p><p>The operator can then press the "Execute" button
+      to submit the request the server, and receive the response.</p><p>At the moment, the web services plugin is still very immature,
+      and is likely to be buggy. At the very least, this initial implementation
+      only has support for RPC/encoded transports.</p></div></body></html>

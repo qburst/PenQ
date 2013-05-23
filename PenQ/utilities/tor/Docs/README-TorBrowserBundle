@@ -1,0 +1,29 @@
+Tor Browser Bundle for GNU/Linux
+===============
+
+Included applications
+---------------------
+
+Vidalia 0.2.21 (with Qt 4.8.1)
+Tor 0.2.3.25 (with libevent-2.0.21-stable, zlib-1.2.7 and openssl-1.0.1c)
+Firefox 10.0.12esr
+ \_ Torbutton 1.4.6.3
+ |_ NoScript 2.6.4.2
+ |_ HTTPS-Everywhere 3.1.2
+
+Usage
+-----
+
+Extract the bundle with:
+
+tar -xvzf tor-browser-gnu-linux*.tar.gz
+
+This will create a directory named tor-browser_LANG. Click on this directory or
+cd into it and execute the 'start-tor-browser' script. This will start Vidalia.
+Once Tor has successfully opened a circuit, Firefox will automatically be
+opened.
+
+To exit, close Firefox. Vidalia will automatically clean up and exit.
+
+For more information about bugfixes and other package changes, see the
+changelog in tor-browser_LANG/Docs/changelog.
