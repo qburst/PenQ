@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!-- 
+ **** BEGIN LICENSE BLOCK ****
+ Copyright(c) 2005 Adam Judson
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ Portions of this code have been based upon 
+ LiveHttpHeaders  - http://livehttpheaders.mozdev.org
+ Copyright(c) 2002-2003 Daniel Savard.
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ TamperData: 
+ - track and modify http requests and responses
+
+ This program is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ more details.
+
+ You should have received a copy of the GNU General Public License along with
+ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ Place, Suite 330, Boston, MA 02111-1307 USA
+
+ **** END LICENSE BLOCK ****
+
+-->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://tamperdata/locale/tamperdata.dtd">
+<dialog id="tamper-uri" title="Tamper Data &tamperdata.tamperURI.title;"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept,cancel" 
+        ondialogaccept="TamperURI.instance.modifyURI();return true;"
+        ondialogcancel="TamperURI.instance.dontModifyURI();return true;"
+        onload="TamperURI.init(); sizeToContent();"
+        onunload="return true;"
+        persist="width height screenX screenY">
+<script type="application/x-javascript" src="chrome://global/content/dialogOverlay.js" />
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperLang.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperURI.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperPreferences.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperUtils.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperMenu.js"/>
+
+   <commandset>
+      <command id="tamper.menu.select" oncommand="menuSelect()"/>
+   </commandset>
+
+   <popupset id="tamper.popup.popupset">
+      <popup id="tamper.popup.popup" onpopupshowing="TamperMenu.instance.customizePopup();" onpopuphiding="TamperMenu.instance.unCustomizePopup();">
+      </popup>
+   </popupset>
+
+   <vbox flex="1">
+      <groupbox flex="1">
+         <caption id="uri text" label="&tamperdata.tamperURI.base.uri;" crop="end"/>
+         <grid flex="1">
+            <columns>
+               <column/>
+               <column/>
+               <column/>
+               <column/>
+            </columns>
+            <rows>
+               <row align="center">
+                  <label control="tamper.uri.protocol" value="&tamperdata.tamperURI.protocol;"/>
+                  <textbox id="tamper.uri.protocol" flex="1" maxwidth="50"/>
+                  <label control="tamper.uri.credentials" value="&tamperdata.tamperURI.credentials;"/>
+                  <textbox id="tamper.uri.credentials" flex="1" maxwidth="150"/>
+               </row>
+               <row align="center">
+                  <label control="tamper.uri.host" value="&tamperdata.tamperURI.host;"/>
+                  <textbox id="tamper.uri.host" flex="1" maxwidth="200"/>
+                  <label control="tamper.uri.port" value="&tamperdata.tamperURI.port;"/>
+                  <textbox id="tamper.uri.port" flex="1" maxwidth="50"/>
+               </row>
+               <row align="center">
+                  <label control="tamper.uri.path" value="&tamperdata.tamperURI.path;"/>
+                  <textbox id="tamper.uri.path" flex="1" maxwidth="300"/>
+                  <label control="tamper.uri.ref" value="&tamperdata.tamperURI.reference;"/>
+                  <textbox id="tamper.uri.ref" flex="1" maxwidth="200"/>
+               </row>
+            </rows>
+         </grid>
+      </groupbox>
+      <groupbox flex="1">
+         <caption id="parameter text" label="&tamperdata.tamperURI.get.parameters;" crop="end"/>
+         <hbox flex="1">   
+            <listbox id="parameter list" flex="1" context="tamper.popup.popup">
+               <listcols>
+                  <listcol minwidth="150" flex="1"/>
+                  <listcol flex="2"/>
+               </listcols>
+         
+               <listhead>
+                  <listheader label="&tamperdata.tamperURI.get.parameter.name;"/>
+                  <listheader label="&tamperdata.tamperURI.get.parameter.value;"/>
+               </listhead>
+            </listbox>
+         </hbox>
+      </groupbox>
+   </vbox>
+</dialog>

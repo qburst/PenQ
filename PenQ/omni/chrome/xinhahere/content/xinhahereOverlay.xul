@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://xinhahere/skin/xinhahere.css"?>
+<?xml-stylesheet href="chrome://xinhahere/skin/xinhahere-button.css"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css"?> 
+
+<!DOCTYPE overlay SYSTEM "chrome://xinhahere/locale/xinhahere.dtd">
+
+<overlay id="xinhahereOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
+  <script type="application/x-javascript" src="chrome://global/content/nsDragAndDrop.js"/>
+  <script type="application/x-javascript" src="chrome://global/content/globalOverlay.js"/>
+  <script type="application/x-javascript" src="chrome://browser/content/utilityOverlay.js"/>
+  <script type="application/x-javascript" src="chrome://global/content/contentAreaUtils.js"/>
+  <script type="application/x-javascript" src="chrome://browser/content/browser.js"/>
+  <script type="application/x-javascript" src="chrome://browser/content/web-panels.js"/>
+  
+<!-- This imports our javascript. -->
+<script type="application/x-javascript" src="options.js"/>
+<script type="application/x-javascript" src="xinhahereOverlay.js"/>
+
+<!-- This is for the right click menu. -->
+<popup id="contentAreaContextMenu">
+  <menuseparator id="sep_xinhahere" insertbefore="context-sep-paste"/>
+  <menuitem label="&xinhahere.menu.open;" id="mnu_xinhahereopen" insertbefore="context-sep-paste" oncommand="xinhahereOverlay.openDef(event.shiftKey)" accesskey="X"/>
+  <menu label="&xinhahere.title;" insertbefore="context-sep-paste" id="mnu_xinhahere">
+	  <menupopup>
+		  <menuitem label="&xinhahere.menu.window;" oncommand="xinhahereOverlay.openWin(event.shiftKey)"/>
+		  <menuitem label="&xinhahere.menu.bottom;" oncommand="xinhahereOverlay.showBottomBar(event.shiftKey)"/>
+		  <!-- menuitem label="&xinhahere.title; in Side Bar" oncommand="xinhahereOverlay.showSideBar()"/ -->
+		  <!-- menuitem label="&xinhahere.title; in Tab" oncommand="xinhahereOverlay.openTab()"/ -->
+		  <menuseparator/>
+		  <menuitem label="&xinhahere.menu.options;" oncommand="xinhahereOverlay.show_ops()"/>
+	  </menupopup>
+  </menu>
+</popup>
+
+<!-- Button -->
+<toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="xinhahere-button" class="toolbarbutton-1" disabled="true"
+    label="&xinhahere.menu.open;" tooltiptext="&xinhahere.menu.open;"
+    oncommand="xinhahereOverlay.openDef(event.shiftKey);"/>
+</toolbarpalette>
+
+<!-- broadcasterset id="mainBroadcasterSet">
+  <broadcaster id="xinhahereSidebar"
+    autoCheck="false"
+	label="Xinha Here"
+	type="checkbox" group="sidebar"
+	sidebarurl="chrome://xinhahere/content/web-panels.xul"
+	sidebartitle="&xinhahere.title;"
+	collapsed="true" 
+	oncommand="toggleSidebar('xinhahereSidebar');" 
+	context="contentAreaContextMenu" />
+</broadcasterset -->
+
+ <!-- FireFox Status Bar -->
+     <keyset id="mainKeyset">
+		<key id="key_xinhahere" label="&xinhahere.menu.open;" modifiers="accel,shift" key="X" oncommand="xinhahereOverlay.openDef()"/>
+      </keyset>
+
+ <!-- Bottom Bar --> 
+<vbox id="appcontent" flex="1" >
+	<splitter id="xinhahereSplit" collapse="after" resizeafter="closest" state="open" collapsed="true" insertafter="content" orient="vertical">
+		<grippy tooltiptext="Drag this bar to resize the editor"/>
+	</splitter>
+	<box id="xinhahereBox" collapsed="true" minheight="100px" insertafter="xinhahereSplit" flex="1" >
+		<iframe name="xinhahereFrame" id="xinhahereFrame" flex="1" tooltip="aHTMLTooltip"/>
+	</box>
+</vbox>
+
+</overlay>
+

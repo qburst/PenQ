@@ -1,0 +1,297 @@
+.htmlarea td { margin:0;padding:0; }
+
+.htmlarea .toolbarRow {
+  width:1px;
+}
+
+.htmlarea .toolbar {
+  cursor: default;
+  background: #383838;
+  padding: 3px;
+  border: 1px solid #383837;
+  border-radius:3px; 
+  opacity:0.95;
+}
+.htmlarea .toolbar table { margin: 0; font-family: tahoma,verdana,sans-serif; font-size: 11px; }
+.htmlarea .toolbar img { border: none; vertical-align: top; }
+.htmlarea .toolbar .label { padding: 0px 3px; }
+
+.htmlarea .toolbar .button {
+
+  padding: 1px;
+  margin: 0.5px;
+  width: 18px;
+  height: 18px;
+  border-radius:3px;
+  -moz-appearance: none;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  color: #a6a6a6;
+  border: 1px solid;
+    border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow:  0px 1px 1px rgba(255, 255, 255, 0.2) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.1);
+  background: rgba(10,10,10,1)
+              -moz-linear-gradient(rgba(97, 97, 97, 0.65), rgba(97, 97, 97, 0.3) 49%,
+			  rgba(80, 80, 80, 0.3) 51%, rgba(80, 80, 80, 0.18));
+}
+.htmlarea .toolbar a.button:hover {
+  border: 1px solid;
+  background: rgba(8,8,8,1)
+              -moz-linear-gradient(rgba(97, 97, 97, 0.45), rgba(97, 97, 97, 0.15) 49%,
+			  rgba(75, 75, 75, 0.12) 51%, rgba(75, 75, 75, 0.08));
+  color: #ffffff;
+  -moz-transition: .2s ease-in;
+}
+.htmlarea .toolbar a.buttonDisabled:hover {
+  border-color: #262a2f;
+}
+.htmlarea .toolbar .buttonActive,
+.htmlarea .toolbar .buttonPressed
+{
+  padding: 2px 0px 0px 2px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+}
+.htmlarea .toolbar .buttonPressed {
+  background: ButtonHighlight;
+}
+.htmlarea .toolbar .indicator {
+  padding: 0px 3px;
+  overflow: hidden;
+  width: 20px;
+  text-align: center;
+  cursor: default;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+}
+
+.htmlarea .toolbar .buttonDisabled img {
+  filter: gray() alpha(opacity = 25);
+  -moz-opacity: 0.25;
+  opacity: 0.25;
+}
+
+.htmlarea .toolbar .separator {
+  /*position: relative;*/
+  margin:0 3px;
+  border-left: 1px solid ButtonShadow;
+  border-right: 1px solid ButtonHighlight;
+  width: 0px;
+  height: 18px;
+  padding: 0px;
+}
+
+.htmlarea .toolbar .space { width: 5px; }
+
+.htmlarea .toolbar select, .htmlarea .toolbar option { font: 11px Tahoma,Verdana,sans-serif;}
+
+.htmlarea .toolbar select,
+.htmlarea .toolbar select:hover,
+.htmlarea .toolbar select:active { 
+  position:relative;
+  top:-2px;
+  margin-bottom:-2px;
+  color: ButtonText;
+}
+
+.htmlarea iframe.xinha_iframe, .htmlarea textarea.xinha_textarea
+{
+  border: none; /*1px solid;*/
+}
+
+.htmlarea .statusBar {
+  border: 1px solid;
+  padding: 2px 4px;
+  font: 11px Tahoma,Verdana,sans-serif;
+  height:16px;
+  border-radius:3px;
+
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow:  0px 1px 1px rgba(255, 255, 255, 0.2) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.1);
+  background: rgba(10,10,10,1)
+              -moz-linear-gradient(rgba(97, 97, 97, 0.65), rgba(97, 97, 97, 0.3) 49%,
+			  rgba(80, 80, 80, 0.3) 51%, rgba(80, 80, 80, 0.18));
+  color: #a6a6a6;
+  text-shadow: none;
+}
+
+.htmlarea .statusBar .statusBarTree a {
+  padding: 2px 5px;
+  color: #00ee41 !important;
+  text-shadow: 0px 0px 3px #00ee41;
+}
+
+.htmlarea .statusBar .statusBarTree a:visited { color: #00ee41 !important;
+  text-shadow: 0px 0px 3px #00ee41; }
+.htmlarea .statusBar .statusBarTree a:hover {
+color: #15adff !important;
+text-shadow: 0px 0px 3px #15adff;}
+
+
+/* popup dialogs */
+
+.dialog {
+
+  color: #a6a6a6;
+    border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow:  0px 1px 1px rgba(255, 255, 255, 0.2) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.1);
+  background: rgba(10,10,10,1)
+              -moz-linear-gradient(rgba(97, 97, 97, 0.65), rgba(97, 97, 97, 0.3) 49%,
+			  rgba(80, 80, 80, 0.3) 51%, rgba(80, 80, 80, 0.18));
+}
+
+.dialog .content { padding: 2px; }
+
+.dialog, .dialog button, .dialog input, .dialog select, .dialog textarea, .dialog table {
+  font: 11px Tahoma,Verdana,sans-serif;
+}
+
+.dialog table { border-collapse: collapse; }
+
+.dialog .title, .dialog h1
+{
+  background: #008;
+  color: #ff8;
+  border-bottom: 1px solid #000;
+  padding: 1px 0px 2px 5px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: default;
+}
+.dialog h1 { margin:0px;}
+.dialog .title .button {
+  float: right;
+  border: 1px solid #66a;
+  padding: 0px 1px 0px 2px;
+  margin-right: 1px;
+  color: #fff;
+  text-align: center;
+}
+
+.dialog .title .button-hilite { border-color: #88f; background: #44c; }
+
+.dialog button {
+  width: 5em;
+  padding: 0px;
+}
+
+.dialog .buttonColor {
+  width :1em;
+  padding: 1px;
+  cursor: default;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+}
+
+.dialog .buttonColor .chooser, .dialog .buttonColor .nocolor {
+  height: 0.6em;
+  border: 1px solid;
+  padding: 0px 1em;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+}
+
+.dialog .buttonClick {
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+}
+.dialog .buttonColor-hilite {
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+}
+
+.dialog .buttonColor .nocolor { padding: 0px; }
+.dialog .buttonColor .nocolor-hilite { background-color: #fff; color: #f00; }
+
+.dialog .label { text-align: right; width: 6em; }
+.dialog .value input { width: 100%; }
+.dialog .buttons { text-align: right; padding: 2px 4px 0px 4px; }
+
+.dialog legend { font-weight: bold; }
+.dialog fieldset table { margin: 2px 0px; }
+
+.popupwin {
+  padding: 0px;
+  margin: 0px;
+}
+
+.popupwin .title {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 120%;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  letter-spacing: 2px;
+}
+
+form { margin: 0px; border: none; }
+
+
+/** Panels **/
+.htmlarea .panels.top
+{
+  border-bottom : 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+}
+
+.htmlarea .panels.right
+{
+  border-left : 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+}
+
+.htmlarea .panels.left
+{
+  border-right : 1px solid;
+  border-color: ButtonShadow;
+}
+
+.htmlarea .panels.bottom
+{
+  border-top : 1px solid;
+  border-color: ButtonShadow;
+}
+
+.htmlarea .panel h1 {
+  background: #383838;
+  border: 1px solid;
+ border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  margin:   0px;
+  padding:  0px;
+  font-size:100%;
+  font-weight:bold;
+  padding: 2px;
+  clear:left;
+  
+}
+
+.htmlarea .panel { overflow:hidden; }
+.htmlarea .panels.left  .panel { border-right:none; border-left:none; }
+.htmlarea .panels.left  h1     { border-right:none;  }
+.htmlarea .panels.right .panel { border-right:none; border-left:none; }
+.htmlarea .panels.left  h1     { border-left:none;  }
+.htmlarea { border: 1px solid black; }
+
+.loading
+{
+  font-family:sans-serif;
+  position:absolute;
+  z-index:998;
+  text-align:center;
+  width:212px;
+  padding: 55px 0 5px 0;
+  border:2px solid #ccc;
+  /* border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;*/
+
+}
+.loading_main
+{
+  font-size:11px;
+  color:#000;
+ 
+}
+.loading_sub
+{
+  font-size:9px;
+  color:#666;
+  text-align:center;
+}

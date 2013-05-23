@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://xssme/skin/xssme_sidebar.css" type="text/css"?>
+<window
+    id="sidebar"
+    title="XSS Me"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    xmlns:html="http://www.w3.org/1999/xhtml" >
+<!--
+Copyright 2007 Security Compass
+
+This file is part of XSS Me.
+
+XSS Me is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+XSS Me is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with XSS Me.  If not, see <http://www.gnu.org/licenses/>.
+
+If you have any questions regarding XSS Me please contact
+tools@securitycompass.com
+-->
+    
+    <script type="application/x-javascript;version=1.7"
+            src="chrome://xssme/content/sidebarBuilder.js" />
+    <script type="application/x-javascript"
+            src="chrome://xssme/content/PrefObserver.js" />
+    <script type="application/x-javascript;version=1.7"
+            src="chrome://xssme/content/io.js" />
+    <script type="application/x-javascript;version=1.7"
+            src="chrome://xssme/content/util.js" />
+    <script type="application/x-javascript;version=1.7"
+            src="chrome://xssme/content/TestRunnerContainer.js" />
+    <script type="application/x-javascript;version=1.7"
+            src="chrome://xssme/content/json.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/xssme_StreamListener.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/progressListener.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/tabbrowsermanager.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/preferenceStringContainer.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/attackStringContainer.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/ErrorStringContainer.js" />
+    <script type="application/x-javascript;version=1.7"
+            src="chrome://xssme/content/Results.js" />
+    <script type="application/x-javascript;version=1.7"
+            src="chrome://xssme/content/FieldResult.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/ResultsManager.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/AttackRunner.js" />
+    <script type="application/x-javascript" 
+            src="chrome://xssme/content/AttackHttpResponseObserver.js" />
+    <script type="application/x-javascript"
+            src="chrome://xssme/content/TestManager.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/xssmeevaluators.js" />
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://xssme/content/xssme_sidebar.js"/>
+    <commandset>
+        <command id="xssme_generate_form_ui" oncommand="setTimeout(function(){xssmeExtension.do_generate_form_ui()}, 1);" />
+        <command id="xssme_do_test" oncommand="xssmeExtension.run_tests(event)" />
+    </commandset>
+    <hbox >
+        <spacer width="2px" />
+        <html:a href="http://www.securitycompass.com" target="securitycompasssite">
+            <image src="chrome://xssme/skin/small_logo_sc.png"/>
+        </html:a>
+    </hbox>
+    <label style="font-size: xx-large" class="title">XSS Me</label>
+    <vbox style="overflow:auto;" flex="1">
+        <description>XSS-Me is a tool to aid in testing for Cross-Site Scripting vulnerabilities in
+the current page.</description>
+
+<description>Each tab in the sidebar represents a form on the current page and lists all of
+the fields in the form.</description>
+        <spacer height="5px" />
+        <hbox>
+            <vbox id="xssmetestbuttonbox"  align="start" flex="0" >
+                <button label="Test all forms with all attacks" crop="right" id='test_all_forms_with_all_attacks' command="xssme_do_test" />
+                <button label="Test all forms with top attacks" crop="right" id='test_all_forms_with_top_attacks' command="xssme_do_test" />
+            </vbox>
+        </hbox>
+        <spacer style="height: 5px" />
+        <box id="xssme_here_be_tabs" pack="start" align="start" >
+        </box>
+        <spacer flex="1" />
+    </vbox>
+    <script>
+        window.addEventListener("load", function() {
+        xssmeExtension = new extension();
+        xssmeExtension.addAllMainWindowEventListeners();
+        document.getElementById('xssme_generate_form_ui').doCommand();}, 
+                true);
+            
+        window.addEventListener("unload", 
+            function() { xssmeExtension.removeAllMainWindowEventListeners()}, 
+                true); // This should limit leaks
+    </script>
+</window>

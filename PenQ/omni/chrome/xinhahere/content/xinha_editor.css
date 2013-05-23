@@ -1,0 +1,36 @@
+
+	html { 
+		height: 100%;
+		padding: 0px 0px 0px 0px;
+		margin: 0 0 0 0;
+	}
+	
+	body { 
+		height: 100%;
+		padding: 0px 0px 0px 0px;
+		margin: 0 0 0 0;
+	}
+	
+	div#content {
+		/* position: absolute; */
+		top: 0px;
+		left: 0px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		width: 100%;
+		border: 0px solid Black;
+	}
+
+	#myTextArea {
+		border: 0px solid Black;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.buttons {
+		border: 0px solid Black;
+		margin-top: 10px; /* because HTMLArea overshoots */
+	}
+	
+	.htmlarea { border: 0px solid black; }

@@ -1,0 +1,40 @@
+/*
+Copyright 2007 Security Compass
+
+This file is part of SQL Inject Me.
+
+SQL Inject Me is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SQL Inject Me is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SQL Inject Me.  If not, see <http://www.gnu.org/licenses/>.
+*/
+*
+/* This is just an example.  You shouldn't do this. */
+#sqlime-hello
+{
+}
+#sqlime-toolbar-button
+{
+  list-style-image: url("chrome://sqlime/skin/toolbar-button.png");
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+#sqlime-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 24px 48px  0px);
+}
+[iconsize="small"] #sqlime-toolbar-button
+{
+  -moz-image-region: rect( 0px 40px 16px 24px);
+}
+[iconsize="small"] #sqlime-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 40px 40px 24px);
+}

@@ -1,0 +1,22 @@
+# en-US.manifest
+override chrome://global/locale/netError.dtd chrome://browser/locale/netError.dtd
+locale browser-region en-US en-US/locale/browser-region/
+locale global-platform en-US en-US/locale/en-US/global-platform/
+override chrome://mozapps/locale/downloads/settingsChange.dtd chrome://browser/locale/downloads/settingsChange.dtd
+override chrome://global/locale/appstrings.properties chrome://browser/locale/appstrings.properties
+locale global-region en-US en-US/locale/en-US/global-region/
+locale passwordmgr en-US en-US/locale/en-US/passwordmgr/
+locale mozapps en-US en-US/locale/en-US/mozapps/
+locale testpilot en-US en-US/locale/feedback/
+locale pipnss en-US en-US/locale/en-US/pipnss/
+locale branding en-US en-US/locale/branding/
+locale alerts en-US en-US/locale/en-US/alerts/
+locale pippki en-US en-US/locale/en-US/pippki/
+locale cookie en-US en-US/locale/en-US/cookie/
+locale necko en-US en-US/locale/en-US/necko/
+locale weave en-US en-US/locale/en-US/
+locale autoconfig en-US en-US/locale/en-US/autoconfig/
+locale global en-US en-US/locale/en-US/global/
+locale places en-US en-US/locale/en-US/places/
+locale browser en-US en-US/locale/browser/
+

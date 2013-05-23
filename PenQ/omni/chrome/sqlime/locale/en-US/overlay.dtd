@@ -1,0 +1,15 @@
+<!ENTITY sqlime.tools "XSS Me">
+<!ENTITY sqlime.toolx "XSS Me">
+<!ENTITY sqlime.open "Open XSS ME">
+<!ENTITY sqlime.helppage "http://www.securitycompass.com/sqlime.html">
+<!ENTITY sqlime.help "Help">
+<!ENTITY sqlime.about "About">
+<!ENTITY sqlime.options "Options">
+<!ENTITY sqlime.encoding "Encoding">
+<!ENTITY sqlime.random "Random">
+<!ENTITY sqlime.encoding.none "None">
+<!ENTITY sqlime.encoding.unicode "Unicode">
+<!ENTITY sqlime.encoding.html "HTML">
+<!ENTITY sqlime.encoding.hex "Hex">
+<!ENTITY sqlime.encoding.doublehex "Double Hex">
+<!ENTITY sqlime.cookies "Cookies">

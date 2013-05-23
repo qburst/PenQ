@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<dialog id="attackstring" title="Attack String"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept,cancel"
+        buttonlabelaccept="Set Attack String"
+        buttonlabelcancel="Cancel"
+        ondialogaccept="return checkOK();"
+        ondialogcancel="return checkCancel();">
+<!--
+Copyright 2007 Security Compass
+
+This file is part of XSS Me.
+
+XSS Me is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+XSS Me is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with XSS Me.  If not, see <http://www.gnu.org/licenses/>.
+
+If you have any questions regarding XSS Me please contact
+tools@securitycompass.com
+-->
+<script type="application/x-javascript" src="chrome://xssme/content/json.js" />
+<script type="application/x-javascript;version=1.7" src="chrome://xssme/content/preferenceStringContainer.js" />
+<script type="application/x-javascript;version=1.7" src="chrome://xssme/content/attackStringContainer.js" />
+<script type="application/x-javascript;version=1.7" src="chrome://xssme/content/preferences.js" />
+<script type="application/x-javascript;version=1.7" src="chrome://xssme/content/addAttack.js" />
+<description value="Please enter an attack string and a signature (an id by which we can attribute the string to you, ex. your name)" />
+<label value="Attack String" control="attackstringtxtbox" />
+<textbox id="attackstringtxtbox" />
+<label value="Your Signature" control="sigtxtbox" />
+<textbox id="sigtxtbox" />
+<script>
+    function checkOK(){
+        return onOk();
+    }
+    function checkCancel(){
+        return onCancel();
+    }
+</script>
+</dialog>

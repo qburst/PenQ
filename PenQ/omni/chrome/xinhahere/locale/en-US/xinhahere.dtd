@@ -1,0 +1,24 @@
+<!ENTITY xinhahere.title     "Xinha Here!">
+<!ENTITY xinhahere.version  "0.17">
+<!ENTITY xinhahere.homepageurl  "http://www.hypercubed.com/projects/firefox/">
+
+<!ENTITY xinhahere.options.title  "Xinha Here! options">
+<!ENTITY xinhahere.options.save   "OK">
+<!ENTITY xinhahere.options.cancel "Cancel">
+<!ENTITY xinhahere.options.skins "Xinha Skin">
+<!ENTITY xinhahere.options.plugins "Xinha Plugins">
+<!ENTITY xinhahere.options.xinhahereplugin "Enable &xinhahere.title; Toolbar">
+<!ENTITY xinhahere.options.open  "By default open Xinha in">
+<!ENTITY xinhahere.options.edopts  "Xinha editor options">
+
+<!ENTITY xinhahere.about.title  "&xinhahere.title; About">
+<!ENTITY xinhahere.about.createdby  "Created By">
+<!ENTITY xinhahere.about.homepage   "Home Page">
+<!ENTITY xinhahere.about.close "Close">
+<!ENTITY xinhahere.about.xinharelease "Xinha 0.95: Trunk (4 Apr 2008)">
+
+<!ENTITY xinhahere.menu.open  "Open &xinhahere.title;">
+<!ENTITY xinhahere.menu.window  "Open Xinha in Window">
+<!ENTITY xinhahere.menu.bottom  "Open Xinha in Bottom Bar">
+<!ENTITY xinhahere.menu.options  "&xinhahere.title; Options">
+<!ENTITY xinhahere.menu.about  "&xinhahere.title; About">

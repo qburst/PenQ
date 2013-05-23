@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!-- 
+ **** BEGIN LICENSE BLOCK ****
+ Copyright(c) 2005 Adam Judson
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ Portions of this code have been based upon 
+ LiveHttpHeaders  - http://livehttpheaders.mozdev.org
+ Copyright(c) 2002-2003 Daniel Savard.
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ TamperData: 
+ - track and modify http requests and responses
+
+ This program is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ more details.
+
+ You should have received a copy of the GNU General Public License along with
+ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ Place, Suite 330, Boston, MA 02111-1307 USA
+
+ **** END LICENSE BLOCK ****
+
+-->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://tamperdata/locale/tamperdata.dtd">
+<dialog id="tamper-source" title="&tamperdata.view.source.title;"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept" 
+        ondialogaccept="return true;"
+        onload="TamperSource.init();"
+        persist="width height screenX screenY">
+
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperLang.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/TamperSource.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperPreferences.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperUtils.js"/>
+   <vbox flex="1">
+      <hbox id="tamper.source.raw.hbox" flex="1">
+         <vbox flex="1">
+            <caption label="&tamperdata.view.source.raw.data;" crop="end" />
+            <textbox id="tamper.source.rawTextBox" flex="1" style="font-family: -moz-fixed; font-weight: normal;" readonly="true" wrap="false" multiline="true"/>
+         </vbox>
+      </hbox>
+
+      <splitter id="tamper.source.splitter" state="open" resizeafter="farthest"/>
+
+      <hbox flex="1">
+         <vbox flex="1">
+            <caption label="&tamperdata.view.source.uncompressed.data;" crop="end"/>
+            <textbox id="tamper.source.uncompressedTextBox" flex="1" style="font-family: -moz-fixed; font-weight: normal;" readonly="true" wrap="false" multiline="true"/>
+         </vbox>
+      </hbox>
+
+   </vbox>
+</dialog>

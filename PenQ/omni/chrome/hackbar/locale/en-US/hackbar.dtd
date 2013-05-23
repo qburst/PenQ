@@ -1,0 +1,112 @@
+<!ENTITY hackbar.hackbar "HackBar">
+<!ENTITY hackbar.toolsMenuShowHide "Show/hide hackbar">
+<!ENTITY hackbar.minusTooltip "Substract 1 from current selection">
+<!ENTITY hackbar.minusLabel "">
+<!ENTITY hackbar.plusTooltip "Add 1 to current selection">
+<!ENTITY hackbar.plusToolLabel "">
+<!ENTITY hackbar.SQLMenuLabel "SQL">
+<!ENTITY hackbar.SQLMenuTooltip "SQL related shortcuts">
+<!ENTITY hackbar.mysql "MySQL">
+<!ENTITY hackbar.mysqlMenuTooltip "MySQL injection tools">
+<!ENTITY hackbar.mssql "MSSQL">
+<!ENTITY hackbar.mssqlMenuTooltip "MSSQL injection tools">
+<!ENTITY hackbar.oracle "Oracle">
+<!ENTITY hackbar.oracleMenuTooltip "Oracle injection tools">
+<!ENTITY hackbar.unionSelectLabel "Union select statement">
+<!ENTITY hackbar.unionSelectTooltip "Union select statement">
+<!ENTITY hackbar.spacesToCommentsLabel "Spaces to inline comments">
+<!ENTITY hackbar.spacesToCommentsTooltip "Convert spaces to inline comments">
+<!ENTITY hackbar.basicInfoLabel "Basic info column">
+<!ENTITY hackbar.basicInfoTooltip "Show basic database information, use this on a union select column with output">
+<!ENTITY hackbar.convertUtf8Label "Convert using UTF-8">
+<!ENTITY hackbar.convertUtf8Tooltip "Build a convert using utf8 statement around the selected text">
+<!ENTITY hackbar.convertLatinLabel "Convert using Latin1">
+<!ENTITY hackbar.convertLatinTooltip "Build a convert using latin1 statement around the selected text">
+<!ENTITY hackbar.SFCLabel "String.fromCharCode()">
+<!ENTITY hackbar.SFCTooltip "Selection to String.fromCharCode conversion">
+<!ENTITY hackbar.htmlCharLabel "HTML Characters">
+<!ENTITY hackbar.htmlCharTooltip "Selection to HTML characters">
+<!ENTITY hackbar.alertXSSLabel "alert(XSS) statement">
+<!ENTITY hackbar.alertXSTooltip "Simple alert statement">
+<!ENTITY hackbar.sha2Label "SHA-256">
+<!ENTITY hackbar.sha2Tooltip "Convert current selection to its SHA-256 hash">
+<!ENTITY hackbar.xssMenuLabel "XSS">
+<!ENTITY hackbar.xssMenuTooltip "XSS tools">
+<!ENTITY hackbar.encMenuLabel "Encryption">
+<!ENTITY hackbar.encMenuTooltip "Encryption tools">
+<!ENTITY hackbar.encdecMenuLabel "Encoding">
+<!ENTITY hackbar.encdecMenuTooltip "Decoding and encoding">
+<!ENTITY hackbar.miscMenuLabel "Other">
+<!ENTITY hackbar.miscMenuTooltip "Miscellaneous tools">
+<!ENTITY hackbar.addslashesLabel "Addslashes">
+<!ENTITY hackbar.addslashesTooltip "Addslashes">
+<!ENTITY hackbar.stripslashesLabel "Stripslashes">
+<!ENTITY hackbar.stripslashesTooltip "Stripslashes">
+<!ENTITY hackbar.usefullStringsMenuLabel "Usefull strings">
+<!ENTITY hackbar.usefullStringsMenuTooltip "Usefull strings">
+<!ENTITY hackbar.pi "PI">
+<!ENTITY hackbar.piBig "Bigger PI">
+<!ENTITY hackbar.phi "PHI">
+<!ENTITY hackbar.loremIpsum "Lorem Ipsum">
+<!ENTITY hackbar.fibonacci "Fibonacci">
+<!ENTITY hackbar.reverseLabel "Reverse">
+<!ENTITY hackbar.reverseTooltip "Reverse current selecction">
+<!ENTITY hackbar.bufferOverflowTooltip "Generate a large 'A's string to try to generate errors">
+<!ENTITY hackbar.bufferOverflowLabel "Buffer overflow">
+<!ENTITY hackbar.Overflow128 "128">
+<!ENTITY hackbar.Overflow512 "512">
+<!ENTITY hackbar.Overflow1024 "1024">
+<!ENTITY hackbar.Overflow2048 "2048">
+<!ENTITY hackbar.OverflowCustom "Custom">
+<!ENTITY hackbar.md5MenuTooltip "MD5 Related functions">
+<!ENTITY hackbar.md5MenuLabel "MD5 Menu">
+<!ENTITY hackbar.md5Tooltip "Convert current selection to its MD5 hash">
+<!ENTITY hackbar.md5Label "MD5 Hash">
+<!ENTITY hackbar.md5SendToTooltip "Send MD5 to an online database">
+<!ENTITY hackbar.md5SendToLabel "Send to...">
+<!ENTITY hackbar.md5SendToRednoizeLabel "md5.rednoize.com">
+<!ENTITY hackbar.md5SendToRednoizeTooltip "Send to http://md5.rednoize.com/">
+<!ENTITY hackbar.sha1Label "SHA-1 Hash">
+<!ENTITY hackbar.sha1Tooltip "Convert current selection to its SHA-1 hash">
+<!ENTITY hackbar.sha1MenuLabel "SHA-1 Menu">
+<!ENTITY hackbar.sha1SendToTooltip "Send SHA-1 to an online database">
+<!ENTITY hackbar.sha1MenuTooltip "SHA-1 Related functions">
+<!ENTITY hackbar.sha1SendToLabel "Send to...">
+<!ENTITY hackbar.sha1SendToRednoizeLabel "md5.rednoize.com">
+<!ENTITY hackbar.sha1SendToRednoizeTooltip "Send to http://md5.rednoize.com/">
+<!ENTITY hackbar.MysqlCharTooltip "Convert current selection to MySQL CHAR() characters">
+<!ENTITY hackbar.MysqlCharLabel "MySQL CHAR()">
+<!ENTITY hackbar.MssqlCharTooltip "Convert current selection to MsSQL CHAR() characters">
+<!ENTITY hackbar.MssqlCharLabel "MsSQL CHAR()">
+<!ENTITY hackbar.OracleCharTooltip "Convert current selection to Oracle CHR() characters">
+<!ENTITY hackbar.OracleCharLabel "Oracle CHR()">
+<!ENTITY hackbar.rot13Tooltip "ROT13.. encryption">
+<!ENTITY hackbar.rot13Label "ROT13">
+<!ENTITY hackbar.UUETooltip "Base64 Encode selection">
+<!ENTITY hackbar.UUELabel "Base64 Encode">
+<!ENTITY hackbar.UUDTooltip "Base64 Decode selection">
+<!ENTITY hackbar.UUDLabel "Base64 Decode">
+<!ENTITY hackbar.URLETooltip "URL encode selected characters">
+<!ENTITY hackbar.URLELabel "URLencode">
+<!ENTITY hackbar.URLDTooltip "URL decode selected characters">
+<!ENTITY hackbar.URLDLabel "URLdecode">
+<!ENTITY hackbar.encodingHexEncTooltip "HEX Encoding">
+<!ENTITY hackbar.encodingHexEncLabel "HEX Encoding">
+<!ENTITY hackbar.encodingHexDecTooltip "HEX Decoding">
+<!ENTITY hackbar.encodingHexDecLabel "HEX Decoding">
+<!ENTITY hackbar.hexEncodingNoSep "String to 00ff00ff">
+<!ENTITY hackbar.hexEncodingSpace "String to 00 ff 00 ff">
+<!ENTITY hackbar.hexEncodingSemicol "String to 00:ff:00:ff">
+<!ENTITY hackbar.stripspacesTooltip "Remove all spaces from selected string">
+<!ENTITY hackbar.stripspacesLabel "Strip spaces">
+<!ENTITY hackbar.IntToHex "INT to HEX">
+<!ENTITY hackbar.HexToInt "HEX to INT">
+<!ENTITY hackbar.HexToChar "HEX to Characters">
+<!ENTITY hackbar.copyUrlTooltip "Copy current URL">
+<!ENTITY hackbar.loadURLLabel "Load URL">
+<!ENTITY hackbar.splitTooltip "Split current URL">
+<!ENTITY hackbar.splitLabel "Split URL">
+<!ENTITY hackbar.executeLabel "Execute ">
+<!ENTITY hackbar.executeTooltip "Execute current URL">
+<!ENTITY hackbar.removeRow "Remove row from the textfield">
+<!ENTITY hackbar.addRow "Add row to the textfield">

@@ -1,0 +1,24 @@
+﻿<!ENTITY xinhahere.title     "Xinha Here!">
+<!ENTITY xinhahere.version  "0.13">
+<!ENTITY xinhahere.homepageurl  "http://www.hypercubed.com/projects/firefox/">
+
+<!ENTITY xinhahere.options.title  "&xinhahere.title; オプション">
+<!ENTITY xinhahere.options.save   "OK">
+<!ENTITY xinhahere.options.cancel "キャンセル">
+<!ENTITY xinhahere.options.skins "Xinhaスキン">
+<!ENTITY xinhahere.options.plugins "Xinhaプラグイン">
+<!ENTITY xinhahere.options.xinhahereplugin "ツールバー拡張を有効化">
+<!ENTITY xinhahere.options.open  "通常はXinhaをここに開く">
+<!ENTITY xinhahere.options.edopts  "エディタオプション">
+
+<!ENTITY xinhahere.about.title  "&xinhahere.title; について">
+<!ENTITY xinhahere.about.createdby  "製作者">
+<!ENTITY xinhahere.about.homepage   "ホームページ">
+<!ENTITY xinhahere.about.close "閉じる">
+<!ENTITY xinhahere.about.xinharelease "Xinha 0.95: Trunk (4 Apr 2008)">
+
+<!ENTITY xinhahere.menu.open  "&xinhahere.title; を開く">
+<!ENTITY xinhahere.menu.window  "Xinhaをウィンドウに開く">
+<!ENTITY xinhahere.menu.bottom  "Xinhaをボトムバーに開く">
+<!ENTITY xinhahere.menu.options  "&xinhahere.title; オプション">
+<!ENTITY xinhahere.menu.about  "&xinhahere.title; について">

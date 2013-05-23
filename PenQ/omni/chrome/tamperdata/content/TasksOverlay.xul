@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+ **** BEGIN LICENSE BLOCK ****
+ Copyright(c) 2005 Adam Judson
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ Portions of this code have been based upon 
+ LiveHttpHeaders  - http://livehttpheaders.mozdev.org
+ Copyright(c) 2002-2003 Daniel Savard.
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ TamperData: 
+ - track and modify http requests and responses
+
+ This program is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ more details.
+
+ You should have received a copy of the GNU General Public License along with
+ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ Place, Suite 330, Boston, MA 02111-1307 USA
+
+ **** END LICENSE BLOCK ****
+
+-->
+
+<!DOCTYPE overlay SYSTEM "chrome://tamperdata/locale/tamperdata.dtd">
+<overlay id="TamperDataTasksOverlay"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:nc="http://home.netscape.com/NC-rdf#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <html:script>
+    <![CDATA[
+      function openTamper() {
+         toOpenWindowByType('global:TamperData', 'chrome://tamperdata/content/tamperdata.xul');
+      }
+
+      var tdObserverService = Components.classes["@mozilla.org/observer-service;1"] .getService(Components.interfaces.nsIObserverService);
+      // add our load handler
+      function tdLoadHandler(event) {
+         var targetBrowser = null;
+         var uri, pageCookie;
+         if (gBrowser) {
+            // window.alert("Got to tdLoadHandler");
+            if (gBrowser.mTabbedMode) {
+               var targetBrowserIndex = gBrowser.getBrowserIndexForDocument(event.originalTarget);
+               if (targetBrowserIndex != -1) {
+                  targetBrowser = gBrowser.getBrowserAtIndex(targetBrowserIndex);
+               }
+            } else {
+               targetBrowser = gBrowser.mCurrentBrowser;
+            }
+         }
+         if (targetBrowser && targetBrowser.currentURI.spec) {
+            uri = targetBrowser.currentURI.spec;
+            tdObserverService.notifyObservers(event,"tamper-data-on-load", uri);
+         }
+      }
+      window.addEventListener("load",
+                                function () {
+                                  // Add a callback to be run every time a document loads.
+                                  // note that this includes frames/iframes within the document
+                                  gBrowser.addEventListener("load", tdLoadHandler, true);
+                                },
+                              false
+                              );
+    ]]>
+  </html:script>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem label="&tamperdata.taskmenu.item;"  oncommand="openTamper();" />
+  </menupopup>
+</overlay>
+

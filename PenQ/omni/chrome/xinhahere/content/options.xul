@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="chrome://global/skin/"?>
+<?xml-stylesheet href="chrome://xinhahere/skin/xinhahere.css"?>
+<!DOCTYPE window SYSTEM "chrome://xinhahere/locale/xinhahere.dtd">
+<window
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="xinhahere_optionswindow"
+	title="&xinhahere.options.title;">
+	
+	<script type="application/x-javascript" src="options.js" />
+
+	<script type="application/x-javascript">
+		this.addEventListener("load", xinhahereOptions.init, false);
+		
+		function save() {
+			xinhahereOptions.save();
+			if (!!opener) opener.refreshFlag = true;
+			window.close();
+			return true;
+		}
+		
+	</script> 
+		
+	<groupbox style="padding:1em;" flex="1" label="Test">
+		<caption label="&xinhahere.options.title;" />
+		<hbox align="center">
+			<label value="&xinhahere.options.open;: "/>
+			<menulist id="xinhahere.open" >		
+				<menupopup>
+					<menuitem label="Last Used Mode" value="last"/>
+					<menuitem label="New Window" value="win"/>
+					<menuitem label="Bottom Bar" value="bot"/>
+				</menupopup>
+			</menulist>
+		</hbox>
+		<checkbox name="XinhaHerePlugin" id="XinhaHerePlugin" label="&xinhahere.options.xinhahereplugin;"/>
+	</groupbox>
+	
+	<groupbox style="padding:1em;" flex="1">
+		<caption label="&xinhahere.options.edopts;" />
+		<hbox>
+			<label value="Language: " />
+			<menulist id="xinhahere.lang">	
+			<menupopup>
+	          <menuitem value="en" label="English" />
+	          <menuitem value="pt_br" label="Brazilian Portuguese" />
+	          <menuitem value="ch" label="Chinese" />
+	          <menuitem value="gb" label="Chinese GB" />
+	          <menuitem value="cz" label="Czech" />
+	          <menuitem value="da" label="Danish" />
+			  <menuitem value="nl" label="Dutch" />
+	          <menuitem value="ee" label="Estonian" />
+	          <menuitem value="fi" label="Finnish" />
+	          <menuitem value="fr" label="French" />
+	          <menuitem value="de" label="German" />
+			  <menuitem value="el" label="Greek" />
+			  <menuitem value="he" label="Hebrew" />
+	          <menuitem value="hu" label="Hungarian" />
+	          <menuitem value="it" label="Italian" />
+	          <menuitem value="ja" label="Japanese" />
+	          <menuitem value="lv" label="Latvian" />
+	          <menuitem value="no" label="Norwegian" />
+	          <menuitem value="nb" label="Norwegian" />
+			  <menuitem value="fa" label="Persian" />
+	          <menuitem value="pl" label="Polish" />
+	          <menuitem value="ro" label="Romanian" />
+	          <menuitem value="ru" label="Russian" />
+			  <menuitem value="sr" label="Serbian" />
+			  <menuitem value="si" label="Singhalese" />
+			  <menuitem value="sh" label="Serbo-Croatian" />
+	          <menuitem value="es" label="Spanish" />
+			  <menuitem value="sv" label="Swedish" />
+	          <menuitem value="vn" label="Vietnamese" />
+			  <menuitem value="b5" label="b5" />
+			</menupopup>
+			</menulist>
+		</hbox>
+		<hbox align="center">
+			<label value="&xinhahere.options.skins;: "/>
+			<menulist id="xinhahere.style" >		
+				<menupopup >
+					<menuitem label="none" value=""/>
+					<menuitem label="blue-look" value="blue-look"/>
+					<menuitem label="green-look" value="green-look"/>
+					<menuitem label="xp-blue" value="xp-blue"/>
+					<menuitem label="xp-green" value="xp-green"/>
+					<menuitem label="inditreuse" value="inditreuse"/>
+					<menuitem label="blue-metallic" value="blue-metallic"/>
+					<menuitem label="titan" value="titan"/>
+					<menuitem label="silva" value="titan"/>
+				</menupopup>
+			</menulist>
+		</hbox>
+		<label value="&xinhahere.options.plugins;: " />
+		<listbox id="plugins_list" orient="vertical" flex="1" style="overflow: auto; border : thin solid Black;" height="250">
+
+		</listbox>
+	</groupbox>
+	
+	<hbox align="center" style="margin:.5em;" pack="end">
+		<button label="&xinhahere.options.save;" onclick="save();" />
+		<button label="&xinhahere.options.cancel;" onclick="window.close();" />
+	</hbox>
+</window>

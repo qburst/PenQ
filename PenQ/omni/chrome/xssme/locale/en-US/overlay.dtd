@@ -1,0 +1,15 @@
+<!ENTITY xssme.tools "XSS Me">
+<!ENTITY xssme.toolx "XSS Me">
+<!ENTITY xssme.open "Open XSS ME">
+<!ENTITY xssme.helppage "http://www.securitycompass.com/xssme.html">
+<!ENTITY xssme.help "Help">
+<!ENTITY xssme.about "About">
+<!ENTITY xssme.options "Options">
+<!ENTITY xssme.encoding "Encoding">
+<!ENTITY xssme.random "Random">
+<!ENTITY xssme.encoding.none "None">
+<!ENTITY xssme.encoding.unicode "Unicode">
+<!ENTITY xssme.encoding.html "HTML">
+<!ENTITY xssme.encoding.hex "Hex">
+<!ENTITY xssme.encoding.doublehex "Double Hex">
+<!ENTITY xssme.cookies "Cookies">

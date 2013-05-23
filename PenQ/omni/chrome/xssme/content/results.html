@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://xssme/skin/results.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+      lang="en" xml:lang="en">
+    <head>
+        <title>Results for http://www.domain.tld/url.ext</title>
+        <style type="text/css">
+            .bar-status{
+                text-align: left;
+                width: 6em;
+            }
+            .bar {
+                width: 40%;
+                border: thin solid
+            }
+            .percent {
+                text-align: left;
+            }
+            .bar-passed {
+            
+            }
+            .bar-warning{
+            }
+            .bar-failed{
+            }
+            li {
+                list-style: none;
+            }
+            .passed {
+                color: green;
+    }
+            .warning {
+                color: #AAAA00;
+            }
+            .failed {
+                color: red;
+            }
+            .title {
+                color: #405068 !important;
+            }
+        </style>
+
+    </head>
+    <body>
+        <script>alert(window.arguments[0])</script>
+        <img src="chrome://xssme/skin/logo_small.jpg" />
+        <h1><span class="title">XSS Me</span> Test Results for http://domain.tld/url.ext</h1>
+        <p>Here are the results for the 9999 tests run:</p>
+        <table style="width: 100%">
+            <tr>
+                <td class="bar-status">Failed:</style></td>
+                <td class="bar"><div id="failed-bar" style="background-color: #FF3333;color: white;border: solid #FF3333;">&nbsp;</div></td>
+                <td class="percent" id="failed-label"></td>
+    
+            </tr>
+            <tr>
+                <td class="bar-status">Warning:</style></td>
+                <td class="bar"><div id="warning-bar" style="background-color: #FFFF00; color: white;border: solid #FFFF00;">&nbsp;</div></td>
+                <td class="percent" id="warning-label"><td>
+            </tr>
+            <tr>
+                <td class="bar-status">Passed:</style></td>
+                <td class="bar"><div id="passed-bar" style="background-color: #66FF66;color: white;border: solid #66FF66;">&nbsp;</div></td>
+                <td class="percent" id="passed-label"></td>
+                
+            </tr>
+        </table>
+        <fieldset>
+        <div id="details">
+        </div>
+
+            <legend>Form 1</legend>
+            <fieldset>
+                <legend>Test 1</legend>
+                <p>Result: <span class="failed">Failed</span></p>
+                <ul>
+                    <li>Field 1: value1</li>
+                    <li>Field 2: value2</li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Test 2</legend>
+                <p>Result: <span class="warning">Warning</span></p>
+                <ul>
+                    <li>Field 1: value1</li>
+                    <li>Field 2: value2</li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Test 1</legend>
+                <p>Result: <span class="passed">Passed</span></p>
+                <ul>
+                    <li>Field 1: value1</li>
+                    <li>Field 2: value2</li>
+                </ul>
+            </fieldset>
+        </fieldset>
+    </body>
+</html>
+      

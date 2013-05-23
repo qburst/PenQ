@@ -1,0 +1,18 @@
+/*  toolbar button  */
+
+toolbar[iconsize="small"] #xinhahere-button {
+  list-style-image: url("chrome://xinhahere/skin/xinhahere.png");
+}
+
+toolbar[iconsize="small"] #xinhahere-button[disabled="true"] {
+  list-style-image: url("chrome://xinhahere/skin/xinhahere-grey.png");
+}
+
+#xinhahere-button {
+  list-style-image: url("chrome://xinhahere/skin/xinhahere.png");
+}
+
+#xinhahere-button[disabled="true"]{
+  list-style-image: url("chrome://xinhahere/skin/xinhahere-grey.png");
+}
+

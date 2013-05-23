@@ -1,0 +1,5 @@
+<!ENTITY sqlime.label "Your localized menuitem">
+<!ENTITY sqlimeContext.label "Your Menuitem">
+<!ENTITY sqlimeContext.accesskey "Y">
+<!ENTITY sqlimeToolbar.label "Your Toolbar Button">
+<!ENTITY sqlimeToolbar.tooltip "This is your toolbar button!">

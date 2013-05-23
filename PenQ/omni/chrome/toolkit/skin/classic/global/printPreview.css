@@ -1,0 +1,121 @@
+/* ..... page navigation ..... */
+
+.home-arrow,
+.end-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-left-end.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.home-arrow:hover,
+.end-arrow:-moz-locale-dir(rtl):hover {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-left-end[hover].png");
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.end-arrow,
+.home-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-right-end.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.end-arrow:hover,
+.home-arrow:-moz-locale-dir(rtl):hover {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-right-end[hover].png");
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.left-arrow,
+.right-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-left.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.left-arrow:hover,
+.right-arrow:-moz-locale-dir(rtl):hover {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-left[hover].png");
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.right-arrow,
+.left-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-right.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.right-arrow:hover,
+.left-arrow:-moz-locale-dir(rtl):hover {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-right[hover].png");
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.previous-arrow,
+.next-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-left.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.previous-arrow:hover,
+.next-arrow:-moz-locale-dir(rtl):hover {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-left[hover].png");
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.next-arrow,
+.previous-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-right.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.next-arrow:hover,
+.previous-arrow:-moz-locale-dir(rtl):hover {
+  list-style-image: url("chrome://global/skin/printpreview/arrow-right[hover].png");
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+/* ...... scale in/decrement ..... */
+
+.up-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp.gif");
+}
+
+.down-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn-sharp.gif");
+}
+
+
+/* ..... orientation ..... */
+
+.toolbar-portrait-page {
+  list-style-image: url("chrome://global/skin/icons/Print-preview.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+  color:#a6a6a6;
+  background:none;
+}
+.toolbar-portrait-page:hover {
+  list-style-image: url("chrome://global/skin/icons/Print-preview[hover].png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+.toolbar-landscape-page {
+  list-style-image: url("chrome://global/skin/icons/Print-preview.png");
+  -moz-image-region: rect(0px 32px 16px 16px);
+  color:#a6a6a6;
+  background:none;  
+}
+
+.toolbar-landscape-page:hover {
+  list-style-image: url("chrome://global/skin/icons/Print-preview[hover].png");
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+toolbar#print-preview-toolbar {
+  -moz-appearance: none !important;
+  background-image: -moz-linear-gradient(rgb(70,70,70), rgb(53,53,53) 75%);
+  padding:5px;
+  min-height:20px;
+  border-bottom: 1px solid rgba(29,29,29,1);
+  color:#a6a6a6;
+}
+toolbar#print-preview-toolbar button {
+	margin: -1px 5px 0 5px;
+}

@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<!-- 
+ **** BEGIN LICENSE BLOCK ****
+ Copyright(c) 2005 Adam Judson
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ Portions of this code have been based upon 
+ LiveHttpHeaders  - http://livehttpheaders.mozdev.org
+ Copyright(c) 2002-2003 Daniel Savard.
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ TamperData: 
+ - track and modify http requests and responses
+
+ This program is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ more details.
+
+ You should have received a copy of the GNU General Public License along with
+ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ Place, Suite 330, Boston, MA 02111-1307 USA
+
+ **** END LICENSE BLOCK ****
+
+-->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://tamperdata/locale/tamperdata.dtd" >
+<window id="tamper-window" 
+        title="Tamper Data &tamperdata.tamperdata.title;"
+        windowtype="global:TamperData"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="startTamper(); sizeToContent();"
+        onunload="stopTamper()"
+        persist="width height screenX screenY">
+
+<script type="application/x-javascript" src="chrome://global/content/dialogOverlay.js" />
+<script type="application/x-javascript" src="chrome://global/content/globalOverlay.js" />
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperLang.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperPreferences.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperdata.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperGui.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperGraph.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperRequestResponse.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperOutputTree.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperUtils.js"/>
+
+
+   <commandset>
+      <command id="start.tamper"                   oncommand="oTamper.isTampering = true;"/>
+      <command id="stop.tamper"                    oncommand="oTamper.isTampering = false;"  disabled="true"/>
+      <command id="clear.output"                   oncommand="oTamper.clearResults();"       disabled="true"/>
+      <command id="tamper.options"                 oncommand="oTamper.gui.options();"           />
+      <command id="tamper.help"                    oncommand="oTamper.gui.help();"              />
+      <command id="tamper.copy.selection"          oncommand="oTamper.gui.copySelection();"  disabled="true"/>
+      <command id="tamper.copy.all"                oncommand="oTamper.gui.copyAll();"        disabled="true"/>
+      <command id="tamper.export.xml"              oncommand="oTamper.gui.exportXML();"      disabled="true"/>
+      <command id="tamper.export.all.xml"          oncommand="oTamper.gui.exportAllXML();"   disabled="true"/>
+      <command id="tamper.show.graph"              oncommand="oTamper.gui.showGraph(false);" disabled="true"/>
+      <command id="tamper.show.graph.all"          oncommand="oTamper.gui.showGraph(true);"  disabled="true"/>
+      <command id="tamper.details"                 oncommand="oTamper.gui.doubleClick();"    disabled="true" />
+      <command id="tamper.reopen"                  oncommand="oTamper.gui.reOpen();"         disabled="true" />
+      <command id="tamper.replay"                  oncommand="oTamper.gui.replay();"         disabled="true" />
+      <command id="tamper.viewSource"              oncommand="oTamper.gui.viewSource();"     disabled="true" />
+      <command id="tamper.filter"                  oncommand="oTamper.gui.filterData();"    />
+      <command id="tamper.clearFilter"             oncommand="oTamper.gui.clearFilter();"    disabled="true" />
+      <command id="tamper.request.copy.selection"  oncommand="oTamper.gui.requestCopySelection();"  disabled="true"/>
+      <command id="tamper.request.copy.all"        oncommand="oTamper.gui.requestCopyAll();"        />
+      <command id="tamper.request.details"         oncommand="oTamper.gui.requestDoubleClick();"    disabled="true" />
+      <command id="tamper.response.copy.selection" oncommand="oTamper.gui.responseCopySelection();" disabled="true"/>
+      <command id="tamper.response.copy.all"       oncommand="oTamper.gui.responseCopyAll();"       />
+      <command id="tamper.response.details"        oncommand="oTamper.gui.responseDoubleClick();"   disabled="true" />
+   </commandset>
+
+   <popupset id="popupset">
+      <popup id="outputTree.context">
+         <menuitem label="&tamperdata.command.details;"        command="tamper.details" />
+         <menuitem label="&tamperdata.command.reopen;"         command="tamper.reopen" />
+         <menuitem label="&tamperdata.command.replay;"         command="tamper.replay" />
+         <menuitem label="&tamperdata.command.viewSource;"     command="tamper.viewSource" />
+         <menuseparator/>
+         <menuitem label="&tamperdata.command.copy;"            command="tamper.copy.selection" />
+         <menuitem label="&tamperdata.command.copy.all;"        command="tamper.copy.all" />
+         <menuitem label="&tamperdata.command.export.xml;"      command="tamper.export.xml" />
+         <menuitem label="&tamperdata.command.export.all.xml;"  command="tamper.export.all.xml" />
+         <menuitem label="&tamperdata.command.graph.selected;"  command="tamper.show.graph" />
+         <menuitem label="&tamperdata.command.graph.all;"       command="tamper.show.graph.all" />
+         <menuseparator/>
+         <menuitem label="&tamperdata.command.clear;"    command="clear.output" />
+      </popup>
+
+      <popup id="requestTree.context">
+         <menuitem label="&tamperdata.command.details;"  command="tamper.request.details" />
+         <menuseparator/>
+         <menuitem label="&tamperdata.command.copy;"     command="tamper.request.copy.selection" />
+         <menuitem label="&tamperdata.command.copy.all;" command="tamper.request.copy.all" />
+      </popup>
+
+      <popup id="responseTree.context">
+         <menuitem label="&tamperdata.command.details;"  command="tamper.response.details" />
+         <menuseparator/>
+         <menuitem label="&tamperdata.command.copy;"     command="tamper.response.copy.selection" />
+         <menuitem label="&tamperdata.command.copy.all;" command="tamper.response.copy.all" />
+      </popup>
+
+   </popupset>
+   
+   <toolbox>
+      <toolbar id="Tamper tool bar" flex="1">
+         <toolbarbutton id="tamper.start" label="&tamperdata.toolbar.startTamper;" command="start.tamper"/>
+         <toolbarbutton id="tamper.stop"  label="&tamperdata.toolbar.stopTamper;"  command="stop.tamper"/>
+         <toolbarbutton id="tamper.clear" label="&tamperdata.command.clear;"       command="clear.output"/>
+         <toolbarspring flex="1"/>
+         <toolbarbutton id="tamper.options" label="&tamperdata.command.options;"   command="tamper.options"/>
+         <toolbarbutton id="tamper.help"    label="&tamperdata.command.help;"      command="tamper.help"/>
+      </toolbar>
+   </toolbox>
+   <spacer style="min-height:5px" />
+   <vbox flex="1" style="overflow: auto;">
+      <hbox align="center">
+         <label value="&tamperdata.label.filter;" control="tamper.filter.input"/>
+         <textbox id="tamper.filter.input" flex="1" type="timed" timeout="500" command="tamper.filter"/>
+         <button id="button" label="&tamperdata.command.showAll;" command="tamper.clearFilter"/>
+      </hbox>
+      <hbox flex="1">
+         <tree id="outputTree" context="outputTree.context" enableColumnDrag="true" flex="1" minheight="150" onselect="oTamper.gui.selectionChange();" ondblclick="oTamper.gui.doubleClick();">
+            <treecols>
+               <treecol id="output.time"              label="&tamperdata.tree.time;"            flex="1" persist="width ordinal hidden"/>
+               <splitter class="tree-splitter"        resizeafter="farthest"/>
+
+               <treecol id="output.duration"          label="&tamperdata.tree.duration;"        flex="1" persist="width ordinal hidden"/>
+               <splitter class="tree-splitter"        resizeafter="farthest"/>
+
+               <treecol id="output.total.duration"    label="&tamperdata.tree.total.duration;"  flex="1" persist="width ordinal hidden"/>
+               <splitter class="tree-splitter"        resizeafter="farthest"/>
+
+               <treecol id="output.size"              label="&tamperdata.tree.size;"            flex="1" persist="width ordinal hidden"/>
+               <splitter class="tree-splitter"        resizeafter="farthest"/>
+
+               <treecol id="output.method"            label="&tamperdata.tree.method;"          flex="1" persist="width ordinal hidden"/>
+               <splitter class="tree-splitter"        resizeafter="farthest"/>
+
+               <treecol id="output.status"            label="&tamperdata.tree.status;"          flex="1" persist="width ordinal hidden"/>
+               <splitter class="tree-splitter"        resizeafter="farthest"/>
+
+               <treecol id="output.content.type"      label="&tamperdata.tree.content.type;"    flex="1" persist="width ordinal hidden"/>
+               <splitter class="tree-splitter"        resizeafter="farthest"/>
+
+               <treecol id="output.url"               label="&tamperdata.tree.url;"             flex="1" persist="width ordinal hidden"/>
+               <splitter class="tree-splitter"        resizeafter="farthest"/>
+
+               <treecol id="output.load.flags"        label="&tamperdata.tree.load.flags;"      flex="1" persist="width ordinal hidden"/>
+            </treecols>
+            <treechildren/>
+         </tree>
+      </hbox>
+
+      <splitter id="topSplitter" state="open" resizeafter="farthest"/>
+
+      <vbox flex="1">
+         <hbox flex="1">   
+            <listbox id="request list" flex="1" context="requestTree.context" onselect="oTamper.gui.requestSelectionChange();" ondblclick="oTamper.gui.requestDoubleClick();">
+               <listcols>
+                  <listcol minwidth="150" flex="1"/>
+                  <listcol flex="2"/>
+               </listcols>
+         
+               <listhead>
+                  <listheader label="&tamperdata.request.header.name;"/>
+                  <listheader label="&tamperdata.request.header.value;"/>
+               </listhead>
+            </listbox>
+
+            <splitter id="bottomSplitter" state="open"/>
+
+            <listbox id="response list" flex="1" context="responseTree.context" onselect="oTamper.gui.responseSelectionChange();" ondblclick="oTamper.gui.responseDoubleClick();">
+               <listcols>
+                  <listcol minwidth="150" flex="1"/>
+                  <listcol flex="2"/>
+               </listcols>
+         
+               <listhead>
+                   <listheader label="&tamperdata.response.header.name;"/>
+                   <listheader label="&tamperdata.response.header.value;"/>
+               </listhead>
+            </listbox>
+
+         </hbox>
+      </vbox>
+   </vbox>
+</window>

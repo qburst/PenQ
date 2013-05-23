@@ -1,0 +1,71 @@
+<!ENTITY tamperdata.tamperdata.title "Wychodzące żądania">
+<!ENTITY tamperdata.toolbar.startTamper "Rozpocznij">
+<!ENTITY tamperdata.toolbar.stopTamper "Zatrzymaj">
+<!ENTITY tamperdata.command.showAll "Pokaż wszystkie">
+<!ENTITY tamperdata.command.clear "Wyczyść">
+<!ENTITY tamperdata.command.options "Opcje">
+<!ENTITY tamperdata.command.help "Pomoc">
+<!ENTITY tamperdata.command.copy "Kopiuj">
+<!ENTITY tamperdata.command.copy.all "Kopiuj wszystkie">
+<!ENTITY tamperdata.command.export.xml "Wykesportuj zaznaczone (XML)">
+<!ENTITY tamperdata.command.export.all.xml "Wyeksportuj wszystko (XML)">
+<!ENTITY tamperdata.command.show.graph "Pokaż wykres">
+<!ENTITY tamperdata.command.details "Detale">
+<!ENTITY tamperdata.command.reopen "Otwórz w przeglądarce">
+<!ENTITY tamperdata.command.replay "Powtórz w przeglądarce">
+<!ENTITY tamperdata.command.viewSource "Pokaż źródło">
+<!ENTITY tamperdata.command.graph.selected "Wykres zaznaczonych">
+<!ENTITY tamperdata.command.graph.all "Wykres wszystkich">
+<!ENTITY tamperdata.label.filter "Filtr">
+<!ENTITY tamperdata.tree.time "Czas">
+<!ENTITY tamperdata.tree.duration "Czas trwania">
+<!ENTITY tamperdata.tree.total.duration "Całkowity czas trwania">
+<!ENTITY tamperdata.tree.size "Rozmiar">
+<!ENTITY tamperdata.tree.method "Metoda">
+<!ENTITY tamperdata.tree.status "Stan">
+<!ENTITY tamperdata.tree.content.type "Typ zawartości">
+<!ENTITY tamperdata.tree.url "URL">
+<!ENTITY tamperdata.tree.load.flags "Wczytaj Flagi">
+<!ENTITY tamperdata.request.header.name "Nazwa nagłówka żądania">
+<!ENTITY tamperdata.request.header.value "Wartość nagłówka żądania">
+<!ENTITY tamperdata.response.header.name "Nazwa nagłówka odpowiedzi">
+<!ENTITY tamperdata.response.header.value "Wartość nagłówka odpowiedzi">
+<!ENTITY tamperdata.tamperPopup.title "Tamper Popup">
+<!ENTITY tamperdata.tamperPopup.request.header.name "Nazwa nagłówka żądania">
+<!ENTITY tamperdata.tamperPopup.request.header.value "Wartość nagłówka żądania">
+<!ENTITY tamperdata.tamperPopup.post.parameter.name "Nazwa parametru POST">
+<!ENTITY tamperdata.tamperPopup.post.parameter.value "Wartość parametru POST">
+<!ENTITY tamperdata.taskmenu.item "Dane Tamper">
+<!ENTITY tamperdata.sidebar.title "Dane Tamper">
+<!ENTITY tamperdata.tamperURI.title "- Modyfikuj URI">
+<!ENTITY tamperdata.tamperURI.base.uri "Bazowy URI">
+<!ENTITY tamperdata.tamperURI.protocol "Protokół">
+<!ENTITY tamperdata.tamperURI.credentials "Uprawnienia">
+<!ENTITY tamperdata.tamperURI.host "Host">
+<!ENTITY tamperdata.tamperURI.port "Port">
+<!ENTITY tamperdata.tamperURI.path "Ścieżka">
+<!ENTITY tamperdata.tamperURI.reference "Odwołanie">
+<!ENTITY tamperdata.tamperURI.get.parameters "Parametry GET">
+<!ENTITY tamperdata.tamperURI.get.parameter.name "Nazwa parametru GET">
+<!ENTITY tamperdata.tamperURI.get.parameter.value "Wartość parametru GET">
+<!ENTITY tamperdata.tamperOptions.title "- Opcje">
+<!ENTITY tamperdata.tamperOptions.tamper.images "Tamper z obrazkami itp.">
+<!ENTITY tamperdata.tamperOptions.add.replaces "Dodaj zamieniając istniejące">
+<!ENTITY tamperdata.tamperOptions.force.caching "Wymuś pliki tymczasowe (cache) na wszystkich żądaniach (podgląd źródła zadziała)">
+<!ENTITY tamperdata.tamperOptions.context.menu.entries "Pozycje menu kontekstowego">
+<!ENTITY tamperdata.tamperOptions.tamper.context.menu.entries "Pozycje menu kontekstowego Tamper">
+<!ENTITY tamperdata.tamperOptions.new.menu.entry "Nowy">
+<!ENTITY tamperdata.tamperOptions.delete.menu.entry "Usuń">
+<!ENTITY tamperdata.tamperOptions.label "Etykieta">
+<!ENTITY tamperdata.tamperOptions.update "Aktualizuj">
+<!ENTITY tamperdata.tamperOptions.import "Importuj">
+<!ENTITY tamperdata.tamperOptions.export "Eksportuj">
+<!ENTITY tamperdata.tamperOptions.close "Zamknij">
+<!ENTITY tamperdata.details.dlg.title "Detale Tamper">
+<!ENTITY tamperdata.details.dlg.encoded "Zakodowany">
+<!ENTITY tamperdata.details.dlg.decoded "Odkodowany">
+<!ENTITY tamperdata.details.dlg.name.col "Nazwa">
+<!ENTITY tamperdata.details.dlg.value.col "Wartość">
+<!ENTITY tamperdata.view.source.title "- Pokaż źródło">
+<!ENTITY tamperdata.view.source.raw.data "Dane Raw">
+<!ENTITY tamperdata.view.source.uncompressed.data "Dane nieskompresowane">

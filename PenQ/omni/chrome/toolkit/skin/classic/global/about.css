@@ -1,0 +1,114 @@
+html {
+  background: rgb(48,48,48) url("chrome://browser/skin/penqErrorbg.png") repeat-x;
+  padding: 0 1em;
+  font: message-box;
+}
+
+html a {
+	color: #00ee41 !important;
+	text-decoration: none;
+}
+html a:hover {
+	color: #00ee41 !important;
+	text-decoration:underline;
+	-moz-transition: .1s ease-in;
+}
+html a:active, html a:focus {
+	color: #00ee41 !important;
+	text-decoration: none;
+	outline:none;
+	-moz-transition: .1s ease-in;
+}
+
+h1, h2 {
+  font-weight:lighter;
+}
+
+h1 {
+  color:#00ee41 !important;
+}
+
+h2 {
+  color:#e7e7e7 !important;
+}
+
+body {
+  color: #a6a6a6;
+  position: relative;
+  min-width: 330px;
+  max-width: 50em;
+  margin: 4em auto;
+  border-radius: 10px;
+  padding: 3em;
+  -moz-padding-start: 30px;
+  background: rgba(54,54,54,.1) !important;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75), 0px 0px 1px rgba(255, 255, 255, 0.25) inset;
+  border: 1px solid rgba(0,0,0,.5);
+}
+
+.aboutPageWideContainer {
+  max-width: 80%;
+}
+
+#aboutLogoContainer {
+  border: 0px solid ThreeDLightShadow;
+  width: 300px;
+  margin-bottom: 2em;
+}
+
+img {
+  border: 0;
+  width:200px;
+  
+}
+
+#version {
+  font-weight: bold;
+  color: #e7e7e7 !important;
+  margin: -24px 0 9px 17px;
+}
+
+ul {
+  margin: 0;
+  -moz-margin-start: 1.5em;
+  padding: 0;
+  list-style: square;
+}
+
+ul > li {
+  margin-top: .5em;
+}
+
+th, td {
+  padding: 15px;
+
+}
+
+td {
+  font-size: small;
+}
+
+th {
+  color: #e7e7e7;
+  font-weight: normal;
+  font-size: medium;
+  text-align:left;
+}
+
+table {
+  clear: both;
+  width: 100%;
+  margin: 0 auto;
+  border: 2px solid;
+  -moz-border-top-colors: rgba(255, 255, 255, 0.1) rgba(18,18,18,.8) !important;
+  -moz-border-right-colors: rgba(255, 255, 255, 0.1) rgba(18,18,18,.8) !important;
+  -moz-border-bottom-colors: rgba(255, 255, 255, 0.1) rgba(18,18,18,.8) !important;
+  -moz-border-left-colors: rgba(255, 255, 255, 0.1) rgba(18,18,18,.8) !important;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .06);
+  box-shadow: 0px 5px 8px rgba(0,0,0,.5) inset;
+  font-size: 8pt;
+  color:#a6a6a6;
+  padding:0 0 10px 0;
+  border-spacing:0;
+}

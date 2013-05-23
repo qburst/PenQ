@@ -1,0 +1,49 @@
+html, body, .dialog {
+  background: #383838;
+  color: #a6a6a6; 
+  font: 11px Tahoma,Verdana,sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+body { padding: 5px; }
+form { padding: 0px; margin: 0px; }
+form p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+table {
+  font: 11px Tahoma,Verdana,sans-serif;
+}
+select, input, button { font: 11px Tahoma,Verdana,sans-serif; }
+button { width: 70px;   
+      border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow:  0px 1px 1px rgba(255, 255, 255, 0.2) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.1);
+  background: rgba(10,10,10,1)
+              -moz-linear-gradient(rgba(97, 97, 97, 0.65), rgba(97, 97, 97, 0.3) 49%,
+			  rgba(80, 80, 80, 0.3) 51%, rgba(80, 80, 80, 0.18));
+ color: #00ee41 !important;
+  text-shadow: 0px 0px 3px #00ee41;
+  border-radius:5px;
+  }
+table .label { text-align: right; width: 8em;  color: #000;}
+
+.fl { width: 9em; float: left; padding: 2px 5px; text-align: right; }
+.fr { width: 7em; float: left; padding: 2px 5px; text-align: right; }
+fieldset { padding: 0px 10px 5px 5px; }
+.space { padding: 2px; }
+.title { background: #000; color: #ff4008; font-weight: bold; font-size: 120%; padding: 3px 10px; margin-bottom: 10px;
+border-bottom: 1px solid black; letter-spacing: 2px;
+}
+.buttonColor {
+  padding: 1px;
+  cursor: default;
+  border: 1px solid;
+   border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+}
+#buttons {
+      margin-top: 1em; 
+      border-top: 1px solid #999;
+      padding: 1em; 
+      text-align: right;
+
+}

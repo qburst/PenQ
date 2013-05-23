@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!-- 
+ **** BEGIN LICENSE BLOCK ****
+ Copyright(c) 2005 Adam Judson
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ Portions of this code have been based upon 
+ LiveHttpHeaders  - http://livehttpheaders.mozdev.org
+ Copyright(c) 2002-2003 Daniel Savard.
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ TamperData: 
+ - track and modify http requests and responses
+
+ This program is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ more details.
+
+ You should have received a copy of the GNU General Public License along with
+ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ Place, Suite 330, Boston, MA 02111-1307 USA
+
+ **** END LICENSE BLOCK ****
+
+-->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://tamperdata/locale/tamperdata.dtd">
+<dialog id="tamper-popup" title="&tamperdata.tamperPopup.title;"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept,cancel" 
+        ondialogaccept="TamperPopupDialog.modifyRequest();return true;"
+        ondialogcancel="return true;"
+        onload="TamperPopupDialog.init()"
+        onunload="return true;"
+        width="600"
+        height="600"
+        persist="width height screenX screenY">
+
+<script type="application/x-javascript" src="chrome://global/content/dialogOverlay.js" />
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperLang.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperPopup.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperPreferences.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperUtils.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperMenu.js"/>
+
+   <commandset>
+      <command id="tamper.menu.select" oncommand="menuSelect()"/>
+   </commandset>
+
+   <popupset id="tamper.popup.popupset">
+      <popup id="tamper.popup.popup" onpopupshowing="TamperMenu.instance.customizePopup();" onpopuphiding="TamperMenu.instance.unCustomizePopup();">
+      </popup>
+   </popupset>
+
+   <vbox flex="1">
+      <groupbox id="tamper group" flex="1">
+         <caption id="uri text" label="" crop="end" flex="1"/>
+         <hbox flex="1">   
+            <listbox id="header list" flex="1" context="tamper.popup.popup">
+               <listcols>
+                  <listcol minwidth="150" flex="1"/>
+                  <listcol flex="2"/>
+               </listcols>
+         
+               <listhead>
+                  <listheader label="&tamperdata.tamperPopup.request.header.name;"/>
+                  <listheader label="&tamperdata.tamperPopup.request.header.value;"/>
+               </listhead>
+            </listbox>
+   
+            <splitter id="bottomSplitter" state="open"/>
+   
+            <listbox id="post data list" flex="1" context="tamper.popup.popup">
+               <listcols>
+                  <listcol minwidth="150" flex="1"/>
+                  <listcol flex="2"/>
+               </listcols>
+         
+               <listhead>
+                   <listheader label="&tamperdata.tamperPopup.post.parameter.name;"/>
+                   <listheader label="&tamperdata.tamperPopup.post.parameter.value;"/>
+               </listhead>
+            </listbox>
+         </hbox>
+      </groupbox>
+   </vbox>
+</dialog>

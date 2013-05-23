@@ -1,0 +1,37 @@
+
+#errorPageContainer {
+  background-image: url("chrome://global/skin/icons/warning-large.png");
+}
+
+#tabList {
+  width: 100%;
+  height: 12em;
+}
+
+treechildren::-moz-tree-image(icon),
+treechildren::-moz-tree-image(noicon) {
+  padding-right: 2px;
+  margin: 0px 2px;
+  width: 16px;
+  height: 16px;
+}
+
+treechildren::-moz-tree-image(noicon) {
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+}
+treechildren::-moz-tree-image(container, noicon) {
+  list-style-image: url("chrome://browser/skin/aboutSessionRestore-window-icon.png");
+}
+treechildren::-moz-tree-image(checked) {
+  list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+}
+treechildren::-moz-tree-image(partial) {
+  list-style-image: url("chrome://global/skin/checkbox/cbox-check-dis.gif");
+}
+
+#buttons {
+  width: 100%;
+}
+#buttons > button {
+  margin-top: 2em;
+}

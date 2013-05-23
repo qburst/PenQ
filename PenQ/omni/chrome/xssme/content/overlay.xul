@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="chrome://xssme/skin/overlay.css" type="text/css" ?>
+<!DOCTYPE overlay SYSTEM "chrome://xssme/locale/overlay.dtd">
+<overlay id="xssme-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <!--
+Copyright 2007 Security Compass
+
+This file is part of XSS Me.
+
+XSS Me is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+XSS Me is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with XSS Me.  If not, see <http://www.gnu.org/licenses/>.
+
+If you have any questions regarding XSS Me please contact
+tools@securitycompass.com
+-->
+    <script type="application/x-javascript;version=1.7" src="chrome://xssme/content/json.js" />
+    <script type="application/x-javascript;version=1.7" src="chrome://xssme/content/PrefObserver.js" />
+    <script type="application/x-javascript;version=1.7" src="chrome://xssme/content/overlay.js" />
+    <menupopup id="menu_ToolsPopup">
+        <menu id="Xssme-tools" label="XSS ME"  insertafter="devToolsSeparator" accesskey="x">
+            <menupopup>
+                <menuitem label="Open XSS Me Sidebar" observes="openXSSMeSidebar" />
+                <menuitem label="&xssme.options;" oncommand="window.openDialog('chrome://xssme/content/preferences.xul')" />
+                <menuitem label="&xssme.about;" oncommand="window.openDialog('chrome://xssme/content/about.xul');" />
+                <menuitem label="&xssme.help;" oncommand="window.open('http://securitycompass.com/exploitme.shtml', 'helpwindow', '');" />  
+            </menupopup>
+        </menu>
+    </menupopup>
+    <broadcasterset id="mainBroadcasterSet">
+        <broadcaster id="openXSSMeSidebar"
+                     label="Open XSS Me Sidebar"
+                     autoCheck="false"
+                     group="sidebar"
+                     sidebarurl="chrome://xssme/content/xssme_sidebar.xul"
+                     sidebartitle="XSS Me"
+                     oncommand="toggleSidebar('openXSSMeSidebar');" />
+    </broadcasterset>
+    
+    <popup id="contentAreaContextMenu">
+        
+        <menuitem label="Open XSS Me Sidebar"
+                  observes="openXSSMeSidebar"
+                  insertbefore="context-viewbgimage"
+                  id="xssmecontextmenu" />
+        
+    </popup>
+</overlay>

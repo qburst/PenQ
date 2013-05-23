@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Xinha Here!</title>
+
+  <script type="text/javascript" src="./options.js"></script>
+  
+  <script type="text/javascript">// Set xinha directory
+    var _editor_url = window.location.href;
+    var _editor_url = _editor_url.substring(0, _editor_url.lastIndexOf('/')+1)+"xinha-core/";
+	var _editor_lang = "en";
+  </script>
+
+  <!-- Load up the actual editor core -->
+  <script type="text/javascript" src="./xinha-core/XinhaCore.js"></script>
+  
+  <!-- Load up Xinha Here version of dialog.js -->
+  <!-- script type="text/javascript" src="dialog.js"></script -->
+  
+  <!-- Must be here to override default Xinha styles -->
+  <style>
+	@import url("xinha_editor.css");
+  </style>
+
+  <!-- Xinah Here extension core script -->
+  <script src="xinha_editor.js" type="text/javascript"></script>
+
+</head>
+
+<body class="dialog">
+	<div align="center" id="content">
+		<textarea cols="" rows="1" name="myTextArea" id="myTextArea">
+	    </textarea>
+	</div>
+	<div class="buttons" id="submits" style="visibility: hidden; float: right;"><button onclick="update(event.shiftKey); xinhaClose();" class="dialog" title="Set HTML and close">OK</button> <button onclick="update(event.shiftKey);"  class="dialog" title="Set HTML"/>Apply</button> <button onclick="xinhaClose();" title="Close" class="dialog">Cancel</button></div>
+	<div class="buttons" style="visibility: show; float: left;"></div>
+</body>
+</html>

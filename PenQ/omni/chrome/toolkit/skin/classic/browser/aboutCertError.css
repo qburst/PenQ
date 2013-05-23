@@ -1,0 +1,214 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is mozilla.org code.
+ *
+ * The Initial Developer of the Original Code is
+ * Mozilla Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 2008
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   William Price <bugzilla@mob.rice.edu>
+ *   Steven Garrity <steven@silverorange.com>
+ *   Henrik Skupin  <mozilla@hskupin.info>
+ *   Johnathan Nightingale <johnath@mozilla.com>
+ *   Ehsan Akhgari <ehsan.akhgari@gmail.com>
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+
+html {
+  background: rgb(48,48,48) url("chrome://browser/skin/penqErrorbg.png") repeat-x;
+}
+
+html a {
+	color: #00ee41 !important;
+	text-decoration: none;
+	font-weight:lighter;
+}
+html a:hover {
+	color: #00ee41 !important;
+	text-decoration:underline;
+    -moz-transition: .1s ease-in;
+}
+html a:active, html a:focus {
+	color: #00ee41 !important;
+	text-decoration: none;
+	outline:none;
+    -moz-transition: .1s ease-in;
+}
+
+body {
+  margin: 0;
+  padding: 0 1em;
+  color: #c4c5cb;
+  font: message-box;
+}
+
+h1 {
+  margin: 0 0 .6em 0;
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: rgba(255,255,255,0.1) rgb(19,19,19);
+  padding-bottom:5px;
+  font-size: 160%;
+  font-weight:lighter;
+  color: #00ee41;
+}
+
+h2 {
+  color: #a6a6a6;
+  font-weight: lighter;
+  font-size: 130%;
+}
+
+#errorPageContainer {
+  position: relative;
+  min-width: 13em;
+  max-width: 52em;
+  margin: 4em auto;
+  border-radius: 10px;
+  padding: 3em;
+  -moz-padding-start: 30px;
+  background: rgba(54, 54, 54, .1) url("chrome://global/skin/icons/sslWarning.png") left 0 no-repeat;
+  background-origin: content-box;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75), 0px 0px 1px rgba(255, 255, 255, 0.25) inset;
+  border: 1px solid rgba(0,0,0,.5);
+}
+
+body[dir="rtl"] #errorPageContainer {
+  background-position: right 0;
+}
+
+#errorTitle {
+  -moz-margin-start: 80px;
+}
+
+#errorLongContent {
+  -moz-margin-start: 80px;
+}
+
+#technicalContent > h2, #expertContent > h2 {
+  background : url("chrome://browser/skin/section_expanded.png") left center no-repeat;
+}
+
+body[dir="rtl"] #technicalContent > h2,
+body[dir="rtl"] #expertContent > h2 {
+  background-position: right center;
+}
+
+#technicalContent[collapsed] > h2,
+#expertContent[collapsed] > h2{
+  background-image: url("chrome://browser/skin/section_collapsed.png");
+}
+
+body[dir="rtl"] #technicalContent[collapsed] > h2,
+body[dir="rtl"] #expertContent[collapsed] > h2 {
+  background-image: url("chrome://browser/skin/section_collapsed-rtl.png");
+}
+
+/* :::::::::::::::::: BUTTONS ::::::::::::::::::::: */
+
+button {
+  -moz-appearance: none;
+  margin: 1px 5px 2px 5px;
+  min-width: 6.3em;
+  border-radius: 4.5px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.15);
+  background: #171717 url("chrome://global/skin/buttons/button_bg.png") repeat-x;
+  color: #a6a6a6;
+  text-shadow: none;
+}
+
+button:hover {
+  background: #171717 url("chrome://global/skin/buttons/button_hover_bg.png") repeat-x;
+  color: #ffffff;
+  -moz-transition: .2s ease-in;
+}
+
+.button-box {
+  border: 1px solid transparent;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 4px;
+}
+
+.button-text {
+  margin: 0 !important;
+  text-align: center;
+}
+
+/* .......... focused state .......... */
+
+button:focus {
+  color :#00ee41 !important;
+  -moz-transition: .2s ease-in;
+}
+
+/* .......... active/open/checked state .......... */
+
+button:active,
+button[open="true"],
+button[checked="true"] {
+  box-shadow: 0px 0px 5px rgba(4,4,4,1) inset,
+			  0 1px 0 rgba(255,255,255,.15);
+  -moz-transition: .2s ease-in;
+}
+
+button:active > .button-box:-moz-system-metric(windows-classic),
+button[open="true"] > .button-box:-moz-system-metric(windows-classic),
+button[checked="true"] > .button-box:-moz-system-metric(windows-classic) {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  -moz-padding-start: 4px;
+  -moz-padding-end: 3px;
+}
+
+/* .......... disabled state .......... */
+
+button[disabled="true"] {
+  background: #222222 url("chrome://global/skin/buttons/button_bg[disable].png") repeat-x;
+  border-radius: 4.5px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.5);
+  cursor:default;
+  color: rgba(200,200,200,.65) !important;
+}
+
+button[disabled="true"]:-moz-system-metric(windows-classic) {
+  /*color: ThreeDShadow;*/
+  text-shadow: 1px 1px #202020;
+}
+
+button[disabled="true"] > .button-box {
+  padding-top: 1px !important;
+  padding-bottom: 2px !important;
+  -moz-padding-start: 3px !important;
+  -moz-padding-end: 4px !important;
+}

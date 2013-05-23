@@ -1,0 +1,250 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Mozilla Communicator client code, released
+ * March 31, 1998.
+ *
+ * The Initial Developer of the Original Code is
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Joe Hewitt (hewitt@netscape.com)
+ *   Pamela Greene (pamg.bugs@gmail.com)
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/* ===== autocomplete.css =================================================
+  == Styles used by the autocomplete widget.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/* ::::: autocomplete ::::: */
+
+/* .padded is used by autocomplete widgets that don't have an icon. Gross. -dwh */
+textbox:not(.padded) {
+  cursor: default;
+  padding: 0;
+}
+
+textbox[nomatch="true"][highlightnonmatches="true"] {
+  color: red;
+}
+
+.autocomplete-textbox-container {
+  -moz-box-align: center;
+}
+
+textbox:not(.padded) .textbox-input-box {
+  margin: 0 3px;
+}
+
+.textbox-input-box {
+  -moz-box-align: center;
+}
+
+/* ::::: autocomplete popups ::::: */
+
+panel[type="autocomplete"],
+panel[type="autocomplete-richlistbox"],
+.autocomplete-history-popup {
+  -moz-appearance: none;
+  padding: 5px;
+  -moz-window-shadow: none !important;
+  background: rgba(39,39,39,.97) !important;
+  border-radius:3px;
+  border: 2px solid;
+ -moz-border-top-colors : rgba(29, 29, 29, 1) rgba(255, 255, 255, 0.1);
+ -moz-border-left-colors : rgba(29, 29, 29, 1) rgba(255, 255, 255, 0.075);
+ -moz-border-right-colors : rgba(29, 29, 29, 1) rgba(255, 255, 255, 0.075);
+ -moz-border-bottom-colors: rgba(29, 29, 29, 1) rgba(255, 255, 255, 0.05);
+}
+
+.autocomplete-history-popup {
+  max-height: 180px;
+}
+
+treechildren.autocomplete-treebody::-moz-tree-row(odd){
+  background-color: transparent !important;
+}
+
+treechildren.autocomplete-treebody::-moz-tree-row(hover){
+  background-color: rgb(39,39,39) !important;
+}
+
+/* ::::: tree ::::: */
+
+.autocomplete-tree {
+  -moz-appearance: none !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.autocomplete-treecol {
+  -moz-appearance: none !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* GTK calculates space for a sort arrow */
+.autocomplete-treecol > .treecol-sortdirection {
+  -moz-appearance: none !important;
+}
+
+.autocomplete-treebody::-moz-tree-cell-text {
+  -moz-padding-start: 8px;
+}
+
+treechildren.autocomplete-treebody::-moz-tree-row(selected) {
+  background: rgba(10,10,10,.5);
+}
+
+treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
+  color: #ffffff !important;
+}
+
+.autocomplete-treebody::-moz-tree-image(treecolAutoCompleteValue) {
+  max-width: 16px;
+  height: 16px;
+}
+
+/* ::::: richlistbox autocomplete ::::: */
+
+.autocomplete-richlistbox {
+  -moz-appearance: none;
+  margin: 0;
+  text-shadow: 0 1px 0 #ffffff;
+}
+
+.autocomplete-richlistitem[selected="true"] {
+  background: #343434 !important;
+  color: #a6a6a6;
+  box-shadow: 0px 3px 7px rgba(0,0,0,.8) inset !important;
+  border-top: 1px solid rgb(4,4,4) !important;
+  text-shadow: 0 1px 0 rgb(18,18,18);
+}
+
+.autocomplete-richlistitem:hover {
+  background: #ffffff !important;
+  color: #272727 !important;
+  box-shadow:none !important;
+  border-top: 1px solid transparent !important;
+  text-shadow: none !important;
+  -moz-transition: none !important;
+}
+
+.autocomplete-richlistitem {
+  padding: 2px 2px 7px 2px;
+  border-top: 1px solid #b6b6b6 !important;
+}
+
+.autocomplete-richlistitem:not(:first-child) {
+  /*border-top: 1px solid ThreeDLightShadow;*/
+}
+
+.ac-site-icon {
+  width: 16px; 
+  height: 16px;
+  margin: 0 5px -3px 3px;
+}
+
+.ac-type-icon {
+  width: 16px; 
+  height: 16px;
+}
+
+.ac-extra > .ac-result-type-tag {
+  margin: 0 4px;
+}
+
+.ac-extra > .ac-comment {
+  padding-right: 4px;
+}
+
+.ac-ellipsis-after {
+  margin: 2px 0px 0px 0px !important;
+  padding: 0; 
+  min-width: 1em;
+}
+
+.ac-normal-text {
+  margin: 2px 0px 0px 0px !important;
+  padding: 0;
+}
+
+.ac-normal-text > html|span {
+  margin: 0 !important;
+  padding: 0;
+}
+
+
+.ac-url-text {
+	color: rgb(103,103,103) !important;
+}
+
+.ac-url-text:hover {
+	color: rgb(166,166,166) !important;
+}
+
+
+html|span.ac-emphasize-text {
+  font-weight: bold;
+  color: #00ee41;
+}
+
+html|span.ac-emphasize-alt {
+  text-decoration: underline;
+}
+
+.ac-title, .ac-url {
+  overflow: hidden;
+}
+
+.ac-title{
+  font-weight: lighter;
+}
+
+.autocomplete-richlistitem[selected="true"] .ac-title {
+  color: #FFFFFF;
+}
+
+.autocomplete-richlistitem:hover .ac-title{
+  color:#272727 !important;
+}
+
+/* ::::: textboxes inside toolbarpaletteitems ::::: */
+
+toolbarpaletteitem > toolbaritem > textbox > hbox > hbox > html|*.textbox-input {
+  visibility: hidden;
+}
+
+toolbarpaletteitem > toolbaritem > * > textbox > hbox > hbox > html|*.textbox-input {
+  visibility: hidden;
+}
+

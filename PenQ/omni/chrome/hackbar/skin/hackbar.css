@@ -1,0 +1,18 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+menu#firstMenuItem { margin-left: 88px; }
+
+textbox#hackBarTargetUrl,
+textbox#hackBarTargetUrlPostField,
+textbox#hackBarTargetUrlReferrerField { font-family: monospace, courier; font-size: 12px; }
+
+toolbarbutton#hackBarWebButton { list-style-image: url("chrome://hackbar/skin/web.png"); }
+toolbarbutton#hackBarCopyButton { list-style-image: url("chrome://hackbar/skin/load.png"); }
+toolbarbutton#hackBarSplitButton { list-style-image: url("chrome://hackbar/skin/split.gif"); }
+
+/* Button */
+toolbarbutton#hackBarToolbarButton { list-style-image: url("chrome://hackbar/skin/toolbar_button.png"); }
+toolbarbutton.custombutton {-moz-image-region: rect( 0px 24px 24px  0px);}
+toolbarbutton.custombutton:hover {-moz-image-region: rect(24px 24px 48px  0px);}
+[iconsize="small"] toolbarbutton.custombutton {-moz-image-region: rect( 0px 40px 16px 24px);}
+[iconsize="small"] toolbarbutton.custombutton:hover {-moz-image-region: rect(24px 40px 40px 24px);}

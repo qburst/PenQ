@@ -1,0 +1,191 @@
+
+@import url("chrome://global/skin/");
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+
+#warningScreen
+{
+  background: rgb(48,48,48) url("chrome://browser/skin/penqErrorbg.png") repeat-x;
+}
+
+html a {
+	color: #00ee41 !important;
+	text-decoration: none;
+}
+html a:hover {
+	color: #00ee41 !important;
+	text-decoration:underline;
+	-moz-transition: .1s ease-in;
+}
+html a:active, html a:focus {
+	color: #00ee41 !important;
+	text-decoration: none;
+	outline:none;
+	-moz-transition: .1s ease-in;
+}
+
+h1 {
+  margin: 0 0 .6em 0;
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: rgba(255,255,255,0.1) rgb(16,16,19) ;
+  font-size: 150%;
+  font-weight:lighter;
+  padding-bottom:5px;
+  color:#00ee41;
+}
+
+#warningBox
+{
+  background: rgba(54,54,54,.1) !important;
+  color: #e7e7e7;
+  border-radius: 10px;
+  padding: 3em;
+  -moz-padding-start: 30px;
+  margin-left: 1em;
+  margin-right: 1em;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75), 0px 0px 1px rgba(255, 255, 255, 0.25) inset;
+  border: 1px solid rgba(0,0,0,.5);
+}
+
+#warningInnerBox
+{
+ max-width: 50em;
+}
+
+#warningTitle
+{
+  margin: 0 0 .6em 0;
+  font-size: 160%;
+  font-weight:lighter;
+  padding-bottom:5px;
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: rgba(255,255,255,0.1) rgb(16,16,19);
+  color: #00ee41;
+}
+
+#warningText
+{
+  font-size: 110%;
+  margin-left: 0;
+}
+
+#warningButton
+{
+  margin-top: 0.6em;
+}
+
+#showWarningNextTime
+{
+  margin-top: 0.6em;
+}
+
+#exclam
+{
+  list-style-image: url("chrome://global/skin/icons/warning-large.png");
+  -moz-margin-end: 3em;
+}
+
+#configTreeBody::-moz-tree-cell-text(user)
+{
+  font-weight: bold;
+}
+
+#configTreeBody::-moz-tree-cell-text(locked)
+{
+  font-style: italic;
+}
+
+#configTree 
+{  
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#filterRow
+{
+  margin-top: 5px;
+}
+
+/* :::::::::::::::::: BUTTONS ::::::::::::::::::::: */
+
+button {
+  -moz-appearance: none;
+  margin: 1px 5px 2px 5px;
+  min-width: 6.3em;
+  border-radius: 4.5px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.15);
+  background: #171717 url("chrome://global/skin/buttons/button_bg.png") repeat-x;
+  color: #a6a6a6;
+  text-shadow: none;
+}
+
+button:hover {
+  background: #171717 url("chrome://global/skin/buttons/button_hover_bg.png") repeat-x;
+  color: #ffffff;
+  -moz-transition: .2s ease-in;
+}
+
+.button-box {
+  border: 1px solid transparent;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 4px;
+}
+
+.button-text {
+  margin: 0 !important;
+  text-align: center;
+}
+
+/* .......... focused state .......... */
+
+button:focus {
+  color :#00ee41 !important;
+  -moz-transition: .2s ease-in;
+}
+
+/* .......... active/open/checked state .......... */
+
+button/*:hover*/:active,
+button[open="true"],
+button[checked="true"] {
+  box-shadow: 0px 0px 5px rgba(4,4,4,1) inset,
+			  0 1px 0 rgba(255,255,255,.15);
+  -moz-transition: .2s ease-in;
+}
+
+button/*:hover*/:active > .button-box:-moz-system-metric(windows-classic),
+button[open="true"] > .button-box:-moz-system-metric(windows-classic),
+button[checked="true"] > .button-box:-moz-system-metric(windows-classic) {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  -moz-padding-start: 4px;
+  -moz-padding-end: 3px;
+}
+
+/* .......... disabled state .......... */
+
+button[disabled="true"] {
+  background: #222222 url("chrome://global/skin/buttons/button_bg[disable].png") repeat-x;
+  border-radius: 4.5px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.15);
+  cursor:default;
+  color: rgba(200,200,200,.65) !important;
+}
+
+button[disabled="true"]:-moz-system-metric(windows-classic) {
+  /*color: ThreeDShadow;*/
+  text-shadow: 1px 1px #202020;
+}
+
+button[disabled="true"] > .button-box {
+  padding-top: 1px !important;
+  padding-bottom: 2px !important;
+  -moz-padding-start: 3px !important;
+  -moz-padding-end: 4px !important;
+}

@@ -1,0 +1,71 @@
+
+html {
+  font-family: sans-serif;
+  background: -moz-Field;
+  color: -moz-FieldText;
+  height: 100%;
+  width: 94%;
+  background-image: url("chrome://browser/content/bgPenQ1.png");
+  background-repeat: no-repeat;
+  background-color: #383838;
+}
+
+body {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ .headBox{
+    width:100%;
+    text-align:left;
+    border-bottom:1px solid #5d5d5d;
+	padding:25px;
+	font-size:24px;
+        }
+	     .headBox img{
+	    
+             display:inline-block;
+
+	    }
+
+	  .headBox div{
+	    
+             padding:10px;
+		color:#ff4008 !important;
+
+	    }
+
+          .container{
+ 		color:#ffffff !important;
+		outline: none;
+		padding:25px;
+		border-radius:8px;
+		opacity:0.8;
+		background-color:#383838;
+		border:1px solid #ffffff;
+		box-shadow:0px 0px 10px #ffffff;
+		margin:30px;
+		}
+            .container a {
+              	outline: none;
+	      	text-decoration:none;
+		cursor:pointer;
+		color:#ff4008 !important;
+		}
+            .container a:active {
+              outline: none;
+	      text-decoration:none;
+	      cursor:pointer;
+            }
+            .container a:hover {
+              color: #00ee41 !important;
+              cursor: pointer;
+            }
+            

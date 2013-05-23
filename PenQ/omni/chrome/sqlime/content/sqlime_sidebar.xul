@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://sqlime/skin/sqlime_sidebar.css" type="text/css"?>
+<window
+    id="sidebar"
+    title="SQL Inject Me"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    xmlns:html="http://www.w3.org/1999/xhtml" >
+    <!-- 
+Copyright 2007 Security Compass
+
+This file is part of SQL Inject Me.
+
+SQL Inject Me is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SQL Inject Me is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SQL Inject Me.  If not, see <http://www.gnu.org/licenses/>.
+
+If you have any questions regarding SQL Inject Me please contact
+tools@securitycompass.com
+-->
+    <script type="application/x-javascript;version=1.7" 
+            src="chrome://sqlime/content/sqlime.js" />
+    <script type="application/x-javascript"
+            src="chrome://sqlime/content/json.js" />
+    <script type="application/x-javascript" 
+            src="chrome://global/content/findUtils.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/io.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/util.js" />
+    <script type="application/x-javascript"
+            src="chrome://sqlime/content/htmlStringEncoder.js" />
+    <script type="application/x-javascript"
+            src="chrome://sqlime/content/sidebarBuilder.js" />
+    <script type="application/x-javascript"
+            src="chrome://sqlime/content/StreamListener.js" />
+    <script type="application/x-javascript"
+            src="chrome://sqlime/content/PrefObserver.js" />
+    <script type="application/x-javascript"
+            src="chrome://sqlime/content/TestManager.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/TestRunnerContainer.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/progressListener.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/tabbrowsermanager.js" />
+    <script type="application/x-javascript"
+            src="chrome://sqlime/content/Results.js" />
+    <script type="application/x-javascript"
+            src="chrome://sqlime/content/FieldResult.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/ResultsManager.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/preferenceStringContainer.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/attackStringContainer.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/ErrorStringContainer.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/AttackRunner.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/AttackHttpResponseObserver.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/sqlimeevaluators.js" />
+    <script type="application/x-javascript" 
+            src="chrome://sqlime/content/sqlime_sidebar.js"/>
+    <commandset>
+        <command id="sqlime_generate_form_ui" oncommand="setTimeout(function(){sqlimeExtension.do_generate_form_ui()}, 1);" />
+        <command id="sqlime_do_test" oncommand="sqlimeExtension.run_tests(event)" />
+    </commandset>
+    <box>
+        <html:a href="http://www.securitycompass.com" target="securitycompasssite">
+            <image src="chrome://sqlime/skin/small_logo_sc.png" />
+        </html:a>
+    </box>
+    <label style="font-size: xx-large" class="title">SQL Inject Me</label>
+    <vbox style="overflow:auto;" flex="1">
+        <description>
+            SQL Inject Me lets you test the page you're viewing for SQL Injection vulnerabilities.
+        </description>
+        <description>
+            Each tab represents a form on the page and lists all the fields. Just fill in good values for all the fields and mark which ones are to be tested (they will become yellow) then click either "Test with All Attacks" or "Test with Top Attacks".
+        </description>
+        <spacer height="5px" />
+        <hbox>
+            <vbox id="sqlimetestbuttonbox"  align="start" flex="0" >
+                <button label="Test all forms with all attacks" crop="right" id='test_all_forms_with_all_attacks' command="sqlime_do_test" />
+                <button label="Test all forms with top attacks" crop="right" id='test_all_forms_with_top_attacks' command="sqlime_do_test" />
+            </vbox>
+        </hbox>
+        <spacer style="height: 5px" />
+        <box id="sqlime_here_be_tabs" pack="start" align="start" >
+        </box>
+        <spacer flex="1" />
+    </vbox>
+    <script>
+        window.addEventListener("load", function() {
+        sqlimeExtension = new extension();
+        sqlimeExtension.addAllMainWindowEventListeners();
+        document.getElementById('sqlime_generate_form_ui').doCommand();}, 
+                true);
+        
+        window.addEventListener("unload", 
+            function() { sqlimeExtension.removeAllMainWindowEventListeners()}, 
+                true); // This should limit leaks
+    </script>
+</window>

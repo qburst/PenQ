@@ -1,0 +1,57 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.wizard-header {
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: rgba(255, 255, 255, 0.15) rgb(29,29,29);
+   background-image: -moz-linear-gradient(rgb(70,70,70), rgb(53,53,53) 75%);
+  color: #a6a6a6;
+}
+
+.wizard-header-box-1 {
+  padding: 5px 0px 5px 0px;
+}
+
+wizard[description=""] .wizard-header-description {
+  display: none;
+}
+
+.wizard-header-label {
+  -moz-margin-start: 23px;
+  font-weight: lighter;
+  color: #00ee41;
+}
+
+.wizard-header-description {
+  -moz-margin-start: 44px;
+}
+
+wizard[branded="true"] .wizard-header-icon {
+  list-style-image: url("chrome://branding/content/icon48.png");
+  -moz-margin-end: 5px;
+}
+
+.wizard-page-box {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px !important;
+}
+
+.wizard-buttons-separator {
+  margin-bottom: 0px !important;
+}
+
+.wizard-buttons-box-2 {
+  margin: 10px;
+}
+
+.wizard-button[dlgtype="finish"]{
+  -moz-margin-start: 0px !important;
+}
+
+.wizard-button[dlgtype="next"] {
+  -moz-margin-start: 3px !important;  
+}
+
+.wizard-button[dlgtype="back"] {
+  -moz-margin-end: 3px !important;
+}

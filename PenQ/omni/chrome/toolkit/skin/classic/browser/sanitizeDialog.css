@@ -1,0 +1,104 @@
+#sanitizeDurationChoice {
+  -moz-margin-end: 0;
+}
+
+/* Align the duration label with the warning box and item list */
+#sanitizeDurationLabel {
+  -moz-margin-start: 3px;
+}
+
+
+/* Hide the duration dropdown suffix label if it's empty.  Otherwise it
+   takes up a little space, causing the end of the dropdown to not be aligned
+   with the warning box. */
+#sanitizeDurationSuffixLabel[value=""] {
+  display: none;
+}
+
+
+/* Places tree */
+#placesTreechildren::-moz-tree-row(selected),
+#placesTreechildren::-moz-tree-row(grippyRow) {
+  background: #999;
+}
+
+#placesTreechildren::-moz-tree-cell-text(selected) {
+  color: #111;
+}
+
+
+/* Sanitize everything warning box */
+#sanitizeEverythingWarningBox {
+  background-color: #343434;
+  border:2px solid;
+  -moz-border-top-colors: rgb(63, 63, 63) rgb(29, 29, 29) !important;
+  -moz-border-right-colors: rgb(63, 63, 63) rgb(29, 29, 29) !important;
+  -moz-border-bottom-colors: rgb(63, 63, 63) rgb(29, 29, 29) !important;
+  -moz-border-left-colors: rgb(63, 63, 63) rgb(29, 29, 29) !important;
+  border-radius: 5px;
+  padding: 16px;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.75) inset;
+}
+
+#sanitizeEverythingWarningIcon {
+  list-style-image: url("chrome://global/skin/icons/warning-large.png");
+  padding: 0;
+  margin: 0;
+}
+
+#sanitizeEverythingWarningDescBox {
+  padding: 0 16px;
+  margin: 0;
+}
+
+
+/* Progressive disclosure button */
+#detailsExpanderWrapper {
+  padding: 0;
+  margin: 6px 0;
+}
+
+.expander-up,
+.expander-down {
+  min-width: 0;
+  margin: 0;
+  background:none !important;
+  border:none !important;
+  box-shadow: none;
+}
+
+.expander-up > .button-box,
+.expander-down > .button-box {
+  padding: 0;
+}
+
+.expander-up {
+  list-style-image: url("chrome://global/skin/icons/collapse.png");
+}
+
+.expander-up:hover {
+  list-style-image: url("chrome://global/skin/icons/collapse[hover].png");
+}
+
+.expander-down {
+  list-style-image: url("chrome://global/skin/icons/expand.png");
+}
+
+.expander-down:hover {
+  list-style-image: url("chrome://global/skin/icons/expand[hover].png");
+}
+
+/* Make the item list the same width as the warning box */
+#itemList {
+  -moz-margin-start: 0;
+  -moz-margin-end: 0;
+}
+
+
+/* Align the last dialog button with the end of the warning box */
+.prefWindow-dlgbuttons {
+  -moz-margin-end: 0;
+}
+.dialog-button[dlgtype="cancel"] {
+  -moz-margin-end: 0;
+}

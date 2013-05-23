@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE dialog PUBLIC "-//MOZILLA//DTD XUL V1.0//EN" "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://xssme/skin/whiletestruns.css" type="text/css"?>
+<dialog id="dialog-name"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        title="Your XSS Tests are running"
+        buttons="accept"
+        ondialogaccept="return OK();"
+        ondialogcancel="return OK();"
+        onload="onLoad();"
+        onunload="onUnLoad()"
+        flex="1"
+        >
+<!--
+Copyright 2007 Security Compass
+
+This file is part of XSS Me.
+
+XSS Me is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+XSS Me is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with XSS Me.  If not, see <http://www.gnu.org/licenses/>.
+
+If you have any questions regarding XSS Me please contact
+tools@securitycompass.com
+-->
+    <script type="application/x-javascript;version=1.7"
+        src="chrome://xssme/content/whiletestruns.js" />
+    <vbox flex="1">
+        <label value="Test speed may vary due to network traffic inconsistency." />
+        <vbox flex="1" id='heuristicTestingBox'>
+            <label value='Probing for XSS Vulnerabilities: ' />
+            <description><xhtml:span id='heuristicTestCount'></xhtml:span> Tests Run
+            </description>
+            <progressmeter id='heuristicBar' mode='determined'/>
+        </vbox>
+        <vbox flex="1">
+            <label value='Testing with XSS Strings:' />
+            <description><xhtml:span id='thoroughTestCount'>0/TBD</xhtml:span> Tests Run
+            </description>
+            <progressmeter id='thoroughBar' mode="determined" />
+        </vbox>
+    </vbox>
+</dialog>

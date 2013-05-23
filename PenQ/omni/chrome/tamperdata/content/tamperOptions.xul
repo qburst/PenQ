@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!-- 
+ **** BEGIN LICENSE BLOCK ****
+ Copyright(c) 2005 Adam Judson
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ Portions of this code have been based upon 
+ LiveHttpHeaders  - http://livehttpheaders.mozdev.org
+ Copyright(c) 2002-2003 Daniel Savard.
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ TamperData: 
+ - track and modify http requests and responses
+
+ This program is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ more details.
+
+ You should have received a copy of the GNU General Public License along with
+ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ Place, Suite 330, Boston, MA 02111-1307 USA
+
+ **** END LICENSE BLOCK ****
+
+-->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://tamperdata/locale/tamperdata.dtd">
+<window id="tamper-options-window" 
+        title="Tamper Data &tamperdata.tamperOptions.title;"
+        windowtype="global:TamperDataOptions"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="TamperOptions.init(); sizeToContent();" 
+        persist="screenX screenY">
+
+<script type="application/x-javascript" src="chrome://global/content/dialogOverlay.js" />
+<script type="application/x-javascript" src="chrome://global/content/globalOverlay.js" />
+
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperLang.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperPreferences.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperOptions.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperUtils.js"/>
+
+   <vbox flex="1">
+      <spacer flex="1" style="min-height:1em" />
+      <hbox>
+         <checkbox id="tamper.options.images.CB"       label="&tamperdata.tamperOptions.tamper.images;" checked="false" oncommand="TamperOptions.instance.tamperImagesClick();"/>
+         <spacer/>
+         <checkbox id="tamper.options.addReplace.CB"   label="&tamperdata.tamperOptions.add.replaces;"  checked="false" oncommand="TamperOptions.instance.addReplaceExistingClick();"/>
+         <spacer/>
+         <checkbox id="tamper.options.forceCaching.CB" label="&tamperdata.tamperOptions.force.caching;" checked="false" oncommand="TamperOptions.instance.forceCachingClick();"/>
+      </hbox>
+      <separator class="groove"/>
+      <groupbox flex="1">
+         <caption label="&tamperdata.tamperOptions.context.menu.entries;" crop="end"/>
+         <spacer/>
+         <hbox flex="1">
+            <vbox flex="1">
+               <listbox flex="2" id="tamper.options.prefillLB" onselect="TamperOptions.instance.prefillSelectionChange();">
+                  <listhead>
+                     <listheader label="&tamperdata.tamperOptions.tamper.context.menu.entries;"/>
+                  </listhead>
+                  <listcols>
+                     <listcol flex="1"/>
+                  </listcols>
+                  <!-- items are inserted dynamically -->
+               </listbox>
+               <spacer flex="1"/>
+               <spacer flex="1" style="min-height:2em" />
+               <hbox>
+                  <spacer flex="1"/>
+                  <button label="&tamperdata.tamperOptions.new.menu.entry;"    oncommand="TamperOptions.instance.newMenuEntry();"/>
+                  <button label="&tamperdata.tamperOptions.delete.menu.entry;" id="tamper.prefill.delete.PB" oncommand="TamperOptions.instance.deleteMenuEntry();"/>
+               </hbox>
+            </vbox>
+            <splitter state="open" resizeafter="nearest"/>
+            <vbox flex="1">
+               <listbox id="tamper.options.items.tree" flex="1" onselect="TamperOptions.instance.itemSelected();">
+                  <listhead>
+                     <listheader label="&tamperdata.tamperOptions.label;"/>
+                  </listhead>
+                  <listcols>
+                     <listcol flex="1"/>
+                  </listcols>
+                  <!-- items are inserted dynamically -->
+               </listbox>
+               <spacer flex="1"/>
+               <textbox id="tamper.options.item.text" flex="1"/>
+               <hbox flex="1">
+                  <button label="&tamperdata.tamperOptions.update;" id="tamper.options.item.update" oncommand="TamperOptions.instance.itemValueChanged();"/>
+                  <spacer flex="1"/>
+               </hbox>
+               <spacer flex="1" style="min-height:2em" />
+               <hbox flex="1">
+                  <spacer flex="1"/>
+                  <button label="&tamperdata.tamperOptions.new.menu.entry;"    oncommand="TamperOptions.instance.newItem();"/>
+                  <button label="&tamperdata.tamperOptions.delete.menu.entry;" id="tamper.itemList.delete.PB" oncommand="TamperOptions.instance.deleteItem();"/>
+               </hbox>
+            </vbox>
+         </hbox>
+      </groupbox>
+      <separator class="groove"/>
+      <hbox>
+         <button label="&tamperdata.tamperOptions.import;" oncommand="TamperOptions.instance.importPreferences();"/>
+         <button label="&tamperdata.tamperOptions.export;" oncommand="TamperOptions.instance.exportPreferences();"/>
+         <spacer flex="1"/>
+         <button label="&tamperdata.tamperOptions.close;" oncommand="window.close();"/>
+      </hbox>
+   </vbox>
+</window>

@@ -1,0 +1,71 @@
+<!ENTITY tamperdata.tamperdata.title "- Richieste in corso">
+<!ENTITY tamperdata.toolbar.startTamper "Avvia la modifica">
+<!ENTITY tamperdata.toolbar.stopTamper "Ferma la modifica">
+<!ENTITY tamperdata.command.showAll "Mostra tutto">
+<!ENTITY tamperdata.command.clear "Svuota">
+<!ENTITY tamperdata.command.options "Opzioni">
+<!ENTITY tamperdata.command.help "Aiuto">
+<!ENTITY tamperdata.command.copy "Copia">
+<!ENTITY tamperdata.command.copy.all "Copia tutto">
+<!ENTITY tamperdata.command.export.xml "Esporta XML della selezione">
+<!ENTITY tamperdata.command.export.all.xml "Esporta XML di tutto">
+<!ENTITY tamperdata.command.show.graph "Mostra il grafico">
+<!ENTITY tamperdata.command.details "Dettagli">
+<!ENTITY tamperdata.command.reopen "Apri nel browser">
+<!ENTITY tamperdata.command.replay "Modifica URI">
+<!ENTITY tamperdata.command.viewSource "Visualizza sorgente">
+<!ENTITY tamperdata.command.graph.selected "Grafico della selezione">
+<!ENTITY tamperdata.command.graph.all "Grafico di tutto">
+<!ENTITY tamperdata.label.filter "Filtra">
+<!ENTITY tamperdata.tree.time "Data/Ora">
+<!ENTITY tamperdata.tree.duration "Durata">
+<!ENTITY tamperdata.tree.total.duration "Durata totale">
+<!ENTITY tamperdata.tree.size "Dimensione">
+<!ENTITY tamperdata.tree.method "Metodo">
+<!ENTITY tamperdata.tree.status "Stato">
+<!ENTITY tamperdata.tree.content.type "Tipo di contenuto">
+<!ENTITY tamperdata.tree.url "Indirizzo web">
+<!ENTITY tamperdata.tree.load.flags "Azione">
+<!ENTITY tamperdata.request.header.name "Richiesta del nome dell'intestazione">
+<!ENTITY tamperdata.request.header.value "Richiesta del valore dell'intestazione">
+<!ENTITY tamperdata.response.header.name "Risposta del nome dell'intestazione">
+<!ENTITY tamperdata.response.header.value "Risposta del valore dell'intestazione">
+<!ENTITY tamperdata.tamperPopup.title "Pop-up di modifica">
+<!ENTITY tamperdata.tamperPopup.request.header.name "Richiedi il nome dell'intestazione">
+<!ENTITY tamperdata.tamperPopup.request.header.value "Richiedi il valore dell'intestazione">
+<!ENTITY tamperdata.tamperPopup.post.parameter.name "Inserisci il nome dell'intestazione">
+<!ENTITY tamperdata.tamperPopup.post.parameter.value "Inserisci il nome dell'intestazione">
+<!ENTITY tamperdata.taskmenu.item "Modifica con Tamper Data">
+<!ENTITY tamperdata.sidebar.title "Modifica con Tamper Data">
+<!ENTITY tamperdata.tamperURI.title "- Modifica URI">
+<!ENTITY tamperdata.tamperURI.base.uri "URI di base">
+<!ENTITY tamperdata.tamperURI.protocol "Protocollo">
+<!ENTITY tamperdata.tamperURI.credentials "Credenziali">
+<!ENTITY tamperdata.tamperURI.host "Server">
+<!ENTITY tamperdata.tamperURI.port "Porta">
+<!ENTITY tamperdata.tamperURI.path "Percorso">
+<!ENTITY tamperdata.tamperURI.reference "Riferimento">
+<!ENTITY tamperdata.tamperURI.get.parameters "Parametri">
+<!ENTITY tamperdata.tamperURI.get.parameter.name "Nome del parametro">
+<!ENTITY tamperdata.tamperURI.get.parameter.value "Valore del parametro">
+<!ENTITY tamperdata.tamperOptions.title "- Opzioni">
+<!ENTITY tamperdata.tamperOptions.tamper.images "Modifica le immagini, etc.">
+<!ENTITY tamperdata.tamperOptions.add.replaces "Aggiungi/Sostituisci">
+<!ENTITY tamperdata.tamperOptions.force.caching "Forza memorizzazione nella cache ad ogni richiesta">
+<!ENTITY tamperdata.tamperOptions.context.menu.entries "Elementi del menu contestuale">
+<!ENTITY tamperdata.tamperOptions.tamper.context.menu.entries "Elementi del menu contestuale dell'estensione">
+<!ENTITY tamperdata.tamperOptions.new.menu.entry "Nuovo">
+<!ENTITY tamperdata.tamperOptions.delete.menu.entry "Elimina">
+<!ENTITY tamperdata.tamperOptions.label "Etichetta">
+<!ENTITY tamperdata.tamperOptions.update "Aggiorna">
+<!ENTITY tamperdata.tamperOptions.import "Importa">
+<!ENTITY tamperdata.tamperOptions.export "Esporta">
+<!ENTITY tamperdata.tamperOptions.close "Chiudi">
+<!ENTITY tamperdata.details.dlg.title "Dettagli">
+<!ENTITY tamperdata.details.dlg.encoded "Codificato">
+<!ENTITY tamperdata.details.dlg.decoded "Decodificato">
+<!ENTITY tamperdata.details.dlg.name.col "Nome">
+<!ENTITY tamperdata.details.dlg.value.col "Valore">
+<!ENTITY tamperdata.view.source.title "- Visualizza sorgente">
+<!ENTITY tamperdata.view.source.raw.data "Dati grezzi">
+<!ENTITY tamperdata.view.source.uncompressed.data "Dati non compressi">

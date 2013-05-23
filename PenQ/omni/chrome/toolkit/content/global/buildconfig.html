@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>about:buildconfig</title>
+  <link rel="stylesheet" href="chrome://global/skin/about.css" type="text/css">
+  <style type="text/css">
+    th { text-align: start; }
+    h2 { margin-top: 1.5em; }
+    th, td { vertical-align: top; }
+  </style>
+</head>
+<body class="aboutPageWideContainer">
+<h1>about:buildconfig</h1>
+<h2>Source</h2>
+<p>Built from <a href="http://hg.mozilla.org/releases/mozilla-esr10/rev/bd67b391fe22">http://hg.mozilla.org/releases/mozilla-esr10/rev/bd67b391fe22</a></p>
+<h2>Build platform</h2>
+<table>
+  <tbody>
+    <tr>
+      <th>target</th>
+    </tr>
+    <tr>
+      <td>i686-pc-linux-gnu</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Build tools</h2>
+<table>
+  <tbody>
+    <tr>
+      <th>Compiler</th>
+      <th>Version</th>
+      <th>Compiler flags</th>
+    </tr>
+    <tr>
+      <td> /tools/gcc-4.5/bin/gcc</td>
+      <td>gcc version 4.5.2 (GCC) </td>
+      <td> -Wall -W -Wno-unused -Wpointer-arith -Wdeclaration-after-statement -Wcast-align -W -pedantic -Wno-long-long -fno-strict-aliasing -fno-tree-vrp -pthread -ffunction-sections -fdata-sections -pipe  -DNDEBUG -DTRIMMED -g -fprofile-use -fprofile-correction -Wcoverage-mismatch -O3 -fomit-frame-pointer</td>
+    </tr>
+    <tr>
+      <td> /tools/gcc-4.5/bin/g++</td>
+      <td>gcc version 4.5.2 (GCC) </td>
+      <td> -fno-rtti -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Werror=return-type -pedantic -Wno-long-long -fno-exceptions -fno-strict-aliasing -std=gnu++0x -fno-tree-vrp -pthread -ffunction-sections -fdata-sections -pipe  -DNDEBUG -DTRIMMED -g -fprofile-use -fprofile-correction -Wcoverage-mismatch -O3 -fomit-frame-pointer </td>
+    </tr>
+  </tbody>
+</table>
+<h2>Configure arguments</h2>
+<p>--enable-update-channel=esr --enable-update-packaging --enable-official-branding --enable-stdcxx-compat</p>
+</body>
+</html>

@@ -1,0 +1,644 @@
+/* :::::::::: fix for firebug addon :::::::::: */
+
+#fbToolbar .toolbar-text-button, .toolbar-text-menubutton {
+  color: #a6a6a6 !important;
+}
+
+#fbToolbar  .toolbar-text-button:hover, .toolbar-text-menubutton:hover {
+  color: #0099ff !important;
+}
+
+#fbToolbar  .panelStatusLabel {
+  color: #a6a6a6 !important;
+}
+
+#fbToolbar  .panelStatusLabel:hover{
+  color: #0099ff !important;
+}
+
+#fbToolbar toolbarbutton label{
+  color: #a6a6a6 !important;
+}
+
+panelTab{
+  color: #a6a6a6 !important;
+}
+
+.fbsearch-icon {
+    background: url(chrome://browser/skin/tabview/search.png) no-repeat !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.closeButton {
+    background: url(chrome://global/skin/addons/firebug/close.png) no-repeat 0 0 !important;
+}
+
+#fbMinimizeButton {
+    list-style-image: url(chrome://global/skin/addons/firebug/min.png) !important;
+}
+
+#fbDetachButton {
+    list-style-image: url(chrome://global/skin/addons/firebug/detach.png) !important;
+}
+
+#fbCloseButton {
+    margin-right: 4px;
+    list-style-image: url("chrome://global/skin/addons/firebug/off.png") !important;
+}
+
+#fbCommandLineHistoryButton {
+    list-style-image: url(chrome://global/skin/addons/firebug/commandHistory.png) !important;
+}
+
+#fbToggleCommandLine {
+    list-style-image: url(chrome://global/skin/addons/firebug/up.png) !important;
+}
+
+#fbToggleCommandEditor {
+    list-style-image: url(chrome://global/skin/addons/firebug/down.png) !important;
+}
+
+.panelTabBox{
+    background-image: -moz-linear-gradient(rgb(70,70,70), rgb(53,53,53) 75%) !important;
+	border-bottom: 1px solid rgb(29,29,29) !important;
+}
+
+#fbContentSplitter{
+	border-top: 1px solid #42454c !important;
+	border: 1px solid #42454c !important;
+	background-color: #42454c !important;
+}
+
+panelBarArrowscrollbox > .scrollbutton-up,
+panelBarArrowscrollbox > .scrollbutton-down,
+.fb-tabs-alltabs-button {
+    border: 1px solid !important;
+    border-right-width: 1px !important;
+    -moz-border-top-colors: black !important;
+    -moz-border-right-colors: black !important;
+    -moz-border-left-colors: black !important;
+	border-bottom: 0px !important;
+    background: url("chrome://global/skin/addons/firebug/tab-bkgnd.png") repeat-x !important;
+}
+
+panelBarArrowscrollbox > .scrollbutton-up:not([disabled="true"]):hover,
+panelBarArrowscrollbox > .scrollbutton-down:not([disabled="true"]):hover,
+.fb-tabs-alltabs-button:hover {
+    -moz-border-top-colors: black !important;
+    -moz-border-right-colors: black !important;
+    -moz-border-left-colors: black !important;
+	background: url("chrome://global/skin/addons/firebug/tab-hover-bkgnd.png") repeat-x !important;
+}
+
+.fbsearch-textbox{
+	border: 1px solid rgb(29,29,29) !important;
+}
+
+panelTab[selected="true"]{
+	color: #0099ff !important;
+	background-image: none !important;
+	border: 1px solid rgba(255,255,255,0.1) !important;
+	border-bottom: 0px !important;
+	-moz-transition: .1s ease-in;
+}
+
+panelTab[selected="true"]:hover{
+	color: #0099ff !important;
+}
+
+panelTab:hover{
+	color: #ffffff !important;
+	background-image: none !important;
+	border: 1px solid rgba(255,255,255,0.1) !important;
+	border-bottom: 0px !important;
+	-moz-transition: .1s ease-in;
+}
+
+panelTab[selected="true"] > panelTabMenu .menuTarget,
+panelTab:focus > panelTabMenu .menuTarget {
+    background: url(chrome://global/skin/addons/firebug/tabMenuTarget.png) no-repeat center !important;
+}
+
+panelTab[selected="true"]:hover > panelTabMenu .menuTarget {
+    background: url(chrome://global/skin/addons/firebug/tabMenuTargetHover.png) no-repeat center !important;
+}
+
+#fbNavigateBackButton,
+.navigationHistoryMenuItemBack,
+menupopup[chromedir="rtl"] > .navigationHistoryMenuItemForward {
+      list-style-image: url(chrome://global/skin/addons/firebug/nav-back.png) !important;
+}
+
+#fbNavigateForwardButton,
+.navigationHistoryMenuItemForward,
+menupopup[chromedir="rtl"] > .navigationHistoryMenuItemBack {
+      list-style-image: url(chrome://global/skin/addons/firebug/nav-forward.png) !important;
+}
+
+#menu_firebugInspect,
+#fbInspectButton {
+    list-style-image: url(chrome://global/skin/addons/firebug/Templarian_inspector.png) !important;
+}
+
+#inspector-button {
+    list-style-image: url(chrome://global/skin/addons/firebug/inspect.png) !important;
+}
+
+#menu_firebug, #appmenu_firebug, #menu_webDeveloper_firebug,
+#firebug-button:-moz-any([console="on"], [script="on"], [net="on"]) .toolbarbutton-icon,
+#fbStatusIcon:-moz-any([script="on"], [net="on"], [console="on"]) {
+    list-style-image: url(chrome://global/skin/addons/firebug/firebug16.png) !important;
+}
+
+.dialogBox {
+    background: #ffffff url(chrome://global/skin/addons/firebug/firebug32.png) no-repeat 30px 30px !important;
+}
+
+.fbsearch-textbox[active-search='true'] > .fbsearch-icon {
+    background: url(chrome://global/skin/icons/Search-close.png) no-repeat !important;
+}
+
+#firebug-button,
+#fbStatusIcon {
+    list-style-image: url(chrome://global/skin/addons/firebug/firebug-gray-16.png) !important;
+}
+
+#firebug-button[firebugActive="true"] .toolbarbutton-icon{
+	list-style-image: url(chrome://global/skin/addons/firebug/firebug-enabled-16.png) !important;
+}
+
+/* :::::::::: fix for fireftp addon :::::::::: */
+
+#localpath, #remotepath {
+   color: #a6a6a6;
+   background-image: none !important;
+   background-color: #272727 !important;
+}
+
+#localpath:hover, #remotepath:hover {
+   background-color: rgb(29,29,29) !important;
+}
+
+#localpath #identity-box, #remotepath #identity-box{
+   background-image: none !important;
+}
+
+#localpath[focused="true"], #remotepath[focused="true"]{
+	background-color: rgb(18,18,18);
+}
+
+#retrieveButton:hover, #storeButton:hover {
+   -moz-transition: none !important;
+}
+
+#identity-popup-icon{
+  list-style-image: url("chrome://browser/skin/identity.png") !important;
+}
+
+#retrieveButton ,
+#storeButton,
+.upButton,
+.refreshButton,
+.fileTree::-moz-tree-image(isFolder), .dirTree::-moz-tree-image(closed),
+.dirTree::-moz-tree-image(open),
+.fileTree::-moz-tree-image(isLink),
+#page-proxy-button{
+  list-style-image: url("chrome://global/skin/addons/fireftp/fireftp.png") !important;
+}
+
+#fireftp-button,
+#fireftptoolsmenu,
+#fireftpcontentarea,
+#fireftpcontextmenu,
+#appmenu_fireftp,
+#menu_webDeveloper_fireftp {
+  list-style-image    : url("chrome://global/skin/addons/fireftp/logo.png") !important;
+}
+
+#identity-popup-content-box.verifiedIdentity > #identity-popup-encryption > vbox > #identity-popup-encryption-icon ,
+#identity-popup-content-box.verifiedDomain > #identity-popup-encryption > vbox > #identity-popup-encryption-icon {
+  list-style-image: url("chrome://global/skin/addons/fireftp/Secure24.png") !important;
+}
+
+#searchClosebutton {
+  list-style-image    : url("chrome://global/skin/icons/close.png") !important;
+}
+
+image.isFolder,
+image.isLink,
+image.isMultiple {
+  list-style-image: url("chrome://global/skin/addons/fireftp/properties.png") !important;
+}
+
+#searchStatusIcon[status="notfound"] {
+  list-style-image: url("chrome://mozapps/skin/extensions/alerticon-error.png") !important;
+}
+
+ /* :::::::::: fix for NoScript menupopup :::::::::: */
+
+menupopup[sticky="true"]{
+  background: rgba(22,22,22,.97) !important;
+  border-radius:3px;
+  padding: 5px;
+}
+
+/* :::::::::: fix for Error Concsole2 addon :::::::::: */
+
+#item_modeAll, #item_modeErrors, #item_modeWarnings, #item_modeMessages, #item_clearConsole{
+  list-style-image: url("chrome://global/skin/console/console-toolbar.png") !important;
+  -moz-box-orient: horizontal;
+  padding: 4px !important;
+}
+
+/* :::::::::: fix for Error DOM inspector :::::::::: */
+
+#btnFind{
+  list-style-image: url("chrome://global/skin/addons/dom_inspector/btnFind.png") !important;
+}
+
+#btnFind[disabled="true"] {
+  list-style-image: url("chrome://global/skin/addons/dom_inspector/btnFind-dis.png") !important;
+}
+
+.viewer-list {
+  list-style-image: url("chrome://global/skin/addons/dom_inspector/IconViewerList.png") !important;
+}
+
+#btnSelecting{
+  list-style-image: url("chrome://global/skin/addons/dom_inspector/btnSelecting.png") !important;
+}
+
+#btnSelecting[checked="true"] {
+  list-style-image: url("chrome://global/skin/addons/dom_inspector/btnSelecting[selected].png") !important;
+}
+
+#btnSelecting[disabled="true"] {
+  list-style-image: url("chrome://global/skin/addons/dom_inspector/btnSelecting-dis.png") !important;
+}
+
+treechildren::-moz-tree-cell-text(ELEMENT_NODE) {
+  color: #a6a6a6 !important;
+}
+
+treechildren::-moz-tree-cell-text(CDATA_SECTION_NODE),
+treechildren::-moz-tree-cell-text(TEXT_NODE) {
+  color: #ffffff !important;
+}
+
+/* :::::::::: fix for ScrapBook Plus :::::::::: */
+
+toolbox#ScrapBookToolbox toolbar{
+   border-top: 1px solid rgb(60,60,60) !important;
+}
+ 
+.sb-header{
+  background:rgb(110, 110, 110) !important;
+  color:#ffffff !important;
+  text-shadow: 0px -1px 0px rgba(0,0,0,.75) !important;
+  font-weight: bold !important;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.75) inset !important;
+  border: 0px !important;
+}
+
+.sb-header-exit{
+  list-style-image: url("chrome://global/skin/icons/close.png") !important;
+  -moz-image-region: rect(0pt, 16px, 16px, 0pt) !important;
+}
+
+.sb-header-exit:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px) !important;
+}
+
+.sb-header-exit:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px) !important;
+}
+
+#sbTree treechildren{
+    box-shadow: 0px 4px 10px rgba(0,0,0,.9)inset !important;
+}
+
+#sbTree treechildren::-moz-tree-row(odd){
+  background-color: transparent !important;
+}
+
+#sbNoteTextbox .plain{
+  background: #272727 !important;
+}
+
+/* :::::: fix for the Feedback button font color :::::: */
+
+#feedback-menu-button .toolbarbutton-text{
+  color: #a6a6a6 !important;
+}
+
+/* :::::::::: fix for Vertical Toolbar addon :::::::::: */
+
+#vertical-toolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+#vertical-toolbar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+#vertical-toolbar .toolbarbutton-1{
+  background: #343434
+              -moz-linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05) 48%,
+			  rgba(255, 255, 255, 0.004) 40%, rgba(255, 255, 255, 0.004)) !important;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow:   0 1px 0 rgba(255,255,255,.1) !important;
+  color: #a6a6a6 !important;
+  text-shadow: 0 0 2px black !important;
+}
+
+#vertical-toolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:hover,
+#vertical-toolbar .toolbarbutton-1:hover > .toolbarbutton-menubutton-dropmarker,
+#vertical-toolbar .toolbarbutton-1:hover{
+  background-color: rgba(0,173,238,.5) !important;
+  border-color: rgba(0,173,238,.2) rgba(0,173,238,.35) rgba(0,173,238,.5) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.1),
+              0 0 3.5px hsl(190,90%,80%) !important;
+  -moz-transition: background-color .4s ease-in,
+                   border-color .3s ease-in,
+                   box-shadow .3s ease-in !important;
+}
+
+#vertical-toolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:active,
+#vertical-toolbar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker:active,
+#vertical-toolbar .toolbarbutton-1:active{
+  background-color: transparent !important;
+  border-color: rgba(10,10,10,.65) rgba(10,10,10,.55) rgba(10,10,10,.5) !important;
+  box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset,
+              0 0 2px rgba(0,0,0,.4) inset,
+              0 1px 0 rgba(0,0,0,.4) !important;
+  text-shadow: none !important;
+}
+
+toolbarbutton[id^="verticaltoolbar-"] {
+	list-style-image: url("chrome://global/skin/addons/vertical_toolbar/vertical_toolbar.png") !important;
+}
+
+#vertical-toolbar .toolbarbutton-1[disabled="true"] > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+#vertical-toolbar .toolbarbutton-1[disabled="true"] > .toolbarbutton-icon {
+	list-style-image: url("chrome://global/skin/addons/vertical_toolbar/vertical_toolbar.png") !important;
+}
+
+toolbarbutton[id^="verticaltoolbar-"] .toolbarbutton-icon {
+	list-style-image: url("chrome://global/skin/addons/vertical_toolbar/vertical_toolbar.png") !important;
+}
+
+/* :::::: fix for greasemonkey addon :::::: */
+
+#category-scripts > .category-icon,
+.addon[type="user-script"] .icon,
+#detail-view[type="user-script"] #detail-icon
+{
+list-style-image:url("chrome://global/skin/addons/greasemonkey/greasemonkey32.png") !important;
+}
+
+/* :::::: fix for speed dial addon :::::: */
+
+#speedidalTabbox{
+  background: #343434 !important;
+}
+
+hbox#speeddialTabbox-tabs{
+  background-color: #343434 !important;
+  background-image: -moz-linear-gradient(rgb(70,70,70), rgb(53,53,53) 75%) !important;
+}
+
+.sd-tab{
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 3px !important;
+  padding: 1px 4px 2px 4px !important;
+  background: #a4a7ad url("chrome://global/skin/tabs/tab_bg.png") repeat-x !important;
+  border-top:1px solid rgb(18,18,18) !important;
+  border-right:1px solid rgb(18,18,18) !important;
+  border-left:1px solid rgb(18,18,18) !important;
+  border-bottom: 2px solid !important;
+  -moz-border-bottom-colors: rgba(255, 255, 255, 0.15) rgb(29,29,29) !important;
+  color: #a6a6a6 !important;
+}
+
+.sd-tab:hover{
+  background: #1b1b1b url("chrome://global/skin/tabs/tab_bg[hover].png") !important;
+  color: #ffffff !important;
+}
+
+.sd-tab[selected="true"]{
+  background:#1d1d1d url("chrome://global/skin/tabs/tab_bg[active].png") !important;
+  color:#0099ff !important;
+  padding: 1px 6px 4px 6px !important;
+  border-top:1px solid rgb(18,18,18) !important;
+  border-right:1px solid rgb(18,18,18) !important;
+  border-left:1px solid rgb(18,18,18) !important;
+}
+
+.sd-tab-bottom{
+  border-bottom: 2px solid !important;
+  -moz-border-bottom-colors: transparent !important;
+}
+
+.sd-tabs-left,
+.sd-tabs-right {
+  border-bottom: 2px solid !important;
+  -moz-border-bottom-colors: rgba(255, 255, 255, 0.1) rgb(0,0,0) !important;
+  min-width: 3px;
+}
+
+.speeddial-container{
+  background-color: #343434 !important; 
+}
+
+.speeddial-container:hover{
+  background-color: #484848 !important;
+  -moz-transition: .2s ease-in;
+}
+
+.speeddial-container[assigned="f"]{
+  opacity: 1 !important;
+}
+
+.speeddialThumb[speeddial="1"] .speeddial-container[assigned="f"] { background-image: url("chrome://global/skin/addons/speeddial/1.png") !important; }
+.speeddialThumb[speeddial="2"] .speeddial-container[assigned="f"] { background-image: url("chrome://global/skin/addons/speeddial/2.png") !important; }
+.speeddialThumb[speeddial="3"] .speeddial-container[assigned="f"] { background-image: url("chrome://global/skin/addons/speeddial/3.png") !important; }
+.speeddialThumb[speeddial="4"] .speeddial-container[assigned="f"] { background-image: url("chrome://global/skin/addons/speeddial/4.png") !important; }
+.speeddialThumb[speeddial="5"] .speeddial-container[assigned="f"] { background-image: url("chrome://global/skin/addons/speeddial/5.png") !important; }
+.speeddialThumb[speeddial="6"] .speeddial-container[assigned="f"] { background-image: url("chrome://global/skin/addons/speeddial/6.png") !important; }
+.speeddialThumb[speeddial="7"] .speeddial-container[assigned="f"] { background-image: url("chrome://global/skin/addons/speeddial/7.png") !important; }
+.speeddialThumb[speeddial="8"] .speeddial-container[assigned="f"] { background-image: url("chrome://global/skin/addons/speeddial/8.png") !important; }
+.speeddialThumb[speeddial="9"] .speeddial-container[assigned="f"] { background-image: url("chrome://global/skin/addons/speeddial/9.png") !important; }
+
+.speeddial-bottom-left {
+	width: 8px;
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-left-bkgnd.png') !important;
+}
+.grid[chromedir="rtl"] .speeddial-bottom-left {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-right-bkgnd.png') !important;
+}
+.thumbnail[selectedtab="true"] .speeddial-bottom-left {
+	background-image: url('chrome://speeddial/skin/background/bottom-left.png') !important;
+}
+.grid[chromedir="rtl"] .thumbnail[selectedtab="true"] .speeddial-bottom-left {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-right.png') !important;
+}
+.thumbnail:hover .speeddial-bottom-left {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-left-hover.png') !important;
+}
+.grid[chromedir="rtl"] .thumbnail:hover .speeddial-bottom-left {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-right-hover.png') !important;
+}
+.speeddial-bottom-right {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-right-bkgnd.png') !important;
+}
+.grid[chromedir="rtl"] .speeddial-bottom-right {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-left-bkgnd.png') !important;
+}
+.thumbnail[selectedtab="true"] .speeddial-bottom-right {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-right.png') !important;
+}
+.grid[chromedir="rtl"] .thumbnail[selectedtab="true"] .speeddial-bottom-right {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-left.png') !important;
+}
+.thumbnail:hover .speeddial-bottom-right {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-right-hover.png') !important;
+}
+.grid[chromedir="rtl"] .thumbnail:hover .speeddial-bottom-right {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-left-hover.png') !important;
+}
+.speeddial-bottom-middle {
+	height: 24px;
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-middle-bkgnd.png') !important;
+}
+.thumbnail[selectedtab="true"] .speeddial-bottom-middle {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-middle.png') !important;
+}
+.thumbnail:hover .speeddial-bottom-middle {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-middle-hover.png') !important;
+}
+.speeddial-bottom-left {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-left-bkgnd.png') !important;
+}
+.grid[chromedir="rtl"] .speeddial-bottom-left {
+	background-image: url('chrome://global/skin/addons/speeddial/bottom-right-bkgnd.png') !important;
+}
+
+/* edit button */
+.speeddial-edit-button {
+  list-style-image: url("chrome://global/skin/addons/speeddial/edit.png") !important;
+}
+
+/* close button */
+.speeddial-close-button {
+  list-style-image: url("chrome://global/skin/addons/speeddial/close.png") !important;
+}
+
+/* reload button */
+.speeddial-reload-button {
+  list-style-image: url("chrome://global/skin/addons/speeddial/reload.png") !important;
+}
+
+/* new tab button */
+.speeddial-newtab-button {
+  list-style-image: url("chrome://global/skin/addons/speeddial/newtab.png") !important;
+}
+
+/* background tab button */
+.speeddial-backgroundtab-button {
+  list-style-image: url("chrome://global/skin/addons/speeddial/newtab_bg.png") !important;
+}
+
+/* new window button */
+.speeddial-newwindow-button {
+  list-style-image: url("chrome://global/skin/addons/speeddial/newwindow.png") !important;
+}
+
+/* open button */
+.speeddial-open-button {
+  list-style-image: url("chrome://global/skin/addons/speeddial/open.png") !important;
+}
+
+/* :::::: fix for stylish addon :::::: */
+
+#category-userstyles > .category-icon,
+#category-userstyle > .category-icon {
+  list-style-image: url("chrome://global/skin/addons/stylish/stylish32.png") !important;
+}
+
+#stylish-toolbar-button {
+  list-style-image: url("chrome://global/skin/addons/stylish/stylish18.png") !important;	
+}
+#stylish-toolbar-button[styles-applied~="site"]{
+  list-style-image: url("chrome://global/skin/addons/stylish/stylish_applied18.png") !important;
+}
+
+#stylish-toolbar-button .toolbarbutton-icon{
+  padding-right: 2px;
+  width: 20px;
+}
+
+toolbar[iconsize="small"] #stylish-toolbar-button{
+  list-style-image: url("chrome://global/skin/addons/stylish/stylish16.png") !important;
+}
+toolbar[iconsize="small"] #stylish-toolbar-button[styles-applied~="site"]{
+  list-style-image: url("chrome://global/skin/addons/stylish/stylish_applied16.png") !important;
+}
+
+toolbar[iconsize="small"] #stylish-toolbar-button .toolbarbutton-icon{
+  padding-right: 2px !important;
+  width: 18px;
+}
+
+#editor-tools{
+  border-top: 2px solid !important;
+  -moz-border-top-colors: rgb(18,18,18) rgba(255, 255, 255, 0.1) !important;
+  border-bottom: 2px solid !important;
+  -moz-border-bottom-colors: rgba(255, 255, 255, 0.1) rgb(18,18,18) !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px;
+}
+
+/* :::::: fix for X-marks addon :::::: */
+
+#foxmarks-settings .paneSelector {
+  background-image: -moz-linear-gradient(rgb(85, 85, 85) 15%, rgb(57, 57, 57) 50%, rgb(50, 50, 50) 50%, rgb(44, 44, 44)) !important;
+}
+
+#foxmarks-settings .paneSelector radio[pane]:hover {
+  color:#0099ff !important;
+  border:2px solid !important;
+  -moz-border-top-colors: rgba(255,255,255,.07) rgb(29,29,29) !important;
+  -moz-border-right-colors: rgba(255,255,255,.07) rgb(29,29,29) !important;
+  -moz-border-bottom-colors: rgba(255,255,255,.07) rgb(29,29,29) !important;
+  -moz-border-left-colors: rgba(255,255,255,.07) rgb(29,29,29) !important;
+  border-radius:4px !important;
+  background: rgba(0,0,0,.075) !important;
+}
+
+#foxmarks-settings .paneSelector radio[selected="true"]{
+  color: #a6a6a6 !important;
+  border:2px solid !important;
+  -moz-border-top-colors: rgba(255,255,255,.07) rgb(29,29,29) !important;
+  -moz-border-right-colors: rgba(255,255,255,.07) rgb(29,29,29) !important;
+  -moz-border-bottom-colors: rgba(255,255,255,.07) rgb(29,29,29) !important;
+  -moz-border-left-colors: rgba(255,255,255,.07) rgb(29,29,29) !important;
+  border-radius:4px !important;
+  background: rgba(0,0,0,.1) !important;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75) inset !important;
+}
+
+/* :::::: fix for Cookie manager ++ :::::: */
+#cookiesTree treechildren::-moz-tree-cell-text(ELEMENT_NODE) {
+  color: #a6a6a6 !important;
+}
+
+#cookiesTree treechildren::-moz-tree-cell-text(CDATA_SECTION_NODE),
+#cookiesTree treechildren::-moz-tree-cell-text(TEXT_NODE) {
+  color: #ffffff !important;
+}
+#cookiesTree treechildren::-moz-tree-row(odd) {
+  background-color: rgba(255,255,255,.05);
+}
+#hackBarToolbarButton { 
+list-style-image: url("chrome://hackbar/skin/toolbar_button.png"); 
+-moz-image-region: rect( 0px 40px 16px 24px) !important;
+}
+#httprequester-status-bar {
+disply:none;
+}

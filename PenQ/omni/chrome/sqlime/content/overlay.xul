@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="chrome://sqlime/skin/overlay.css" type="text/css" ?>
+<!DOCTYPE overlay SYSTEM "chrome://sqlime/locale/overlay.dtd">
+<overlay id="sqlime-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <!-- 
+Copyright 2007 Security Compass
+
+This file is part of SQL Inject Me.
+
+SQL Inject Me is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SQL Inject Me is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SQL Inject Me.  If not, see <http://www.gnu.org/licenses/>.
+
+If you have any questions regarding SQL Inject Me please contact
+tools@securitycompass.com
+-->
+    <script type="application/x-javascript;version=1.7" src="chrome://sqlime/content/sqlime.js" />
+    <script type="application/x-javascript;version=1.7" src="chrome://sqlime/content/json.js" />
+    <script type="application/x-javascript;version=1.7" src="chrome://sqlime/content/PrefObserver.js" />
+    <script type="application/x-javascript;version=1.7" src="chrome://sqlime/content/overlay.js" />
+    <menupopup id="menu_ToolsPopup">
+        <menu id="sqlime-tools" label="SQL Inject Me"  insertafter="devToolsSeparator" accesskey="S">
+            <menupopup>
+                <menuitem 
+                        label="Open SQL Inject Me Sidebar" 
+                        observes="openSQLIMeSidebar" 
+                />
+                <menuitem 
+                          label="&sqlime.options;" 
+                          oncommand="window.openDialog('chrome://sqlime/content/preferences.xul')" 
+                /> 
+                <menuitem label="&sqlime.about;" oncommand="window.openDialog('chrome://sqlime/content/about.xul');" />
+                <menuitem label="&sqlime.help;" oncommand="window.open('http://securitycompass.com/exploitme.shtml', 'helpwindow', '');" />  
+            </menupopup>
+        </menu>
+    </menupopup>
+    <broadcasterset id="mainBroadcasterSet">
+        <broadcaster id="openSQLIMeSidebar"
+                     label="Open SQL Inject Me Sidebar"
+                     autoCheck="false"
+                     group="sidebar"
+                     sidebarurl="chrome://sqlime/content/sqlime_sidebar.xul"
+                     sidebartitle="SQL Inject Me"
+                     oncommand="toggleSidebar('openSQLIMeSidebar');" />
+    </broadcasterset>
+    
+    <popup id="contentAreaContextMenu">
+        
+        <menuitem label="Open SQL Inject Me Sidebar"
+                  observes="openSQLIMeSidebar"
+                  insertbefore="context-viewbgimage"
+                  id='sqlimecontextmenu'
+                  />
+        
+    </popup>
+</overlay>

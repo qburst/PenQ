@@ -1,0 +1,253 @@
+/*
+ *  This defines the look-and-feel styling of the error pages.
+ *  (see: netError.xhtml)
+ *
+ *  Original styling by William Price <bugzilla@mob.rice.edu>
+ *  Updated by: Steven Garrity <steven@silverorange.com>
+ *              Henrik Skupin  <mozilla@hskupin.info>
+ */
+
+html {
+  background: rgb(48,48,48) url("chrome://browser/skin/penqErrorbg.png") repeat-x;
+}
+
+body {
+  margin: 0;
+  padding: 0 1em;
+  color: #e7e7e7;
+  font: message-box;
+}
+
+html a {
+	color: #00ee41 !important;
+	text-decoration: none;
+}
+html a:hover {
+	color: #00ee41 !important;
+	text-decoration:underline;
+}
+html a:active {
+	color: #00ee41 !important;
+	text-decoration: none;
+	outline:none;
+}
+
+h1 {
+  margin: 0 0 .6em 0;
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: rgba(255,255,255,0.1) rgb(16,16,16);
+  font-size: 150%;
+  font-weight:lighter;
+  padding-bottom:5px;
+  color:#00ee41;
+}
+
+ul, ol {
+  margin: 0;
+  -moz-margin-start: 1.5em;
+  padding: 0;
+}
+
+ul > li, ol > li {
+  margin-bottom: .5em;
+}
+
+ul {
+  list-style: square;
+}
+
+#errorPageContainer {
+  position: relative;
+  min-width: 13em;
+  max-width: 52em;
+  margin: 4em auto;
+  border-radius: 10px;
+  padding: 3em;
+  -moz-padding-start: 30px;
+  background: rgba(54,54,54,.1) url("chrome://global/skin/icons/warning-large.png") left 0 no-repeat;
+  background-origin: content-box;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75), 0px 0px 1px rgba(255, 255, 255, 0.25) inset;
+  border: 1px solid rgba(0,0,0,.5);
+}
+
+#errorPageContainer.certerror {
+  background-image: url("chrome://global/skin/icons/sslWarning.png");
+}
+
+body[dir="rtl"] #errorPageContainer {
+  background-position: right 0;
+}
+
+#errorTitle {
+  -moz-margin-start: 80px;
+}
+
+#errorLongContent {
+  -moz-margin-start: 80px;
+}
+
+#errorShortDesc > p {
+  overflow: auto;
+  color:#a6a6a6;
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: rgba(255,255,255,0.1) rgb(16,16,19) ;
+  padding-bottom:3px;
+  font-size: 130%;
+  white-space: pre-wrap;
+}
+
+#errorLongDesc {
+  -moz-padding-end: 3em;
+  font-size: 110%;
+}
+
+#errorLongDesc > p {
+}
+
+#errorTryAgain {
+  margin-top: 2em;
+  -moz-margin-start: 80px;
+}
+
+#brand {
+  position: absolute;
+  right: 0;
+  bottom: -1.5em;
+  -moz-margin-end: 10px;
+  opacity: .4;
+}
+
+body[dir="rtl"] #brand {
+  right: auto;
+  left: 0;
+}
+
+#brand > p {
+  margin: 0;
+}
+
+#errorContainer {
+  display: none;
+}
+
+#securityOverrideDiv {
+  padding-top: 10px;
+}
+
+#securityOverrideContent {
+  background: rgb(42,42,42);
+  color: #e7e7e7;
+  padding: 10px;
+  border: 2px solid !important;
+  -moz-border-top-colors: rgba(255, 255, 255, 0.1) rgba(18,18,18,.8) !important;
+  -moz-border-right-colors: rgba(255, 255, 255, 0.1) rgba(18,18,18,.8) !important;
+  -moz-border-bottom-colors: rgba(255, 255, 255, 0.1) rgba(18,18,18,.8) !important;
+  -moz-border-left-colors: rgba(255, 255, 255, 0.1) rgba(18,18,18,.8) !important;
+  -moz-box-shadow: 0px 0px 15px rgba(0,0,0,1);
+  border-radius: 10px;
+}
+
+/* Custom styling for 'blacklist' error class */
+:root.blacklist #errorTitle, :root.blacklist #errorLongContent,
+:root.blacklist #errorShortDesc, :root.blacklist #errorLongDesc,
+:root.blacklist a {
+  background-color: #722; /* Dark red */
+  color: white;
+}
+
+:root.blacklist #errorPageContainer {
+  background-image: url("chrome://global/skin/icons/blacklist_large.png");
+  background-color: #722;
+}
+
+:root.blacklist {
+  background: #333;
+}
+
+:root.blacklist #errorTryAgain {
+  display: none;
+}
+
+/* :::::::::::::::::: BUTTONS ::::::::::::::::::::: */
+
+button {
+  -moz-appearance: none;
+  margin: 1px 5px 2px 5px;
+  min-width: 6.3em;
+  border-radius: 4.5px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.15);
+  background: #171717 url("chrome://global/skin/buttons/button_bg.png") repeat-x;
+  color: #a6a6a6;
+  text-shadow: none;
+}
+
+button:hover {
+  background: #171717 url("chrome://global/skin/buttons/button_hover_bg.png") repeat-x;
+  color: #ffffff;
+  -moz-transition: .2s ease-in;
+}
+
+.button-box {
+  border: 1px solid transparent;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 4px;
+}
+
+.button-text {
+  margin: 0 !important;
+  text-align: center;
+}
+
+/* .......... focused state .......... */
+
+button:focus {
+  color :#00ee41 !important;
+  -moz-transition: .2s ease-in;
+}
+
+/* .......... active/open/checked state .......... */
+
+button/*:hover*/:active,
+button[open="true"],
+button[checked="true"] {
+  box-shadow: 0px 0px 5px rgba(4,4,4,1) inset,
+			  0 1px 0 rgba(255,255,255,.15);
+  -moz-transition: .2s ease-in;
+}
+
+button/*:hover*/:active > .button-box:-moz-system-metric(windows-classic),
+button[open="true"] > .button-box:-moz-system-metric(windows-classic),
+button[checked="true"] > .button-box:-moz-system-metric(windows-classic) {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  -moz-padding-start: 4px;
+  -moz-padding-end: 3px;
+}
+
+/* .......... disabled state .......... */
+
+button[disabled="true"] {
+  background: #222222 url("chrome://global/skin/buttons/button_bg[disable].png") repeat-x;
+  border-radius: 4.5px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.15);
+  cursor:default;
+  color: rgba(200,200,200,.65) !important;
+}
+
+button[disabled="true"]:-moz-system-metric(windows-classic) {
+  /*color: ThreeDShadow;*/
+  text-shadow: 1px 1px #202020;
+}
+
+button[disabled="true"] > .button-box {
+  padding-top: 1px !important;
+  padding-bottom: 2px !important;
+  -moz-padding-start: 3px !important;
+  -moz-padding-end: 4px !important;
+}

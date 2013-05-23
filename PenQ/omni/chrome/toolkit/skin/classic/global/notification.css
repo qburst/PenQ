@@ -1,0 +1,142 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+notification {
+  background:  -moz-linear-gradient(rgb(39,39,39), rgb(18,18,18));
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgb(46,46,46);
+  height: 29px;
+  border-top: 1px solid rgb(58, 58, 58);
+}
+
+notification[type="info"] {
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgb(46,46,46);
+  border-top: 1px solid rgb(58, 58, 58);
+}
+
+notification[type="critical"] {
+  background-color: #9e0b0f;
+  color: #ffffff;
+}
+
+.messageImage {
+  width: 16px;
+  height: 16px;
+  -moz-margin-start: 6px;
+  -moz-margin-end: 1px;
+}
+
+/* Default icons for notifications */
+
+notification[type="info"] .messageImage {
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
+}
+
+notification[type="warning"] .messageImage {
+  list-style-image: url("chrome://global/skin/icons/warning-16.png");
+}
+
+notification[type="critical"] .messageImage {
+  list-style-image: url("chrome://global/skin/icons/error-16.png");
+}
+
+.messageCloseButton {
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-appearance: none;
+  -moz-image-region: rect(0, 16px, 16px, 0);
+  padding: 4px 2px;
+  border: none !important;
+}
+
+.messageCloseButton:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.messageCloseButton:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
+}
+
+.messageCloseButton > .toolbarbutton-icon {
+  -moz-margin-end: 5px;
+}
+
+/* Popup notification */
+
+.popup-notification-description {
+  max-width: 248px;
+}
+
+.popup-notification-menubutton {
+  margin-top: 17px;
+}
+
+@media all and (-moz-windows-default-theme) {
+  .popup-notification-menubutton[type="menu-button"] {
+    -moz-appearance: none;
+    border-radius: 4.5px;
+    padding: 0;
+  }
+
+  .popup-notification-menubutton[type="menu-button"]:hover:active {
+    -moz-appearance: none;
+  }
+
+  .popup-notification-menubutton > .button-menubutton-button,
+  .popup-notification-menubutton > .button-menubutton-dropmarker {
+    -moz-appearance: none;
+	margin:0px;
+  }
+
+  .popup-notification-menubutton{
+  background: none;
+  box-shadow: none;
+  }
+  
+  .popup-notification-menubutton > .button-menubutton-button {
+  height: auto;
+  min-width: 6.3em;
+  padding: 3px;
+  border-radius: 4.5px 0px 0px 4.5px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.1);
+  background: #282828 url("chrome://global/skin/buttons/button_bg.png") repeat-x;
+  color: #a6a6a6;
+  text-shadow: none;
+  }
+
+  .popup-notification-menubutton > .button-menubutton-dropmarker {
+    padding: 3px 10px;
+    list-style-image: url("chrome://global/skin/arrow/arrow-dn-sharp.gif");
+	border-left: 0px !important;
+    border-radius: 0px 4.5px 4.5px 0px;
+    border: 1px solid;
+    border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+    box-shadow: 0 1px 0 rgba(255,255,255,.1);
+    background: #282828 url("chrome://global/skin/buttons/button_bg.png") repeat-x;
+    color: #a6a6a6;
+    text-shadow: none;
+  }
+
+
+  .popup-notification-menubutton > .button-menubutton-button:hover,
+  .popup-notification-menubutton > .button-menubutton-dropmarker:hover {
+    background: #373737 url("chrome://global/skin/buttons/button_hover_bg.png") repeat-x;
+    color: #ffffff;
+    -moz-transition: .2s ease-in;
+  }
+
+  .popup-notification-menubutton > .button-menubutton-button:hover:active,
+  .popup-notification-menubutton > .button-menubutton-dropmarker:hover:active,
+  .popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker {
+    background-color: rgba(0,0,0,.05);
+    box-shadow: 0 0 2px rgba(0,0,0,.65) inset,
+				0 1px 0 rgba(255,255,255,.1);
+    -moz-transition: .2s ease-in;
+  }
+}
+
+.popup-notification-closeitem {
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page id="cryptoFox-overlay"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	style="background:#383838;">
+<!-- Javascript Libraries -->
+<script src="CryptoFox.js"/>
+<script src="md5.js"/>
+<script src="base_64.js"/>
+<script src="CRC32.js"/>   
+<script src="SHA1.js"/>
+<script src="SHA256.js"/>
+<script src="AES.js"/>
+<script src="DES.js"/>       
+<script src="lib.js"/>
+<script src="md5_crack.js"/>
+
+<vbox>
+<hbox>
+<spacer flex="1" />
+<button id="activeBtn" label="ActivateCryptoSelector" onclick="com.echammas.cryptofox.CryptoSelector();" style="min-width:150px">Activate Crypto Selector</button>
+<separator/>
+<separator/>
+<menulist id="optionList" label="Select an option" editable="true" tabindex="2" style="min-width:200px;">
+	<menupopup>
+	<!-- Encryption options -->
+	<menuitem label="AES 128-bit Encrypt" id="item"/>
+	<menuitem label="AES 192-bit Encrypt" id="item"/>
+	<menuitem label="AES 256-bit Encrypt" id="item"/>
+	<menuitem label="AES 128-bit Decrypt" id="item"/>
+	<menuitem label="AES 192-bit Decrypt" id="item"/>
+	<menuitem label="AES 256-bit Decrypt" id="item"/>
+	<menuitem label="ASCII to Binary" id="item"/>
+	<menuitem label="ASCII to Hexadecimal" id="item"/>
+	<menuitem label="Base 64 Encode" id="item"/>
+	<menuitem label="Base 64 Decode" id="item"/>
+	<menuitem label="Binary to ASCII" id="item"/>
+	<menuitem label="Binary to Decimal" id="item"/>
+	<menuitem label="Binary to Hexadecimal" id="item"/>
+	<menuitem label="Binary to Octal" id="item"/>
+	<menuitem label="Ceaser Encrypt" id="item"/>
+	<menuitem label="Ceaser Decrypt" id="item"/>
+	<menuitem label="Decimal to Binary" id="item"/>
+	<menuitem label="Decimal to Hexadecimal" id="item"/>
+	<menuitem label="Decimal to Octal" id="item"/>
+	<menuitem label="DES Encrypt" id="item"/>
+	<menuitem label="Generate CRC32 Checksum" id="item"/>
+	<menuitem label="Hexadecimal to ASCII" id="item"/>
+	<menuitem label="Hexadecimal to Binary" id="item"/>
+	<menuitem label="Hexadecimal to Decimal" id="item"/>
+	<menuitem label="Hexadecimal to Octal" id="item"/>
+	<menuitem label="HTML Entities Encode" id="item"/>
+	<menuitem label="MD5 Dictionary attack" id="item"/>
+	<menuitem label="MD5 Encrypt" id="item"/>
+	<menuitem label="Morse Code Encrypt" id="item"/>
+	<menuitem label="Morse Code Decrypt" id="item"/>
+	<menuitem label="Octal to Binary" id="item"/>
+	<menuitem label="Octal to Decimal" id="item"/>
+	<menuitem label="Octal to Hexadecimal" id="item"/>
+	<menuitem label="Reverse" id="item"/>
+	<menuitem label="ROT-13" id="item"/>
+	<menuitem label="SHA1 Encrypt" id="item"/>
+	<menuitem label="SHA256 Encrypt" id="item"/>
+	<menuitem label="URL Encode" id="item"/>
+	<menuitem label="URL Decode" id="item"/>
+	<menuitem label="XOR Encrypt" id="item"/>
+	</menupopup>
+</menulist>
+<separator/>
+<button id="convertBtn" tabindex="3" onclick="com.echammas.cryptofox.convert();" tooltiptext="Encode/Decode" style="min-width:150px">Encode/Decode</button>
+<spacer flex="1"/>
+</hbox>
+<hbox flex="1" >
+<textbox id="plainText"  multiline="true" rows="15" cols="70"  tooltiptext="Text to encode/decode" tabindex="1" editable="true" onkeypress="if((event.which == 13) ||(event.keyCode == 13)){com.echammas.cryptofox.convert();}"  flex="1"/>
+</hbox>
+</vbox>
+<!--
+<popup id="contentAreaContextMenu">
+  <menuitem id="context-item1" label="CryptoFox Encode/Decode" oncommand="com.echammas.cryptofox.SelectAndProcess();"/>
+</popup>
+-->
+    
+</page>

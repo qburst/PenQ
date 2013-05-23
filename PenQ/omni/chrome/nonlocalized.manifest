@@ -1,0 +1,111 @@
+# browser.manifest
+overlay chrome://global/content/viewPartialSource.xul chrome://browser/content/viewSourceOverlay.xul
+skin browser classic/1.0 browser/skin/classic/browser/
+override chrome://global/skin/icons/warning-16.png moz-icon://stock/gtk-dialog-warning?size=menu
+overlay chrome://global/content/viewSource.xul chrome://browser/content/viewSourceOverlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://browser/content/browser.css
+overlay chrome://browser/content/browser.xul         chrome://browser/content/safebrowsing/report-phishing-overlay.xul
+content branding browser/content/branding/ contentaccessible=yes
+override chrome://global/content/license.html chrome://browser/content/license.html
+content browser browser/content/browser/ contentaccessible=yes
+style chrome://global/content/customizeToolbar.xul chrome://browser/skin/
+skin communicator classic/1.0 browser/skin/classic/communicator/
+
+# pippki.manifest
+content pippki pippki/content/pippki/
+
+# toolkit.manifest
+content satchel toolkit/content/satchel/
+resource gre-resources toolkit/res/
+skin global classic/1.0 toolkit/skin/classic/global/ os=WINNT osversion<6
+skin mozapps classic/1.0 toolkit/skin/classic/mozapps/ os=WINNT osversion<6
+content mozapps toolkit/content/mozapps/
+content global toolkit/content/global/ contentaccessible=yes
+content global-platform toolkit/content/global-platform/ platform
+skin mozapps classic/1.0 toolkit/skin/classic/mozapps/ os!=WINNT
+content passwordmgr toolkit/content/passwordmgr/
+override chrome://global/content/nsTransferable.js chrome://global/content/nsDragAndDrop.js
+content xbl-marquee toolkit/content/xbl-marquee/
+content global-region toolkit/content/global-region/
+content cookie toolkit/content/cookie/
+skin global classic/1.0 toolkit/skin/classic/global/ os!=WINNT
+
+#tamperdata.manifest
+
+content tamperdata tamperdata/content/
+locale  tamperdata en tamperdata/locale/en/
+locale  tamperdata en-US tamperdata/locale/en-US/
+locale  tamperdata it-IT tamperdata/locale/it-IT/
+locale  tamperdata fr-FR tamperdata/locale/fr-FR/
+locale  tamperdata es-ES tamperdata/locale/es-ES/
+locale  tamperdata uk-UA tamperdata/locale/uk-UA/
+locale  tamperdata de-DE tamperdata/locale/de-DE/
+locale  tamperdata ru-RU tamperdata/locale/ru-RU/
+locale  tamperdata pt-BR tamperdata/locale/pt-BR/
+locale  tamperdata pl-PL tamperdata/locale/pl-PL/
+
+#zinhahere.manifest
+
+content	xinhahere	xinhahere/content/ xpcnativewrappers=no
+
+locale	xinhahere	en-US	xinhahere/locale/en-US/
+locale	xinhahere	ja-JP	xinhahere/locale/ja-JP/
+
+skin	xinhahere	classic/1.0	xinhahere/skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://xinhahere/skin/xinhahere-button.css
+
+#criptofox.manifest
+
+content cryptoFox       cryptoFox/content/
+
+#xssme.manifest
+
+content	xssme	xssme/content/
+locale	xssme	en-US	xssme/locale/en-US/
+skin	xssme	classic/1.0	xssme/skin/
+overlay	chrome://browser/content/browser.xul	chrome://xssme/content/overlay.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://xssme/skin/overlay.css
+override chrome://xssme/content/preferences.js chrome://xssme/content/preferences.fx3.js
+
+#sqlime.manifest
+
+content	sqlime	sqlime/content/
+locale	sqlime	en-US	sqlime/locale/en-US/
+skin	sqlime	classic/1.0	sqlime/skin/
+overlay	chrome://browser/content/browser.xul	chrome://sqlime/content/overlay.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://sqlime/skin/overlay.css
+override chrome://sqlime/content/preferences.js chrome://sqlime/content/preferences.fx3.js 
+
+#httprequester.manifest
+
+content	httprequester	httprequester/content/
+overlay	chrome://browser/content/browser.xul	chrome://httprequester/content/overlay.xul
+locale	httprequester	en-US	locale/en-US/
+skin	httprequester	classic/1.0	httprequester/skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://httprequester/skin/overlay.css
+
+
+#hackbar.manifest
+
+content hackbar hackbar/content/
+overlay chrome://browser/content/browser.xul chrome://hackbar/content/hackbar.xul
+locale hackbar en-US hackbar/locale/en-US/
+skin hackbar classic/1.0 hackbar/skin/
+
+#restclient.manifest
+
+content   restclient                restclient/content/
+skin      restclient   classic/1.0  restclient/skin/
+locale    restclient   en-US        restclient/locale/en-US/
+locale    restclient   fr-FR        restclient/locale/fr-FR/
+locale    restclient   zh-CN        restclient/locale/zh-CN/
+
+overlay chrome://browser/content/browser.xul        chrome://restclient/content/restclientOverlay.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://restclient/skin/overlay.css
+
+
+#style.penq
+
+skin   linux    classic/1.0    toolkit/skin/classic/linux/
+skin   browser    classic/1.0    toolkit/skin/classic/browser/
+

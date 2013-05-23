@@ -1,0 +1,96 @@
+<!-- tamperdata window -->
+<!ENTITY tamperdata.tamperdata.title "- Ongoing requests" >
+
+<!ENTITY tamperdata.toolbar.startTamper      "Start Tamper" >
+<!ENTITY tamperdata.toolbar.stopTamper       "Stop Tamper" >
+<!ENTITY tamperdata.command.showAll          "Show All" >
+<!ENTITY tamperdata.command.clear            "Clear" >
+<!ENTITY tamperdata.command.options          "Options" >
+<!ENTITY tamperdata.command.help             "Help" >
+<!ENTITY tamperdata.command.copy             "Copy" >
+<!ENTITY tamperdata.command.copy.all         "Copy All" >
+<!ENTITY tamperdata.command.export.xml       "Export XML - Selection" >
+<!ENTITY tamperdata.command.export.all.xml   "Export XML - All" >
+<!ENTITY tamperdata.command.show.graph       "Show Graph" >
+<!ENTITY tamperdata.command.details          "Details" >
+<!ENTITY tamperdata.command.reopen           "Open in browser" >
+<!ENTITY tamperdata.command.replay           "Replay in browser" >
+<!ENTITY tamperdata.command.viewSource       "View Source" >
+<!ENTITY tamperdata.command.graph.selected   "Graph selected">
+<!ENTITY tamperdata.command.graph.all        "Graph All">
+
+<!ENTITY tamperdata.label.filter             "Filter" >
+
+<!ENTITY tamperdata.tree.time                "Time" >
+<!ENTITY tamperdata.tree.duration            "Duration" >
+<!ENTITY tamperdata.tree.total.duration      "Total Duration" >
+<!ENTITY tamperdata.tree.size                "Size" >
+<!ENTITY tamperdata.tree.method              "Method" >
+<!ENTITY tamperdata.tree.status              "Status" >
+<!ENTITY tamperdata.tree.content.type        "Content Type" >
+<!ENTITY tamperdata.tree.url                 "URL" >
+<!ENTITY tamperdata.tree.load.flags          "Load Flags" >
+
+<!ENTITY tamperdata.request.header.name      "Request Header Name" >
+<!ENTITY tamperdata.request.header.value     "Request Header Value" >
+<!ENTITY tamperdata.response.header.name     "Response Header Name" >
+<!ENTITY tamperdata.response.header.value    "Response Header Value" >
+
+
+<!-- Tamper popup -->
+<!ENTITY tamperdata.tamperPopup.title "Tamper Popup">
+<!ENTITY tamperdata.tamperPopup.request.header.name   "Request Header Name">
+<!ENTITY tamperdata.tamperPopup.request.header.value  "Request Header Value">
+<!ENTITY tamperdata.tamperPopup.post.parameter.name   "Post Parameter Name">
+<!ENTITY tamperdata.tamperPopup.post.parameter.value  "Post Parameter Value">
+
+
+<!-- overlays for menu and sidebar -->
+<!ENTITY tamperdata.taskmenu.item "Tamper Data" >
+<!ENTITY tamperdata.sidebar.title "Tamper Data" >
+
+
+<!-- Modify URI window -->
+<!ENTITY tamperdata.tamperURI.title                "- Modify URI" >
+<!ENTITY tamperdata.tamperURI.base.uri             "Base URI" >
+<!ENTITY tamperdata.tamperURI.protocol             "Protocol" >
+<!ENTITY tamperdata.tamperURI.credentials          "Credentials" >
+<!ENTITY tamperdata.tamperURI.host                 "Host" >
+<!ENTITY tamperdata.tamperURI.port                 "Port" >
+<!ENTITY tamperdata.tamperURI.path                 "Path" >
+<!ENTITY tamperdata.tamperURI.reference            "Reference" >
+<!ENTITY tamperdata.tamperURI.get.parameters       "Get Parameters" >
+<!ENTITY tamperdata.tamperURI.get.parameter.name   "GET parameter name" >
+<!ENTITY tamperdata.tamperURI.get.parameter.value  "GET parameter value" >
+
+
+<!-- options window -->
+<!ENTITY tamperdata.tamperOptions.title                        "- Options" >
+<!ENTITY tamperdata.tamperOptions.tamper.images                "Tamper with Images etc." >
+<!ENTITY tamperdata.tamperOptions.add.replaces                 "Add replaces existing" >
+<!ENTITY tamperdata.tamperOptions.force.caching                "Force caching on all requests (so view-source works)" >
+<!ENTITY tamperdata.tamperOptions.context.menu.entries         "Context Menu Entries" >
+<!ENTITY tamperdata.tamperOptions.tamper.context.menu.entries  "Tamper Context Menu Entries" >
+<!ENTITY tamperdata.tamperOptions.new.menu.entry               "New" >
+<!ENTITY tamperdata.tamperOptions.delete.menu.entry            "Delete" >
+<!ENTITY tamperdata.tamperOptions.label                        "Label" >
+<!ENTITY tamperdata.tamperOptions.update                       "Update" >
+<!ENTITY tamperdata.tamperOptions.import                       "Import" >
+<!ENTITY tamperdata.tamperOptions.export                       "Export" >
+<!ENTITY tamperdata.tamperOptions.close                        "Close" >
+
+
+
+<!-- detail popup -->
+<!ENTITY tamperdata.details.dlg.title     "Tamper Details">
+<!ENTITY tamperdata.details.dlg.encoded   "Encoded">
+<!ENTITY tamperdata.details.dlg.decoded   "Decoded">
+<!ENTITY tamperdata.details.dlg.name.col  "Name">
+<!ENTITY tamperdata.details.dlg.value.col "Value">
+
+<!-- View Source window -->
+<!ENTITY tamperdata.view.source.title               "- View Source">
+<!ENTITY tamperdata.view.source.raw.data            "Raw Data">
+<!ENTITY tamperdata.view.source.uncompressed.data   "Uncompressed Data">
+
+

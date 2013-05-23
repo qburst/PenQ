@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://hackbar/skin/hackbar.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://hackbar/locale/hackbar.dtd" >
+
+<overlay id="hackBarOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript" src="chrome://hackbar/content/namespace.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Encrypt.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Toolbox.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/TabManagement.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Crypto.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/SQL.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/GUI.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Strings.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Main.js" />
+
+  <script type="application/x-javascript">
+  <![CDATA[
+    var hackBar = new HackBar.Main( window );
+  ]]>
+  </script>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="hackBarToolbarButton"/>
+  </toolbarpalette>
+  <toolbarbutton id="hackBarToolbarButton" label="Toggle HackBar" tooltiptext="&hackbar.toolsMenuShowHide;" oncommand="hackBar.toggleBar()" class="hackBarToolbarButton chromeclass-toolbar-additional custombutton" />
+
+  <commandset id="mainCommandSet">
+    <command id="cmd_toggleHackBar" oncommand="hackBar.toggleBar()"/>
+  </commandset>
+
+  <keyset id="mainKeyset">
+    <key id="key_toggleHackBar" keycode="VK_F9" command="cmd_toggleHackBar"/>
+    <key key="+" modifiers="alt" oncommand="hackBar.selectionNumberChange( 1 )" />
+    <key key="-" modifiers="alt" oncommand="hackBar.selectionNumberChange( -1 )" />
+    <key key="y" modifiers="alt" oncommand="selectionToSQLChar( 'mysql' )" />
+    <key key="q" modifiers="alt" oncommand="selectionToSQLChar( 'mssql' )" />
+    <key key="m" modifiers="alt" oncommand="hackBar.selectionToMD5()" />
+    <key key="a" modifiers="alt" oncommand="hackBar.useCurrentUrl()" />
+    <key key="s" modifiers="alt" oncommand="hackBar.splitUrl()" />
+    <key key="x" modifiers="alt" oncommand="hackBar.loadUrl()" />
+  </keyset>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem lass="menuitem-iconic" image="chrome://hackbar/skin/hackbar_icon.png" label="&hackbar.toolsMenuShowHide;" key="key_toggleHackBar" insertafter="devToolsSeparator" oncommand="hackBar.toggleBar()" />
+  </menupopup>
+
+  <toolbox id="navigator-toolbox">
+    <toolbar id="hackBarToolbar" toolbarname="&hackbar.hackbar;" class="chromeclass-toolbar" context="toolbar-context-menu" hidden="false" persist="hidden">
+      <vbox flex="1">
+        <toolbaritem flex="1">
+          <hbox flex="1">
+            <!-- INCREMENT / DECREMENT MENU -->
+            <menulist id="hackBarPlusMinusSelection">
+              <menupopup>
+                <menuitem label="INT" />
+                <menuitem label="HEX" />
+                <menuitem label="OCT" />
+                <menuitem label="Alphabet" />
+                <menuitem label="AlNum" />
+              </menupopup>
+            </menulist>
+            <toolbarbutton class="menuitem-iconic" image="chrome://hackbar/skin/minus.gif" tooltiptext="&hackbar.minusTooltip;" label="&hackbar.minusLabel;" oncommand="hackBar.selectionNumberChange( -1 )"/>
+            <toolbarbutton class="menuitem-iconic" image="chrome://hackbar/skin/plus.gif" tooltiptext="&hackbar.plusTooltip;" label="&hackbar.plusToolLabel;" oncommand="hackBar.selectionNumberChange( 1 )" />
+            <!-- / INCREMENT / DECREMENT MENU -->
+            
+            <!-- SQL MENU ITEMS -->
+            <toolbarbutton class="menuitem-iconic" type="menu" tooltiptext="&hackbar.SQLMenuTooltip;" label="&hackbar.SQLMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
+              <menupopup>
+                 <menu class="menuitem-iconic" type="menu" tooltiptext="&hackbar.mysqlMenuTooltip;" label="&hackbar.mysql;">
+                  <menupopup>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.basicInfoTooltip;" label="&hackbar.basicInfoLabel;" oncommand="HackBar.SQL.selectionMySQLBasicInfo()"/>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database_convert.png" tooltiptext="&hackbar.convertUtf8Tooltip;" label="&hackbar.convertUtf8Label;" oncommand="HackBar.SQL.selectionMySQLConvertUsing( 'utf8' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database_convert.png" tooltiptext="&hackbar.convertLatinTooltip;" label="&hackbar.convertLatinLabel;" oncommand="HackBar.SQL.selectionMySQLConvertUsing( 'latin1' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.MysqlCharTooltip;" label="&hackbar.MysqlCharLabel;" oncommand="HackBar.SQL.selectionToSQLChar( 'mysql' )" accesskey="y" />
+                  </menupopup>
+                </menu>
+                <menu class="menuitem-iconic" image="chrome://hackbar/skin/mssql.gif" type="menu" tooltiptext="&hackbar.mssqlMenuTooltip;" label="&hackbar.mssql;">
+                  <menupopup>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.MssqlCharTooltip;" label="&hackbar.MssqlCharLabel;" oncommand="HackBar.SQL.selectionToSQLChar( 'mssql' )" accesskey="q" />
+                  </menupopup>
+                </menu>
+                <menu class="menuitem-iconic" image="chrome://hackbar/skin/oracle.gif" type="menu" tooltiptext="&hackbar.oracleMenuTooltip;" label="&hackbar.oracle;">
+                  <menupopup>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.OracleCharTooltip;" label="&hackbar.OracleCharLabel;" oncommand="HackBar.SQL.selectionToSQLChar( 'oracle' )" accesskey="o" />
+                  </menupopup>
+                </menu>
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.unionSelectTooltip;" label="&hackbar.unionSelectLabel;" oncommand="HackBar.SQL.selectionToUnionSelect()"/>
+				<menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.spacesToCommentsTooltip;" label="&hackbar.spacesToCommentsLabel;" oncommand="HackBar.SQL.selectionToInlineComments()"/>
+              </menupopup>
+            </toolbarbutton>
+            <!-- / SQL MENU ITEMS -->
+            
+            <!-- XSS MENU ITEMS -->
+            <toolbarbutton type="menu" tooltiptext="&hackbar.xssMenuTooltip;" label="&hackbar.xssMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
+              <menupopup>
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/xss.png" tooltiptext="&hackbar.SFCTooltip;" label="&hackbar.SFCLabel;" oncommand="hackBar.selectionToChar( 'stringFromCharCode' )" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/xss.png" tooltiptext="&hackbar.htmlCharTooltip;" label="&hackbar.htmlCharLabel;" oncommand="hackBar.selectionToChar( 'htmlChar' )" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/xss_alert.png" tooltiptext="&hackbar.alertXSTooltip;" label="&hackbar.alertXSSLabel;" oncommand="HackBar.Strings.getUsefullString( 'alert' )" />
+              </menupopup>
+            </toolbarbutton>
+            <!-- / XSS MENU ITEMS -->
+            
+            <!-- ENCRYPTION MENU ITEMS -->
+            <toolbarbutton type="menu" tooltiptext="&hackbar.encMenuTooltip;" label="&hackbar.encMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
+              <menupopup>
+                <menu tooltiptext="&hackbar.md5MenuTooltip;" label="&hackbar.md5MenuLabel;">
+                  <menupopup>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/encryption.png" tooltiptext="&hackbar.md5Tooltip;" label="&hackbar.md5Label;" oncommand="hackBar.selectionToMD5()"/>
+                    <menu tooltiptext="&hackbar.md5SendToTooltip;" label="&hackbar.md5SendToLabel;">
+                      <menupopup>
+                        <menuitem class="menuitem-iconic" tooltiptext="&hackbar.md5SendToRednoizeTooltip;" label="&hackbar.md5SendToRednoizeLabel;" oncommand="HackBar.Crypto.getClearTextPassword( 'md5' )"/>
+                      </menupopup>
+                    </menu>
+                  </menupopup>
+                </menu>
+                <menu tooltiptext="&hackbar.sha1MenuTooltip;" label="&hackbar.sha1MenuLabel;">
+                  <menupopup>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/encryption.png" tooltiptext="&hackbar.sha1Tooltip;" label="&hackbar.sha1Label;" oncommand="hackBar.selectionToSHA(1)" />
+                    <menu tooltiptext="&hackbar.sha1SendToTooltip;" label="&hackbar.sha1SendToLabel;">
+                      <menupopup>
+                        <menuitem class="menuitem-iconic" tooltiptext="&hackbar.sha1SendToRednoizeTooltip;" label="&hackbar.sha1SendToRednoizeLabel;" oncommand="HackBar.Crypto.getClearTextPassword( 'sha1' )"/>
+                      </menupopup>
+                    </menu>
+                  </menupopup>
+                </menu>
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/encryption.png" tooltiptext="&hackbar.sha2Tooltip;" label="&hackbar.sha2Label;" oncommand="hackBar.selectionToSHA(256)" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/encryption_weak.png" tooltiptext="&hackbar.rot13Tooltip;" label="&hackbar.rot13Label;" oncommand="hackBar.selectionToRot13()" />
+              </menupopup>
+            </toolbarbutton>
+            <!-- / ENCRYPTION MENU ITEMS -->
+            
+            <!-- ENCODING MENU ITEMS -->
+            <toolbarbutton type="menu" tooltiptext="&hackbar.encdecMenuTooltip;" label="&hackbar.encdecMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
+              <menupopup>
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/uue.png" tooltiptext="&hackbar.UUETooltip;" label="&hackbar.UUELabel;" oncommand="hackBar.selectionToBase64( 'encode' )" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/uud.png" tooltiptext="&hackbar.UUDTooltip;" label="&hackbar.UUDLabel;" oncommand="hackBar.selectionToBase64( 'decode' )" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/urle.png" tooltiptext="&hackbar.URLETooltip;" label="&hackbar.URLELabel;" oncommand="hackBar.selectionToURL( 'encode' )" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/urld.png" tooltiptext="&hackbar.URLDTooltip;" label="&hackbar.URLDLabel;" oncommand="hackBar.selectionToURL( 'decode' )" />
+                <menu tooltiptext="&hackbar.encodingHexEncTooltip;" label="&hackbar.encodingHexEncLabel;">
+                  <menupopup>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.hexEncodingNoSep;" label="&hackbar.hexEncodingNoSep;" oncommand="hackBar.hexEncoding( '' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.hexEncodingSpace;" label="&hackbar.hexEncodingSpace;" oncommand="hackBar.hexEncoding( ' ' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.hexEncodingSemicol;" label="&hackbar.hexEncodingSemicol;" oncommand="hackBar.hexEncoding( ':' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.IntToHex;" label="&hackbar.IntToHex;" oncommand="hackBar.NumberToHex()" />
+                  </menupopup>
+                </menu>
+                <menu tooltiptext="&hackbar.encodingHexDecTooltip;" label="&hackbar.encodingHexDecLabel;">
+                  <menupopup>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.HexToInt;" label="&hackbar.HexToInt;" oncommand="hackBar.HexToNumber()" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.HexToChar;" label="&hackbar.HexToChar;" oncommand="hackBar.hexDecoding()" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </toolbarbutton>
+			<!-- / ENCODING MENU ITEMS -->
+			
+			<!-- MISC MENU ITEMS -->
+            <toolbarbutton id="hackBarStringButton" type="menu" tooltiptext="&hackbar.miscMenuTooltip;" label="&hackbar.miscMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
+              <menupopup>
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/addslashes.png" tooltiptext="&hackbar.addslashesTooltip;" label="&hackbar.addslashesLabel;" oncommand="HackBar.Strings.addslashes()" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/stripslashes.png" tooltiptext="&hackbar.stripslashesTooltip;" label="&hackbar.stripslashesLabel;" oncommand="HackBar.Strings.stripslashes()" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/stripspaces.png" tooltiptext="&hackbar.stripspacesTooltip;" label="&hackbar.stripspacesLabel;" oncommand="HackBar.Strings.stripspaces()" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.reverseTooltip;" label="&hackbar.reverseLabel;" oncommand="HackBar.Strings.reverseString( )" />
+                <menu tooltiptext="&hackbar.usefullStringsMenuTooltip;" label="&hackbar.usefullStringsMenuLabel;">
+                  <menupopup>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.pi;" label="&hackbar.pi;" oncommand="HackBar.Strings.getUsefullString( 'pi' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.piBig;" label="&hackbar.piBig;" oncommand="HackBar.Strings.getUsefullString( 'piBig' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.phi;" label="&hackbar.phi;" oncommand="HackBar.Strings.getUsefullString( 'phi' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.loremIpsum;" label="&hackbar.loremIpsum;" oncommand="HackBar.Strings.getUsefullString( 'lorem' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.fibonacci;" label="&hackbar.fibonacci;" oncommand="HackBar.Strings.getUsefullString( 'fibonacci' )" />
+                    <!-- Buffer Overflow submenu -->
+                    <menu tooltiptext="&hackbar.bufferOverflowTooltip;" label="&hackbar.bufferOverflowLabel;">
+                      <menupopup>
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow128;" label="&hackbar.Overflow128;" oncommand="HackBar.Strings.generateOverflowString( 128 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow512;" label="&hackbar.Overflow512;" oncommand="HackBar.Strings.generateOverflowString( 512 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow1024;" label="&hackbar.Overflow1024;" oncommand="HackBar.Strings.generateOverflowString( 1024 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow2048;" label="&hackbar.Overflow2048;" oncommand="HackBar.Strings.generateOverflowString( 2048 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.OverflowCustom;" label="&hackbar.OverflowCustom;" oncommand="HackBar.Strings.generateOverflowString( -1 )" />
+                      </menupopup>
+                    </menu>
+                    <!-- / Buffer Overflow submenu -->
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </toolbarbutton>
+            <!-- / MISC MENU ITEMS -->
+          </hbox>
+        </toolbaritem>
+        <toolbaritem>
+          <vbox width="100">
+            <toolbarbutton id="hackBarCopyButton" tooltiptext="&hackbar.copyUrlTooltip;" label="&hackbar.loadURLLabel;" oncommand="hackBar.useCurrentUrl()" accesskey="a" />
+            <toolbarbutton id="hackBarSplitButton" tooltiptext="&hackbar.splitTooltip;" label="&hackbar.splitLabel;" oncommand="hackBar.splitUrl()" accesskey="s" />
+            <toolbarbutton id="hackBarWebButton" tooltiptext="&hackbar.executeTooltip;" accesskey="x" label="&hackbar.executeLabel;" oncommand="hackBar.loadUrl()" />
+          </vbox>
+          <vbox flex="1">
+            <textbox id="hackBarTargetUrl" multiline="true" rows="3" flex="1" persist="rows" onkeypress="if (event.keyCode == 13) if (event.ctrlKey) hackBar.loadUrl()" />
+          </vbox>
+          <vbox>
+            <toolbarbutton tooltiptext="&hackbar.removeRow;" label="-" oncommand="hackBar.adjustFieldSize( -2, 'hackBarTargetUrl' )" />
+            <toolbarbutton tooltiptext="&hackbar.addRow;" label="+" oncommand="hackBar.adjustFieldSize( 2, 'hackBarTargetUrl' )" />
+          </vbox>
+        </toolbaritem>
+        <toolbaritem>
+          <hbox>
+            <label value="" control="" width="90" />
+            <command id="cmd_togglePostData" oncommand="hackBar.togglePostField()"/>
+            <checkbox id="hackBar_postDataCheckBox" label="Enable Post data" checked="false" command="cmd_togglePostData" />
+            <command id="cmd_toggleRef" oncommand="hackBar.toggleReferrerField()"/>
+            <checkbox id="hackBar_referrerCheckBox" label="Enable Referrer" checked="false" command="cmd_toggleRef" />
+          </hbox>
+        </toolbaritem>
+        <toolbaritem id="hackBarTargetUrlPost" hidden="true">
+          <vbox>
+            <label value="Post data" control="hackBarTargetUrlPostField" width="90" />
+          </vbox>
+          <vbox flex="1">
+            <textbox id="hackBarTargetUrlPostField" multiline="true" rows="3" flex="1" persist="rows" onkeypress="if (event.keyCode == 13) if (event.ctrlKey) hackBar.loadUrl()" />
+          </vbox>
+          <vbox>
+            <toolbarbutton tooltiptext="&hackbar.removeRow;" label="-" oncommand="hackBar.adjustFieldSize( -2, 'hackBarTargetUrlPostField' )" />
+            <toolbarbutton tooltiptext="&hackbar.addRow;" label="+" oncommand="hackBar.adjustFieldSize( 2, 'hackBarTargetUrlPostField' )" />
+          </vbox>
+        </toolbaritem>
+        <toolbaritem id="hackBarTargetUrlReferrer" hidden="true">
+          <vbox>
+            <label value="Referrer" control="hackBarTargetUrlReferrerField" width="90" />
+          </vbox>
+          <vbox flex="1">
+            <textbox id="hackBarTargetUrlReferrerField" multiline="true" rows="3" flex="1" persist="rows" onkeypress="if (event.keyCode == 13) if (event.ctrlKey) hackBar.loadUrl()" />
+          </vbox>
+          <vbox>
+            <toolbarbutton tooltiptext="&hackbar.removeRow;" label="-" oncommand="hackBar.adjustFieldSize( -2, 'hackBarTargetUrlReferrerField' )" />
+            <toolbarbutton tooltiptext="&hackbar.addRow;" label="+" oncommand="hackBar.adjustFieldSize( 2, 'hackBarTargetUrlReferrerField' )" />
+          </vbox>
+        </toolbaritem>
+      </vbox>
+    </toolbar>
+  </toolbox>
+</overlay>

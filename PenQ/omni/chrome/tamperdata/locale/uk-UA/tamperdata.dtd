@@ -1,0 +1,95 @@
+<!-- tamperdata window -->
+<!ENTITY tamperdata.tamperdata.title "- Поточні запити" >
+
+<!ENTITY tamperdata.toolbar.startTamper      "Запуск Tamper" >
+<!ENTITY tamperdata.toolbar.stopTamper       "Зупинити Tamper" >
+<!ENTITY tamperdata.command.showAll          "Показати Все" >
+<!ENTITY tamperdata.command.clear            "Очистити" >
+<!ENTITY tamperdata.command.options          "Налаштування" >
+<!ENTITY tamperdata.command.help             "Допомога" >
+<!ENTITY tamperdata.command.copy             "Копіювати" >
+<!ENTITY tamperdata.command.copy.all         "Копіювати Все" >
+<!ENTITY tamperdata.command.export.xml       "Експорт XML - Вибране" >
+<!ENTITY tamperdata.command.export.all.xml   "Експорт XML - Все" >
+<!ENTITY tamperdata.command.show.graph       "Показати Графік" >
+<!ENTITY tamperdata.command.details          "Деталі" >
+<!ENTITY tamperdata.command.reopen           "Відкрити у браузері" >
+<!ENTITY tamperdata.command.replay           "Повторити у браузер" >
+<!ENTITY tamperdata.command.viewSource       "Переглянути Джерело" >
+<!ENTITY tamperdata.command.graph.selected   "Графік вибраного">
+<!ENTITY tamperdata.command.graph.all        "Графік Всього">
+
+<!ENTITY tamperdata.label.filter             "Фільтр" >
+
+<!ENTITY tamperdata.tree.time                "Час" >
+<!ENTITY tamperdata.tree.duration            "Час виконання" >
+<!ENTITY tamperdata.tree.total.duration      "Загальний час виконання" >
+<!ENTITY tamperdata.tree.size                "Розмір" >
+<!ENTITY tamperdata.tree.method              "Метод" >
+<!ENTITY tamperdata.tree.status              "Статус" >
+<!ENTITY tamperdata.tree.content.type        "Тип Контенту" >
+<!ENTITY tamperdata.tree.url                 "УРЛ" >
+<!ENTITY tamperdata.tree.load.flags          "Завантажити флаги" >
+
+<!ENTITY tamperdata.request.header.name      "Назва заголовку запиту" >
+<!ENTITY tamperdata.request.header.value     "Значення заголовку запиту" >
+<!ENTITY tamperdata.response.header.name     "Назва заголовку відповіді" >
+<!ENTITY tamperdata.response.header.value    "Значення заголовку відповіді" >
+
+
+<!-- Tamper popup -->
+<!ENTITY tamperdata.tamperPopup.title "Вспливаюче вікно Tamper">
+<!ENTITY tamperdata.tamperPopup.request.header.name   "Назва заголовку запиту">
+<!ENTITY tamperdata.tamperPopup.request.header.value  "Значення заголовку запиту">
+<!ENTITY tamperdata.tamperPopup.post.parameter.name   "Назва POST-параметру">
+<!ENTITY tamperdata.tamperPopup.post.parameter.value  "Значення POST-параметру">
+
+
+<!-- overlays for menu and sidebar -->
+<!ENTITY tamperdata.taskmenu.item "Дані Tamper" >
+<!ENTITY tamperdata.sidebar.title "Дані Tamper" >
+
+
+<!-- Modify URI window -->
+<!ENTITY tamperdata.tamperURI.title                "- Модифікувати URI" >
+<!ENTITY tamperdata.tamperURI.base.uri             "Базовий URI" >
+<!ENTITY tamperdata.tamperURI.protocol             "Протокол" >
+<!ENTITY tamperdata.tamperURI.credentials          "Посвідчення" >
+<!ENTITY tamperdata.tamperURI.host                 "Хост" >
+<!ENTITY tamperdata.tamperURI.port                 "Порт" >
+<!ENTITY tamperdata.tamperURI.path                 "Шлях" >
+<!ENTITY tamperdata.tamperURI.get.parameters       "Параметри Get" >
+<!ENTITY tamperdata.tamperURI.get.parameter.name   "Назва параметру GET" >
+<!ENTITY tamperdata.tamperURI.get.parameter.value  "Значення параметру GET" >
+
+
+<!-- options window -->
+<!ENTITY tamperdata.tamperOptions.title                        "- Налаштування" >
+<!ENTITY tamperdata.tamperOptions.tamper.images                "Tamper з Images etc." >
+<!ENTITY tamperdata.tamperOptions.add.replaces                 "Додавання замінює існуюче" >
+<!ENTITY tamperdata.tamperOptions.force.caching                "Примусове кешування всіх запитів(отже перегляд джерела працює)" >
+<!ENTITY tamperdata.tamperOptions.context.menu.entries         "Склад Контекстного Меню" >
+<!ENTITY tamperdata.tamperOptions.tamper.context.menu.entries  "Склад Контекстного Меню Tamper" >
+<!ENTITY tamperdata.tamperOptions.new.menu.entry               "Новий" >
+<!ENTITY tamperdata.tamperOptions.delete.menu.entry            "Видалити" >
+<!ENTITY tamperdata.tamperOptions.label                        "Мітка" >
+<!ENTITY tamperdata.tamperOptions.update                       "Оновити" >
+<!ENTITY tamperdata.tamperOptions.import                       "Імпорт" >
+<!ENTITY tamperdata.tamperOptions.export                       "Експорт" >
+<!ENTITY tamperdata.tamperOptions.close                        "Закрити" >
+
+
+
+<!-- detail popup -->
+<!ENTITY tamperdata.details.dlg.title     "Деталі Tamper">
+<!ENTITY tamperdata.details.dlg.encoded   "Закодовано">
+<!ENTITY tamperdata.details.dlg.decoded   "Розкодовано">
+<!ENTITY tamperdata.details.dlg.name.col  "Назва">
+<!ENTITY tamperdata.details.dlg.value.col "Значення">
+
+<!-- View Source window -->
+<!ENTITY tamperdata.view.source.title               "- Перегляд Джерела">
+<!ENTITY tamperdata.view.source.raw.data            "Raw Data">
+<!ENTITY tamperdata.view.source.uncompressed.data   "Нестиснені дані">
+
+

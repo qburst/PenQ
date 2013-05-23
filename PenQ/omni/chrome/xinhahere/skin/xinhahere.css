@@ -1,0 +1,40 @@
+/* Grippy */
+#xinhahereSplit {
+	border-left-width: 1px;
+	border-right-width: 1px;
+}
+
+#xinhahereSplit grippy {
+  -moz-binding: url("chrome://xinhahere/content/grippies.xml#grippy");
+  min-width: 119px;
+  min-height: 5px;
+  background: transparent none no-repeat center;
+}
+
+#xinhahereSplit grippy:hover {
+	background-color: #C1D2EE;
+}
+
+#xinhahereSplit[state="collapsed"] grippy {
+	background-image: url(grippy_top.png);
+}
+
+#xinhahereSplit grippy {
+	background-image: url(grippy_bottom.png);
+}
+
+/* About Dialog */
+.link {
+	color: #0000FF;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.h1 {
+	font-weight: bold;
+	font-size: x-large;
+}
+
+.h2 {
+	font-weight: bold;
+}

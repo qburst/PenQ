@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay [
+<!ENTITY % reportphishDTD SYSTEM "chrome://browser/locale/safebrowsing/report-phishing.dtd">
+%reportphishDTD;
+<!ENTITY % safebrowsingDTD SYSTEM "chrome://browser/locale/safebrowsing/phishing-afterload-warning-message.dtd">
+%safebrowsingDTD;
+]>
+
+<overlay id="reportPhishingMenuOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="reportPhishingBroadcaster" disabled="true"/>
+    <broadcaster id="reportPhishingErrorBroadcaster" disabled="true"/>
+  </broadcasterset>
+	
+</overlay>

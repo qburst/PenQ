@@ -1,0 +1,151 @@
+@import url("chrome://global/content/aboutMemory.css");
+
+html {
+  background: rgb(48,48,48) url("chrome://browser/skin/penqErrorbg.png") repeat-x;
+  color: #e7e7e7;
+}
+
+h1, h2 {
+  font-weight:lighter;
+}
+
+h1 {
+  color:#00ee41 !important;
+  background: transparent !important;
+}
+
+h2 {
+  color:#e7e7e7 !important;
+  background: transparent !important;
+}
+
+.memBox {
+  background: rgba(54,54,54,.1) !important;
+  border-radius: 10px;
+  padding: 3em;
+  margin-bottom: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75), 0px 0px 1px rgba(255, 255, 255, 0.25) inset;
+  border: 1px solid rgba(0,0,0,.5);
+}
+
+.memValue
+  {
+  text-align:left;
+  }
+
+abbr[title], acronym[title]{
+  border-bottom-color: transparent;
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+}  
+  
+th {
+  color: #e7e7e7;
+  font-weight: normal;
+  font-size: medium;
+  text-align:left;
+}
+
+td {
+  font-size: small;
+  color: #a6a6a6;
+}
+
+.mrName {
+  color: #00ee41;
+}
+
+.mrName:hover {
+}
+
+.mrValue {
+  color: #646464;
+}
+
+hr {
+  border: none;
+}
+
+/* :::::::::::::::::: BUTTONS ::::::::::::::::::::: */
+
+button {
+  -moz-appearance: none;
+  margin: 1px 5px 2px 5px;
+  min-width: 6.3em;
+  border-radius: 4.5px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.15);
+  background: #171717 url("chrome://global/skin/buttons/button_bg.png") repeat-x;
+  color: #a6a6a6;
+  text-shadow: none;
+}
+
+button:hover {
+  background: #171717 url("chrome://global/skin/buttons/button_hover_bg.png") repeat-x;
+  color: #ffffff;
+  -moz-transition: .2s ease-in;
+}
+
+.button-box {
+  border: 1px solid transparent;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 4px;
+}
+
+.button-text {
+  margin: 0 !important;
+  text-align: center;
+}
+
+/* .......... focused state .......... */
+
+button:focus {
+  color :#00ee41 !important;
+  -moz-transition: .2s ease-in;
+}
+
+/* .......... active/open/checked state .......... */
+
+button/*:hover*/:active,
+button[open="true"],
+button[checked="true"] {
+  box-shadow: 0px 0px 5px rgba(4,4,4,1) inset,
+			  0 1px 0 rgba(255,255,255,.15);
+  -moz-transition: .2s ease-in;
+}
+
+button/*:hover*/:active > .button-box:-moz-system-metric(windows-classic),
+button[open="true"] > .button-box:-moz-system-metric(windows-classic),
+button[checked="true"] > .button-box:-moz-system-metric(windows-classic) {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  -moz-padding-start: 4px;
+  -moz-padding-end: 3px;
+}
+
+/* .......... disabled state .......... */
+
+button[disabled="true"] {
+  background: #222222 url("chrome://global/skin/buttons/button_bg[disable].png") repeat-x;
+  border-radius: 4.5px;
+  border: 1px solid;
+  border-color: rgba(10,10,10,.5) rgba(10,10,10,.75) rgba(10,10,10,1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.15);
+  cursor:default;
+  color: rgba(200,200,200,.65) !important;
+}
+
+button[disabled="true"]:-moz-system-metric(windows-classic) {
+  /*color: ThreeDShadow;*/
+  text-shadow: 1px 1px #202020;
+}
+
+button[disabled="true"] > .button-box {
+  padding-top: 1px !important;
+  padding-bottom: 2px !important;
+  -moz-padding-start: 3px !important;
+  -moz-padding-end: 4px !important;
+}

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://xssme/skin/preferences.css" type="text/css"?>
+<prefwindow id="xssmePreferences" title="XSS ME Options"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <prefpane label="General" id="xssgen">
+<!--
+Copyright 2007 Security Compass
+
+This file is part of XSS Me.
+
+XSS Me is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+XSS Me is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with XSS Me.  If not, see <http://www.gnu.org/licenses/>.
+
+If you have any questions regarding XSS Me please contact
+tools@securitycompass.com
+-->
+        <preferences>
+            <preference id="preferedNumAttacks"
+                        name="extensions.xssme.prefnumattacks"
+                        type="int"/>
+            <preference id="showContextMenu"
+                        name="extensions.xssme.showcontextmenu"
+                        type="bool"
+                        instantApply="true"/>
+            <preference id="numTabsToUse"
+                        name="extensions.xssme.numtabstouse"
+                        type="int" />
+            <preference id="prefTestChars"
+                        name="extensions.xssme.testchars"
+                        type="string" />
+            <preference id="prefUseHeuristic"
+                        name="extensions.xssme.useheuristictests"
+                        type="bool" />
+	    <preference id="prefReportBuildingShowPass"
+		        name="extensions.xssme.reportbuilding.showPass"
+		        type="bool" />
+            <preference id="prefReportBuildingShowPass"
+                        name="extensions.xssme.reportbuilding.showPass"
+                        type="bool" />
+        </preferences>
+        <popupset>
+            <tooltip id='tipSidebarBuildingPause'>
+                <description>The higher this value the more cpu time is yielded from generating the side for doing other things (redrawign the screen) but the longer it takes to generate the sidebar.</description>
+            </tooltip>
+        </popupset>
+	<checkbox label="Show context menu" preference="showContextMenu" />
+	<checkbox label="Show passed results in final report (Warning: long reports will cause heavy cpu load)" preference="prefReportBuildingShowPass" />
+        <label value="Preferred number of attacks to test"
+                control="preferedNumAttacksTxtBox" />
+        <textbox id="preferedNumAttacksTxtBox"
+                preference="preferedNumAttacks" />
+        <label value="Number of tabs to use for running tests"
+                control='numtabstouseTxtBox' />
+        <textbox id='numtabstouseTxtBox'
+                preference="numTabsToUse" />
+        <checkbox label="Use heuristic testing"
+                preference="prefUseHeuristic" />
+        <label value="Special characters for heuristic testing"
+                control="txtTestChars" />
+        <textbox id="txtTestChars"
+                preference="prefTestChars" />
+		<label value="Pause between adding items to sidebar (in ms)."
+               tooltip='tipSidebarBuildingPause'
+			   control="txtSidebarBuildingPause"
+               crop="end"
+               />
+	<textbox id="txtSidebarBuildingPause"
+                 preference="prefSidebarBuildingPause"
+                 tooltip='tipSidebarBuildingPause'/>
+        
+    </prefpane>
+    <prefpane label="XSS Strings" id="xssstrings" >
+        <preferences>
+        </preferences>
+        <script type="application/x-javascript;version=1.7" src="chrome://xssme/content/json.js" />
+        <script type="application/x-javascript;version=1.7" src="chrome://xssme/content/io.js" />
+        <script type="application/x-javascript;version=1.7" src="chrome://xssme/content/util.js" />
+        <script type="application/x-javascript;version=1.7" src="chrome://xssme/content/preferenceStringContainer.js" />
+        <script type="application/x-javascript;version=1.7" src="chrome://xssme/content/attackStringContainer.js" />
+        <script type="application/x-javascript;version=1.7" src="chrome://xssme/content/preferences.js" />
+        <groupbox>
+            <description>IMPORTANT:Please close then open the sidebar (or refresh the current webpage) to make sure that all new attack strings are reloaded.</description>
+            <label style="visibility:hidden;color: red" value="No attacks, please enter some" id="noattackslbl" />
+            <hbox>
+                <listbox id="existingXSSstrings" rows="10" seltype="multiple" flex="1">
+                </listbox>
+                <vbox>
+                    <button label="up" oncommand="preferencesController.moveAttackStringUp()"/>
+                    <button label="down" oncommand="preferencesController.moveAttackStringDown()"/>
+                    <button label="add" oncommand="window.openDialog('chrome://xssme/content/addAttack.xul', 'attackstring', 'chrome', attackStringContainer, preferencesController, window)"/>
+                    <button label="remove" oncommand="preferencesController.removeAttack()"/>
+                    <button label="export" oncommand="preferencesController.exportAttacks()" />
+                    <button label="import" oncommand="preferencesController.importAttacks()" />
+                </vbox>
+            </hbox>
+        </groupbox>
+    </prefpane>
+    <script>
+        window.addEventListener("load", function(){preferencesController = new PreferencesController()}, false);
+    </script>
+</prefwindow>

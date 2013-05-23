@@ -1,0 +1,128 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.findbar-closebutton {
+  border: 1px solid transparent;
+  padding: 2px !important;
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-appearance: none;
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.findbar-closebutton > .toolbarbutton-icon {
+  -moz-margin-end: 0px !important;
+  -moz-padding-end: 2px !important;
+  -moz-padding-start: 2px !important;
+}
+
+.findbar-closebutton:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.findbar-closebutton:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
+}
+
+findbar {
+  min-width: 1px;
+  background-image: -moz-linear-gradient(rgb(70,70,70), rgb(53,53,53) 75%);
+  border-top: 1px solid rgb(105,110,121);
+}
+
+/* find-next button */
+
+.findbar-find-next {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+  color: #a6a6a6;
+}
+
+.findbar-find-next:hover {
+  -moz-image-region: rect(16px 16px 32px 0px);
+  color: #00ee41;
+}
+
+.findbar-find-next[disabled="true"] {
+  -moz-image-region: rect(32px 16px 48px 0px) !important;
+  color: rgba(200,200,200,.5);
+}
+
+/* find-previous button */
+
+.findbar-find-previous {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 32px 16px 16px);
+  color: #a6a6a6;
+}
+
+.findbar-find-previous:hover {
+  -moz-image-region: rect(16px 32px 32px 16px);
+  color: #00ee41;
+}
+
+.findbar-find-previous[disabled="true"] {
+  -moz-image-region: rect(32px 32px 48px 16px) !important;
+  color: rgba(200,200,200,.5);
+}
+
+/* highlight button */
+
+.findbar-highlight {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 48px 16px 32px);
+  color: #a6a6a6;
+}
+
+.findbar-highlight:hover {
+  -moz-image-region: rect(16px 48px 32px 32px);
+  color: #00ee41;
+}
+
+.findbar-highlight[disabled="true"] {
+  -moz-image-region: rect(32px 48px 48px 32px) !important;
+  color: rgba(200,200,200,.5);
+}
+
+.findbar-highlight:active, .findbar-highlight[checked="true"] {
+  -moz-image-region: rect(48px 48px 64px 32px);
+  color:#00ee41;
+}
+
+.findbar-highlight[checked="true"]:hover {
+  -moz-image-region: rect(64px 48px 80px 32px);
+  color:#00ee41;
+}
+
+.find-status-icon {
+  list-style-image: none;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  -moz-margin-start: 12px;
+  -moz-margin-end: 0px;
+  width: 16px;
+  height: 16px;
+}
+
+.findbar-find-status {
+  margin: 0 !important;
+  -moz-margin-start: 3px !important;
+  padding: 2px !important;
+  color: #a6a6a6;
+}
+
+.find-status-icon[status="notfound"] {
+  list-style-image: url("chrome://global/skin/icons/notfound.png");
+}
+
+.findbar-textbox[status="notfound"] {
+  box-shadow: 0 0 0 1em #9e0b0f inset;
+  color: white;
+}
+
+.findbar-textbox[flash="true"] {
+  box-shadow: 0 0 0 1em #00ee41 inset;
+  color: black;
+}
+
+.find-status-icon[status="wrapped"] {
+  list-style-image: url("chrome://global/skin/icons/wrap.png");
+}

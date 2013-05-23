@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!-- 
+ **** BEGIN LICENSE BLOCK ****
+ Copyright(c) 2005 Adam Judson
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ Portions of this code have been based upon 
+ LiveHttpHeaders  - http://livehttpheaders.mozdev.org
+ Copyright(c) 2002-2003 Daniel Savard.
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ TamperData: 
+ - track and modify http requests and responses
+
+ This program is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ more details.
+
+ You should have received a copy of the GNU General Public License along with
+ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ Place, Suite 330, Boston, MA 02111-1307 USA
+
+ **** END LICENSE BLOCK ****
+
+-->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://tamperdata/locale/tamperdata.dtd">
+<dialog id="tamper-details-dialog" title="&tamperdata.details.dlg.title;"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept" 
+        ondialogaccept="return true;"
+        onload="onDetailsDialogLoad()"
+        persist="width height screenX screenY">
+
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperLang.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperPreferences.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/tamperUtils.js"/>
+<script type="application/x-javascript" src="chrome://tamperdata/content/TamperDetailsDlg.js"/>
+
+   <commandset>
+      <command id="details.copy.selection" oncommand="oDetailDialog.detailsCopySelection();" disabled="false"/>
+      <command id="details.copy.all"       oncommand="oDetailDialog.detailsCopyAll();"       disabled="false"/>
+   </commandset>
+
+   <popupset id="popupset">
+      <popup id="detailsList.context">
+         <menuitem label="&tamperdata.command.copy;"     command="details.copy.selection" />
+         <menuitem label="&tamperdata.command.copy.all;" command="details.copy.all" />
+      </popup>
+   </popupset>
+
+   <vbox flex="1">
+      <hbox flex="1">
+         <listbox id="detailsList" context="detailsList.context" flex="1">
+            <listcols>
+               <listcol minwidth="100" flex="1"/>
+               <listcol minwidth="150" flex="2"/>
+            </listcols>
+      
+            <listhead>
+               <listheader label="&tamperdata.details.dlg.name.col;"/>
+               <listheader label="&tamperdata.details.dlg.value.col;"/>
+            </listhead>
+         </listbox>
+      </hbox>
+      <hbox flex="1">
+         <radiogroup orient="horizontal">
+           <radio id="details.encoded" selected="true" label="&tamperdata.details.dlg.encoded;" oncommand="oDetailDialog.encode();"/>
+           <radio id="details.decoded"                 label="&tamperdata.details.dlg.decoded;" oncommand="oDetailDialog.decode();"/>
+         </radiogroup>      
+      </hbox>
+   </vbox>
+</dialog>

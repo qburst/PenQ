@@ -1,0 +1,71 @@
+<!ENTITY tamperdata.tamperdata.title "-Текущие запросы">
+<!ENTITY tamperdata.toolbar.startTamper "Запустить перехват">
+<!ENTITY tamperdata.toolbar.stopTamper "Остановить перехват">
+<!ENTITY tamperdata.command.showAll "Показать всё">
+<!ENTITY tamperdata.command.clear "Очистить">
+<!ENTITY tamperdata.command.options "Настройки">
+<!ENTITY tamperdata.command.help "Справка">
+<!ENTITY tamperdata.command.copy "Копировать">
+<!ENTITY tamperdata.command.copy.all "Копировать всё">
+<!ENTITY tamperdata.command.export.xml "Экспорт в XML - Выбранное">
+<!ENTITY tamperdata.command.export.all.xml "Экспорт в XML - Всё">
+<!ENTITY tamperdata.command.show.graph "Показать график">
+<!ENTITY tamperdata.command.details "Подробности">
+<!ENTITY tamperdata.command.reopen "Открыть в браузере">
+<!ENTITY tamperdata.command.replay "Воспроизвести в браузере">
+<!ENTITY tamperdata.command.viewSource "Исходный код">
+<!ENTITY tamperdata.command.graph.selected "График выбранного">
+<!ENTITY tamperdata.command.graph.all "График для всего">
+<!ENTITY tamperdata.label.filter "Фильтр">
+<!ENTITY tamperdata.tree.time "Время">
+<!ENTITY tamperdata.tree.duration "Длительность">
+<!ENTITY tamperdata.tree.total.duration "Полная длит.">
+<!ENTITY tamperdata.tree.size "Размер">
+<!ENTITY tamperdata.tree.method "Method">
+<!ENTITY tamperdata.tree.status "Статус">
+<!ENTITY tamperdata.tree.content.type "Тип содержимого">
+<!ENTITY tamperdata.tree.url "URL">
+<!ENTITY tamperdata.tree.load.flags "Флаги загрузки">
+<!ENTITY tamperdata.request.header.name "Имя заголовка запроса">
+<!ENTITY tamperdata.request.header.value "Значение">
+<!ENTITY tamperdata.response.header.name "Имя заголовка ответа">
+<!ENTITY tamperdata.response.header.value "Значение">
+<!ENTITY tamperdata.tamperPopup.title "Окно перехвата">
+<!ENTITY tamperdata.tamperPopup.request.header.name "Имя заголовка запроса">
+<!ENTITY tamperdata.tamperPopup.request.header.value "Значение">
+<!ENTITY tamperdata.tamperPopup.post.parameter.name "Имя Post параметра">
+<!ENTITY tamperdata.tamperPopup.post.parameter.value "Значение">
+<!ENTITY tamperdata.taskmenu.item "Перехватка данных">
+<!ENTITY tamperdata.sidebar.title "Перехваченные данные">
+<!ENTITY tamperdata.tamperURI.title "-Изменить URI">
+<!ENTITY tamperdata.tamperURI.base.uri "Базовый URI">
+<!ENTITY tamperdata.tamperURI.protocol "Протокол">
+<!ENTITY tamperdata.tamperURI.credentials "Сертификаты">
+<!ENTITY tamperdata.tamperURI.host "Хост">
+<!ENTITY tamperdata.tamperURI.port "Порт">
+<!ENTITY tamperdata.tamperURI.path "Путь">
+<!ENTITY tamperdata.tamperURI.reference "Ссылка">
+<!ENTITY tamperdata.tamperURI.get.parameters "Параметры Get">
+<!ENTITY tamperdata.tamperURI.get.parameter.name "Имя Get параметра">
+<!ENTITY tamperdata.tamperURI.get.parameter.value "Значение Get параметра">
+<!ENTITY tamperdata.tamperOptions.title "-Настройки">
+<!ENTITY tamperdata.tamperOptions.tamper.images "Вмешиваться в картинки и др">
+<!ENTITY tamperdata.tamperOptions.add.replaces "Добавить строку замены">
+<!ENTITY tamperdata.tamperOptions.force.caching "Принудительно кэшировать все запросы (так работает view-source)">
+<!ENTITY tamperdata.tamperOptions.context.menu.entries "Записи контекстного меню">
+<!ENTITY tamperdata.tamperOptions.tamper.context.menu.entries "Вмешаться в контекстное меню">
+<!ENTITY tamperdata.tamperOptions.new.menu.entry "Новый">
+<!ENTITY tamperdata.tamperOptions.delete.menu.entry "Удалить">
+<!ENTITY tamperdata.tamperOptions.label "Метка">
+<!ENTITY tamperdata.tamperOptions.update "Обновить">
+<!ENTITY tamperdata.tamperOptions.import "Импорт">
+<!ENTITY tamperdata.tamperOptions.export "Экспорт">
+<!ENTITY tamperdata.tamperOptions.close "Закрыть">
+<!ENTITY tamperdata.details.dlg.title "Подробности">
+<!ENTITY tamperdata.details.dlg.encoded "Закодированное">
+<!ENTITY tamperdata.details.dlg.decoded "Раскодированное">
+<!ENTITY tamperdata.details.dlg.name.col "Имя">
+<!ENTITY tamperdata.details.dlg.value.col "Значение">
+<!ENTITY tamperdata.view.source.title "-Исходный код">
+<!ENTITY tamperdata.view.source.raw.data "Необработанные данные">
+<!ENTITY tamperdata.view.source.uncompressed.data "Распакованные данные">

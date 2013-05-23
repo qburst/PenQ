@@ -1,0 +1,245 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Mozilla Communicator client code, released
+ * March 31, 1998.
+ *
+ * The Initial Developer of the Original Code is
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 2002
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Joe Hewitt (hewitt@netscape.com)
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+scrollbar {
+	-moz-binding: url("chrome://global/content/bindings/scrollbar.xml#scrollbar");
+	margin: 0px !important;
+	cursor: default;
+	background-color:transparent;
+}
+scrollbar[orient="vertical"] {
+	width:14px !important;
+	padding: 7px 0px 4px 0px;
+	background: #a6a6a6;
+	box-shadow: 3px 0px 7px rgba(0,0,0,.5)inset;
+}
+scrollbar[orient="horizontal"] {
+	height:14px !important;
+	padding: 0px 4px 0px 7px;
+	background: #a6a6a6;
+	box-shadow: 0px 3px 7px rgba(0,0,0,.5)inset;
+}
+thumb {
+	-moz-binding: url("chrome://global/skin/scrollbar.xml#thumb");
+    border-radius: 7px !important;
+}
+ thumb, thumb[height]:not([width]) {
+ min-height: 24px;
+ background: #343434
+              -moz-linear-gradient(left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.07) 48%,
+			  rgba(255, 255, 255, 0.004) 40%, rgba(255, 255, 255, 0.004));
+ box-shadow: 0px 0px 1px rgba(0,0,0,1)inset,
+			 0px 0px 2px rgba(255,255,255,.35)inset;
+}
+
+ thumb:hover, thumb[height]:not([width]):hover {
+  box-shadow: 0px 0px 1px rgba(0,0,0,1)inset,
+			  inset 0px 0px 7px rgba(255,0,0,0.4);
+			  -moz-transition: box-shadow .2s ease-in;
+}
+
+ thumb:active, thumb[height]:not([width]):active {
+  box-shadow: 0px 0px 1px rgba(0,0,0,1)inset,
+			  inset 0px 0px 7px rgba(255,0,0,0.8);
+			  -moz-transition: box-shadow .2s ease-in;
+}
+
+gripper {
+	-moz-box-flex: 1;
+}
+
+/* startcap */
+thumb[orient="horizontal"], thumb[width]:not([height]) {
+ min-width: 24px;
+ background: #343434
+              -moz-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.07) 48%,
+			  rgba(255, 255, 255, 0.004) 40%, rgba(255, 255, 255, 0.004));
+ box-shadow: 0px 0px 1px rgba(0,0,0,1)inset,
+			 0px 0px 2px rgba(255,255,255,.35)inset;
+}
+
+thumb[orient="horizontal"]:hover, thumb[width]:not([height]):hover {
+  box-shadow: 0px 0px 1px rgba(0,0,0,1)inset,
+			  inset 0px 0px 7px rgba(255,0,0,0.4);
+			  -moz-transition: box-shadow .2s ease-in;
+}
+
+thumb[orient="horizontal"]:active, thumb[width]:not([height]):active {
+  box-shadow: 0px 0px 1px rgba(0,0,0,1)inset,
+			  inset 0px 0px 7px rgba(255,0,0,0.8);
+			  -moz-transition: box-shadow .2s ease-in;
+}
+
+/* scrollbar button */
+
+scrollbarbutton {
+	background-repeat: no-repeat;
+}
+/* increment */
+
+scrollbarbutton[type="increment"] {
+	margin: 0px -7px 0px 0px;
+	min-width: 15px;
+	min-height: 14px;
+	background: url("chrome://global/skin/scrollbar/right.png");
+}
+scrollbarbutton[type="increment"]:hover {
+	background: url("chrome://global/skin/scrollbar/right-hover.png");
+}
+scrollbarbutton[type="increment"]:hover:active {
+	background: url("chrome://global/skin/scrollbar/right-active.png");
+}
+scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
+	margin: 0px 0px -7px 0px;
+	min-width: 14px;
+	min-height: 15px;
+	background: url("chrome://global/skin/scrollbar/down.png") no-repeat bottom left;
+}
+scrollbar[orient="vertical"] > scrollbarbutton[type="increment"]:hover {
+	background: url("chrome://global/skin/scrollbar/down-hover.png") no-repeat bottom left;
+}
+scrollbar[orient="vertical"] > scrollbarbutton[type="increment"]:hover:active {
+	background: url("chrome://global/skin/scrollbar/down-active.png") no-repeat bottom left;
+}
+/* decrement */
+
+scrollbarbutton[type="decrement"] {
+	margin: 0px -10px 0px -7px;
+	min-width: 23px;
+	min-height: 14px;
+	background: url("chrome://global/skin/scrollbar/left.png");
+}
+scrollbarbutton[type="decrement"]:hover {
+	background: url("chrome://global/skin/scrollbar/left-hover.png");
+}
+scrollbarbutton[type="decrement"]:hover:active {
+	background: url("chrome://global/skin/scrollbar/left-active.png");
+}
+scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
+	margin: -7px 0px -10px 0px;
+	min-width: 14px;
+	min-height: 23px;
+	background: url("chrome://global/skin/scrollbar/up.png");
+}
+scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"]:hover {
+	background: url("chrome://global/skin/scrollbar/up-hover.png");
+}
+scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"]:hover:active {
+	background: url("chrome://global/skin/scrollbar/up-active.png");
+}
+scrollcorner {
+    border: 1px solid;
+	-moz-border-top-colors: rgba(255,255,255, .3);
+	-moz-border-right-colors: rgba(255,255,255, .2);
+	-moz-border-bottom-colors: rgba(255,255,255, .2);
+	-moz-border-left-colors: rgba(255,255,255, .3);
+	background: #a6a6a6;
+}
+
+
+/*  media print */
+
+@media print {
+ html|div scrollbar {
+ -moz-appearance: scrollbartrack-horizontal;
+ -moz-binding: url("chrome://global/content/bindings/scrollbar.xml#scrollbar");
+ cursor: default;
+ background: transparent /*scrollbar*/;
+}
+ html|div scrollbar[orient="vertical"] {
+ -moz-appearance: scrollbartrack-vertical;
+}
+
+/* thumb (horizontal) */
+
+  html|div thumb {
+ -moz-appearance: scrollbarthumb-vertical;
+ min-height: 8px;
+}
+ html|div thumb[orient="horizontal"] {
+ -moz-appearance: scrollbarthumb-horizontal;
+ min-width: 8px;
+}
+ html|div thumb > gripper {
+ -moz-appearance: none /*scrollbargripper-vertical*/;
+}
+ html|div thumb[orient="horizontal"] > gripper {
+ -moz-appearance: none /*scrollbargripper-horizontal*/;
+}
+
+/* scrollbar button */
+
+  html|div scrollbarbutton {
+ background: -moz-Dialog no-repeat 0px 1px;
+ min-width: 15px;
+ min-height: 15px;
+}
+ html|div scrollbarbutton:hover:active {
+ -moz-border-top-colors: ThreeDShadow -moz-Dialog;
+ -moz-border-right-colors: ThreeDShadow -moz-Dialog;
+ -moz-border-bottom-colors: ThreeDShadow -moz-Dialog;
+ -moz-border-left-colors: ThreeDShadow -moz-Dialog;
+ background-position: 1px 2px;
+}
+
+/* increment */
+
+  html|div scrollbarbutton[type="increment"] {
+ -moz-appearance: scrollbarbutton-right;
+ background-image: url("chrome://global/skin/arrow/arrow-rit.gif")
+}
+ html|div scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
+ -moz-appearance: scrollbarbutton-down;
+ background-image: url("chrome://global/skin/arrow/arrow-dn.gif")
+}
+
+/* decrement */
+
+  html|div scrollbarbutton[type="decrement"] {
+ -moz-appearance: scrollbarbutton-left;
+ background-image: url("chrome://global/skin/arrow/arrow-lft.gif")
+}
+ html|div scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
+ -moz-appearance: scrollbarbutton-up;
+ background-image: url("chrome://global/skin/arrow/arrow-up.gif")
+}
+}

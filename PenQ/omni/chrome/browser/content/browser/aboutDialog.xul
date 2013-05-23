@@ -1,0 +1,121 @@
+<?xml version="1.0"?> <!-- -*- Mode: HTML -*- --> 
+
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/content/aboutDialog.css" type="text/css"?>
+<?xml-stylesheet href="chrome://branding/content/aboutDialog.css" type="text/css"?>
+
+<!DOCTYPE window [
+<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd" >
+%brandDTD;
+<!ENTITY % aboutDialogDTD SYSTEM "chrome://browser/locale/aboutDialog.dtd" >
+%aboutDialogDTD;
+]>
+
+<!--
+<window xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="aboutDialog"
+        windowtype="Browser:About"
+        onload="init(event);"
+        onunload="onUnload(event);"
+        title="&aboutDialog.title;"
+        role="dialog"
+        aria-describedby="version distribution distributionId communityDesc contributeDesc trademark"
+        > 
+        -->
+<window xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="aboutDialog"
+        windowtype="Browser:About"
+        onunload="onUnload(event);"
+        title="&aboutDialog.title;"
+        role="dialog"
+        aria-describedby="version distribution distributionId communityDesc contributeDesc trademark"
+        >
+  <script type="application/javascript" src="chrome://browser/content/aboutDialog.js"/>
+
+  <vbox id="aboutDialogContainer">
+    <hbox id="clientBox">
+      <vbox id="leftBox" flex="1"/>
+      <vbox id="rightBox" flex="1">
+        <label id="version">1.0.1</label>
+        <label id="distribution" class="text-blurb"/>
+        <label id="distributionId" class="text-blurb"/>
+
+        <vbox id="detailsBox">
+        <!-- 
+          <vbox id="updateBox">
+            <deck id="updateDeck" orient="vertical">
+              <hbox id="updateButtonBox" align="center">
+                <button id="updateButton" align="start"
+                        oncommand="gAppUpdater.buttonOnCommand();"/>
+                <spacer flex="1"/>
+              </hbox>
+              <hbox id="checkingForUpdates" align="center">
+                <image class="update-throbber"/><label>&update.checkingForUpdates;</label>
+              </hbox>
+              <hbox id="checkingAddonCompat" align="center">
+                <image class="update-throbber"/><label>&update.checkingAddonCompat;</label>
+              </hbox>
+              <hbox id="downloading" align="center">
+                <image class="update-throbber"/><label>&update.downloading.start;</label><label id="downloadStatus"/><label>&update.downloading.end;</label>
+              </hbox>
+              <hbox id="downloadFailed" align="center">
+                <label>&update.failed.start;</label><label id="failedLink" class="text-link">&update.failed.linkText;</label><label>&update.failed.end;</label>
+              </hbox>
+              <hbox id="adminDisabled" align="center">
+                <label>&update.adminDisabled;</label>
+              </hbox>
+              <hbox id="noUpdatesFound" align="center">
+                <label>&update.noUpdatesFound;</label>
+              </hbox>
+              <hbox id="manualUpdate" align="center">
+                <label>&update.manual.start;</label><label id="manualLink" class="text-link"/><label>&update.manual.end;</label>
+              </hbox>
+            </deck>
+          </vbox>
+
+          <description class="text-blurb" id="currentChannelText">
+            &channel.description.start;<label id="currentChannel"/>&channel.description.end;
+          </description>
+          -->
+          <description class="text-blurb" id="communityDesc">
+            &community.start2;<label class="text-link" href="http://www.qburst.com/">&community.qburstLink;</label>&community.middle2;<label class="text-link" href="http://www.mozilla.org/">&community.creditsLink;</label>&community.end2;
+          </description>
+          <!-- 
+          <description class="text-blurb" id="contributeDesc">
+            &contribute.start;<label class="text-link" href="http://www.mozilla.org/contribute/">&contribute.getInvolvedLink;</label>&contribute.end;
+          </description>
+          --> 
+        </vbox>
+      </vbox>
+    </hbox>
+         <!--
+    <vbox id="bottomBox">
+
+      <hbox pack="center">
+        <label class="text-link bottom-link" href="about:license">&bottomLinks.license;</label>
+        <label class="text-link bottom-link" href="about:rights">&bottomLinks.rights;</label>
+        <label class="text-link bottom-link" href="http://www.mozilla.com/legal/privacy/">&bottomLinks.privacy;</label>
+      </hbox>
+                
+      <description id="trademark">
+        
+        <label class="trademark-label">&trademarkInfo.part1;</label>
+        -->
+        <!-- DO NOT REMOVE without consulting people involved with bug 616193 -->
+        <!--
+        <label id="extra-trademark" class="trademark-label">Some of the trademarks used under license from The Charlton Company.</label>
+      
+      </description>
+         
+    </vbox>
+      -->      
+  </vbox>
+  
+  <keyset>
+    <key keycode="VK_ESCAPE" oncommand="window.close();"/>
+  </keyset>
+
+</window>

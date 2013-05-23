@@ -1,0 +1,211 @@
+
+/* Toolbar */
+#placesToolbar {
+  padding: 3px;  /* b/f buttons have a 1px image padding */
+  -moz-padding-end: 4px;
+   background-image: -moz-linear-gradient(rgb(70,70,70), rgb(53,53,53) 75%);
+}
+
+/* back & forward buttons */
+#back-button, #forward-button {
+  list-style-image: url(libraryNavigation.png);
+  -moz-appearance: none;
+  padding: 0;
+  border: none;
+}
+
+#placesToolbar > toolbarbutton > .toolbarbutton-icon,
+#placesToolbar > toolbarbutton > .toolbarbutton-text {
+  margin: 0;
+  padding: 0;
+}
+
+#back-button,
+#forward-button:-moz-locale-dir(rtl) {  
+  -moz-image-region: rect(0px, 24px, 24px, 0px);
+}
+#back-button:not([disabled="true"]):hover,
+#forward-button:not([disabled="true"]):hover:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(24px, 24px, 48px, 0px);
+}
+#back-button[disabled="true"],
+#forward-button:-moz-locale-dir(rtl)[disabled="true"] {
+  -moz-image-region: rect(48px, 24px, 72px, 0px) !important;
+}
+#back-button:not([disabled="true"]):hover:active,
+#forward-button:not([disabled="true"]):hover:active:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(72px, 24px, 96px, 0px);
+}
+
+#forward-button,
+#back-button:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(0px, 48px, 24px, 24px);
+}
+#forward-button:not([disabled="true"]):hover,
+#back-button:not([disabled="true"]):hover:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(24px, 48px, 48px, 24px);
+}
+#forward-button[disabled="true"],
+#back-button:-moz-locale-dir(rtl)[disabled="true"] {
+  -moz-image-region: rect(48px, 48px, 72px, 24px) !important;
+}
+#forward-button:not([disabled="true"]):hover:active,
+#back-button:not([disabled="true"]):hover:active:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(72px, 48px, 96px, 24px);
+}
+
+/* Menu */
+#placesMenu {
+  -moz-margin-start: 8px;
+  -moz-appearance: none;
+  border: none;
+}
+
+#placesMenu > menu {
+  -moz-padding-start: 4px;
+  -moz-padding-end: 1px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  -moz-appearance: none;
+  color: #a6a6a6;
+  border: 1px solid transparent;
+}
+
+#placesMenu > menu[_moz-menuactive="true"] {
+  background-color: transparent;
+}
+#placesMenu > menu[open="true"] {
+  background:none;
+ }
+
+/*#placesMenu > menu:hover {
+  border-color: ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight;
+}*/
+
+#placesMenu > menu[open="true"] {
+  -moz-padding-start: 5px;
+  -moz-padding-end: 0px;
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+
+#placesMenu > menu > .menubar-text {
+  -moz-padding-end: 8px;
+  background: url(chrome://global/skin/arrow/arrow-dn.gif) right center no-repeat;
+}
+
+#placesMenu > menu > .menubar-text:-moz-locale-dir(rtl) {
+  background-position: left center;
+}
+
+/* organize, view and maintenance buttons icons */
+#organizeButton, 
+#viewMenu, 
+#maintenanceButton {
+  list-style-image: url("chrome://browser/skin/places/libraryToolbar.png");
+}
+
+/* organize button */
+#organizeButton {
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+#organizeButton:hover,
+#organizeButton[open="true"] {
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+
+/* view button */
+#viewMenu {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+#viewMenu:hover,
+#viewMenu[open="true"] {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+/* maintenance button */
+#maintenanceButton {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+#maintenanceButton:hover,
+#maintenanceButton[open="true"] {
+  -moz-image-region: rect(16px, 48px, 32px, 32px);
+}
+
+/* Root View */
+#placesView {
+  border-top: none;
+}
+
+/* Place List, Place Content */
+.placesTree {
+  margin: 0px;
+}
+
+#placesList {
+  -moz-appearance: none;
+  margin: 0px;
+  border: none;
+  padding: 0;
+}
+
+#placeContent {
+  -moz-appearance: none;
+  border: 0px;
+}
+
+#infoPaneBox {
+  border-top: 2px solid;
+  -moz-border-top-colors: rgba(10,10,10,1) rgba(255,255,255,0.05) ;
+  padding: 5px;
+}
+
+.small, .small[disabled="true"] {
+  min-width: 0px;
+  padding: 0px 4px 0px 4px;
+  margin: 0px;  
+  border: 0px;
+}
+
+.small .button-text,
+.small .button-box {
+  padding: 0px;
+  border: 0px;
+}
+
+#infoBoxExpanderLabel {
+  -moz-padding-start: 2px;
+}
+
+#organizerScopeBar {
+  -moz-appearance: none;
+  background: #a6a6a6 url("chrome://browser/skin/places/dropDown.png");
+  padding: 2px 0;
+  -moz-padding-end: 3px;
+}
+
+#organizerScopeBar > toolbarbutton {
+  -moz-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 0 !important;
+  margin: 0 1px;
+}
+
+#organizerScopeBar > toolbarbutton > .toolbarbutton-icon {
+  padding: 0;
+  margin: 0;
+}
+
+#organizerScopeBar > toolbarbutton > .toolbarbutton-text {
+   margin: 0;
+   padding: 2px 5px;
+}
+
+#organizerScopeBar > toolbarbutton:not([disabled="true"]):not([checked="true"]):hover {
+  border-color: ThreeDShadow;
+}
+
+#organizerScopeBar > toolbarbutton[checked="true"] {
+  border-color: ThreeDDarkShadow !important;
+}
