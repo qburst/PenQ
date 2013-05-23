@@ -1,0 +1,9 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Open Status Search</os:ShortName>
+<os:Description>Open Status Search - Search Facebook without logging in</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<SearchForm>http://openstatussearch.com/</SearchForm>
+<os:Url type="text/html" method="GET" template="http://openstatussearch.com/">
+  <os:Param name="q" value="{searchTerms}"/>
+</os:Url>
+</SearchPlugin>

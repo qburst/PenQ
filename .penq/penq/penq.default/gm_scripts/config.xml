@@ -1,0 +1,28 @@
+<UserScriptConfig>
+	<Script basedir="phpsecinfo_checkerv.01" checkRemoteUpdates="true" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Check phpinfo page for security and performance issues. Greasemonkey Implementation of  phpsecinfo(); from http://phpsecinfo.com. Modified a little bit. pAdded PHP Manual Notes. This may be incomplete. Send bugs and suggestions via contact form at http://yehg.net" enabled="true" filename="30287.user.js" installTime="1360754671125" lastUpdateCheck="1360754671000" modified="1360754671000" name="phpsecinfo_checkerv.01" namespace="yehg.net" runAt="document-end" updateAvailable="false" version="" installurl="http://userscripts.org/scripts/source/30287.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/30287.meta.js">
+		<Include>*</Include>
+	</Script>
+	<Script basedir="WebPageFingerPrint_v0.4" checkRemoteUpdates="true" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="For web2.0 security analysis. To be used with FireBug. Provides http headers, overall view of the current page contents - javascript, cookies, fuzzable links, form information. For security assessment, it provides recon scan, bruteforce scan, and fuzzing form. What it differs from the thick-client full-fledged scanner is that this script is tied to the current url page and will not mess with the whole web site. Use it at your own risk. Feel free to send bugs." enabled="true" filename="30285.user.js" installTime="1360754693949" lastUpdateCheck="1360754693000" modified="1360754693000" name="WebPageFingerPrint v0.4" namespace="yehg.net" runAt="document-end" updateAvailable="false" version="" installurl="http://userscripts.org/scripts/source/30285.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/30285.meta.js">
+		<Include>*</Include>
+		<Exclude>about:*</Exclude>
+		<Exclude>data:*</Exclude>
+		<Exclude>file:*</Exclude>
+		<Exclude>unmht:*</Exclude>
+		<Exclude>ftp:*</Exclude>
+		<Exclude>ftps:*</Exclude>
+		<Exclude>view-source:*</Exclude>
+	</Script>
+	<Script basedir="Malware_Script_Detector_v.02b" checkRemoteUpdates="true" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Detect and Alert Malicious JavaScript : XSSProxy, XSS-Shell, AttackAPI, Beef. But No guarantee for full prevention of XSS-Injection threats. Many ways to bypass it but I'm sure it protects you from casual attackers.The main objective of developing Malware Script Detector is that I'm afraid of XSSProxy, XSS-Shell, AttackAPI, Beef and I want to detect them. Malicious sites intentionally embed them. Firefox XSS Warning addon can't check this. This new version is supposed to protect you from most XSS attacks." enabled="true" filename="30284.user.js" installTime="1360754721021" lastUpdateCheck="1360754721000" modified="1360754721000" name="Malware Script Detector v.02b" namespace="http://yehg.net" runAt="document-end" updateAvailable="false" version="" installurl="http://userscripts.org/scripts/source/30284.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/30284.meta.js">
+		<Include>*</Include>
+	</Script>
+	<Script basedir="ClickJacky" checkRemoteUpdates="true" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Detect if a web application/web site is vulnerable to ClickJacking by finding the existence of Anti-Frame Headers such as X-Frame-Options and X-Content-Security" enabled="true" filename="135672.user.js" installTime="1360754784098" lastUpdateCheck="1360754784000" modified="1360754784000" name="ClickJacky" namespace="yehg.net" runAt="document-end" updateAvailable="false" version="" installurl="http://userscripts.org/scripts/source/135672.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/135672.meta.js">
+		<Include>*</Include>
+		<Exclude>file://</Exclude>
+		<Exclude>jar://</Exclude>
+		<Exclude>data://</Exclude>
+		<Exclude>*.js</Exclude>
+		<Exclude>*.css</Exclude>
+		<Exclude>http://*ads*</Exclude>
+		<Exclude>about:blank</Exclude>
+	</Script>
+</UserScriptConfig>

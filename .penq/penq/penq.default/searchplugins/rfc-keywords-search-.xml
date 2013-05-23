@@ -1,0 +1,20 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>RFC keywords Search </os:ShortName>
+<os:Description>Search in RFC by KeyWords</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AP//AAAgcQAAJOAAACTkAAAk5wAAJOcAAAynAAAMJwAADCcAACSnAAAk5wAAJOQAACSkAAAEIAAADDEAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</os:Image>
+<SearchForm>http://www.rfc-editor.org/cgi-bin/rfcsearch.pl</SearchForm>
+<os:Url type="text/html" method="POST" template="http://www.rfc-editor.org/cgi-bin/rfcsearch.pl">
+  <os:Param name="searchwords" value="{searchTerms}"/>
+  <os:Param name="opt" value="All Fields"/>
+  <os:Param name="num" value="100"/>
+  <os:Param name="filefmt" value="txt"/>
+  <os:Param name="search_doc" value="search_all"/>
+  <os:Param name="match_method" value="prefix"/>
+  <os:Param name="abstract" value="absoff"/>
+  <os:Param name="keywords" value="keyoff"/>
+  <os:Param name="sort_method" value="older"/>
+  <os:Param name="format" value="http"/>
+</os:Url><os:Url type="application/x-suggestions+json" method="GET" template="http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=es-es&amp;q={searchTerms}">
+</os:Url>
+</SearchPlugin>
