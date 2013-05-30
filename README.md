@@ -3,7 +3,7 @@ PenQ - Security Testing Browser Bundle
 
 <br>
 
-<img src="https://lh4.googleusercontent.com/-ZNj1Vx51J2M/UZ3j1fWnd3I/AAAAAAAABTQ/3kXRnRiwkRk/w1030-h632-no/PenQScreen.png" width="400px;" height="245px";  align="right" >
+<img src="https://lh4.googleusercontent.com/-dv1CCa1L7V8/UaW42nPs-EI/AAAAAAAABU4/YwUJKDHQlI8/w898-h561-no/PenQ.png" width="400px;" height="245px";  align="right" >
 
 PenQ is an open source Linux based penetration testing browser bundle built over Mozilla Firefox. It comes pre-configured with security tools for spidering, advanced web searching, fingerprinting, anonymous browsing, web server scanning, fuzzing, report generating and many more. PenQ is not just a mix of addons but it comes preconfigured with some very powerful open source java/python and command line tools including Nikto, Wfuzz, OWASP Zap, OWASP Webslayer, OWASP WebScarab, Tor and lots more. 
 
